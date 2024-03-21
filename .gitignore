@@ -1,0 +1,4 @@
+input/*
+output/*
+lib/__pycache__
+assets/templates/*

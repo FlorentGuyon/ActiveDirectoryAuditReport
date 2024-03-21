@@ -1,0 +1,576 @@
+[
+  {
+    "uid": 1,
+    "pingcastle_ids": [
+      "T-SIDFiltering"
+    ],
+    "purpleknight_ids": [
+      "Outbound forest trust with SID History enabled"
+    ],
+    "anssi_ids": [
+      "vuln1_trusts_forest_sidhistory"
+    ],
+    "mitre_ids": [
+      "M1015",
+      "T1134.005"
+    ]
+  },
+  {
+    "uid": 2,
+    "pingcastle_ids": [
+      "T-SIDHistoryUnknownDomain",
+      "S-SIDHistory"
+    ],
+    "anssi_ids": [
+      "vuln3_sidhistory_present"
+    ],
+    "mitre_ids": [
+      "T1134.005"
+    ]
+  },
+  {
+    "uid": 3,
+    "pingcastle_ids": [
+      "A-Krbtgt"
+    ],
+    "purpleknight_ids": [
+      "Kerberos krbtgt account with old password"
+    ],
+    "anssi_ids": [
+      "vuln2_krbtgt"
+    ],
+    "mitre_ids": [
+      "T1558.001"
+    ]
+  },
+  {
+    "uid": 4,
+    "pingcastle_ids": [
+      "S-DesEnabled"
+    ],
+    "purpleknight_ids": [
+      "User accounts that use DES encryption"
+    ],
+    "anssi_ids": [
+      "vuln2_kerberos_properties_deskey"
+    ],
+    "mitre_ids": [
+      "T1558.004"
+    ]
+  },
+  {
+    "uid": 5,
+    "purpleknight_ids": [
+      "AD Certificate Authority with Web Enrollment - PetitPotam and ESC8"
+    ]
+  },
+  {
+    "uid": 6,
+    "pingcastle_ids": [
+      "A-CertTempCustomSubject"
+    ],
+    "purpleknight_ids": [
+      "Modèles de certificats qui permettent aux demandeurs de spécifier un subjectAltName",
+      "Certificate templates with three or more insecure configurations"
+    ],
+    "anssi_ids": [
+      "vuln1_vuln_adcs_template_auth_enroll_with_name"
+    ],
+    "mitre_ids": [
+      "T1558"
+    ]
+  },
+  {
+    "uid": 7,
+    "pingcastle_ids": [
+      "A-WeakRSARootCert2",
+      "A-SHA1RootCert"
+    ],
+    "anssi_ids": [
+      "vuln3_certificates_vuln"
+    ],
+    "mitre_ids": [
+      "T1600.001"
+    ]
+  },
+  {
+    "uid": 8,
+    "purpleknight_ids": [
+      "Non-default principals with DC Sync rights on the domain"
+    ],
+    "anssi_ids": [
+      "vuln1_permissions_naming_context"
+    ]
+  },
+  {
+    "uid": 9,
+    "pingcastle_ids": [
+      "A-NoServicePolicy"
+    ],
+    "mitre_ids": [
+      "T1201"
+    ]
+  },
+  {
+    "uid": 10,
+    "pingcastle_ids": [
+      "P-Delegated"
+    ],
+    "anssi_ids": [
+      "vuln1_vuln_display_specifier"
+    ],
+    "mitre_ids": [
+      "M1015",
+      "T1569"
+    ]
+  },
+  {
+    "uid": 11,
+    "pingcastle_ids": [
+      "S-PwdNeverExpires",
+      "P-AdminPwdTooOld",
+      "S-PwdLastSet-90"
+    ],
+    "purpleknight_ids": [
+      "Admins with old passwords",
+      "Users with Password Never Expires flag set",
+      "Computers with password last set over 90 days ago",
+      "Users with old passwords",
+      "Built-in domain Administrator account with old password (180 days)"
+    ],
+    "anssi_ids": [
+      "vuln2_dont_expire",
+      "vuln1_password_change_priv",
+      "vuln2_password_change_server_no_change_90"
+    ],
+    "mitre_ids": [
+      "M1015",
+      "M1026"
+    ]
+  },
+  {
+    "uid": 12,
+    "pingcastle_ids": [
+      "S-OS-2003",
+      "S-OS-2008",
+      "S-OS-XP",
+      "S-OS-Win7"
+    ],
+    "purpleknight_ids": [
+      "Computers with older OS versions"
+    ],
+    "mitre_ids": [
+      "M1051"
+    ]
+  },
+  {
+    "uid": 13,
+    "pingcastle_ids": [
+      "S-ADRegistrationSchema"
+    ],
+    "anssi_ids": [
+      "vuln2_warning_schema_posssuperiors"
+    ],
+    "mitre_ids": [
+      "M1018"
+    ]
+  },
+  {
+    "uid": 14,
+    "pingcastle_ids": [
+      "P-DelegationGPOData"
+    ],
+    "mitre_ids": [
+      "M1015"
+    ]
+  },
+  {
+    "uid": 15,
+    "pingcastle_ids": [
+      "T-Inactive"
+    ],
+    "purpleknight_ids": [
+      "Trust accounts with old passwords"
+    ],
+    "anssi_ids": [
+      "vuln2_trusts_accounts"
+    ],
+    "mitre_ids": [
+      "T1557"
+    ]
+  },
+  {
+    "uid": 16,
+    "pingcastle_ids": [
+      "P-ServiceDomainAdmin"
+    ],
+    "purpleknight_ids": [
+      "Privileged accounts with a password that never expires"
+    ],
+    "anssi_ids": [
+      "vuln1_dont_expire_priv"
+    ],
+    "mitre_ids": [
+      "T1003.004"
+    ]
+  },
+  {
+    "uid": 17,
+    "pingcastle_ids": [
+      "P-UnkownDelegation"
+    ],
+    "mitre_ids": [
+      "M1015",
+      "T1187"
+    ]
+  },
+  {
+    "uid": 18,
+    "pingcastle_ids": [
+      "S-PwdNotRequired"
+    ],
+    "mitre_ids": [
+      "M1015"
+    ]
+  },
+  {
+    "uid": 19,
+    "purpleknight_ids": [
+      "Dangerous control paths expose certificate templates"
+    ],
+    "anssi_ids": [
+      "vuln1_adcs_template_ control"
+    ]
+  },
+  {
+    "uid": 20,
+    "purpleknight_ids": [
+      "Domain trust to a third-party domain without quarantine"
+    ],
+    "anssi_ids": [
+      "vuln1_trusts_domain_ notfiltered"
+    ]
+  },
+  {
+    "uid": 21,
+    "purpleknight_ids": [
+      "gMSA objects with old passwords"
+    ]
+  },
+  {
+    "uid": 22,
+    "purpleknight_ids": [
+      "Non-privileged users with access to gMSA passwords"
+    ]
+  },
+  {
+    "uid": 23,
+    "purpleknight_ids": [
+      "LDAP signing is not required on Domain Controllers"
+    ]
+  },
+  {
+    "uid": 24,
+    "pingcastle_ids": [
+      "P-Kerberoasting"
+    ],
+    "purpleknight_ids": [
+      "Primary users with SPN not supporting AES encryption on Kerberos",
+      "Privileged users with ServicePrincipalNames defined",
+      "Users with ServicePrincipalName defined"
+    ],
+    "anssi_ids": [
+      "vuln1_spn_priv"
+    ],
+    "mitre_ids": [
+      "T1558.003"
+    ]
+  },
+  {
+    "uid": 25,
+    "purpleknight_ids": [
+      "RC4 or DES encryption type are supported by Domain Controllers"
+    ]
+  },
+  {
+    "uid": 26,
+    "purpleknight_ids": [
+      "Unprivileged principals as DNS Admins"
+    ],
+    "anssi_ids": [
+      "vuln1_permissions_msdn",
+      "vuln1_dnsadmins"
+    ]
+  },
+  {
+    "uid": 27,
+    "pingcastle_ids": [
+      "A-DnsZoneAUCreateChild"
+    ],
+    "mitre_ids": [
+      "T1557"
+    ]
+  },
+  {
+    "uid": 28,
+    "pingcastle_ids": [
+      "P-DNSAdmin"
+    ],
+    "anssi_ids": [
+      "vuln4_dnsadmins"
+    ],
+    "mitre_ids": [
+      "M1026",
+      "T1018"
+    ]
+  },
+  {
+    "uid": 29,
+    "pingcastle_ids": [
+      "A-DnsZoneTransfert"
+    ]
+  },
+  {
+    "uid": 30,
+    "pingcastle_ids": [
+      "P-ControlPathIndirectMany"
+    ],
+    "mitre_ids": [
+      "T1069.002",
+      "M1026"
+    ]
+  },
+  {
+    "uid": 31,
+    "pingcastle_ids": [
+      "S-SMB-v1"
+    ],
+    "mitre_ids": [
+      "T1557.001"
+    ]
+  },
+  {
+    "uid": 32,
+    "pingcastle_ids": [
+      "A-CertEnrollHttp"
+    ],
+    "mitre_ids": [
+      "T1557"
+    ]
+  },
+  {
+    "uid": 33,
+    "pingcastle_ids": [
+      "P-ProtectedUsers"
+    ],
+    "purpleknight_ids": [
+      "Protected Users group not in use"
+    ],
+    "anssi_ids": [
+      "vuln3_protected_users"
+    ],
+    "mitre_ids": [
+      "M1025",
+      "M1026"
+    ]
+  },
+  {
+    "uid": 34,
+    "pingcastle_ids": [
+      "P-LogonDenied"
+    ]
+  },
+  {
+    "uid": 35,
+    "pingcastle_ids": [
+      "A-LAPS-Joined-Computers",
+      "S-ADRegistration"
+    ],
+    "purpleknight_ids": [
+      "Changes to MS LAPS read permissions"
+    ],
+    "mitre_ids": [
+      "T1555.005",
+      "M1018"
+    ]
+  },
+  {
+    "uid": 36,
+    "pingcastle_ids": [
+      "A-AuditDC"
+    ],
+    "mitre_ids": [
+      "M1047"
+    ]
+  },
+  {
+    "uid": 37,
+    "pingcastle_ids": [
+      "A-DCLdapsChannelBinding"
+    ],
+    "mitre_ids": [
+      "T1557"
+    ]
+  },
+  {
+    "uid": 38,
+    "pingcastle_ids": [
+      "A-DCLdapSign"
+    ],
+    "mitre_ids": [
+      "T1557"
+    ]
+  },
+  {
+    "uid": 39,
+    "pingcastle_ids": [
+      "A-PreWin2000Other",
+      "A-PreWin2000AuthenticatedUsers"
+    ],
+    "purpleknight_ids": [
+      "Changes to PreWindows 2000 Compatible Access Group membership"
+    ],
+    "anssi_ids": [
+      "vuln3_compatible_2000_not_default"
+    ],
+    "mitre_ids": [
+      "T1210",
+      "T1110.003"
+    ]
+  },
+  {
+    "uid": 40,
+    "pingcastle_ids": [
+      "P-UnconstrainedDelegation"
+    ],
+    "purpleknight_ids": [
+      "Computer or user accounts with unconstrained delegation"
+    ],
+    "anssi_ids": [
+      "vuln2_delegation_t4d"
+    ],
+    "mitre_ids": [
+      "M1015"
+    ]
+  },
+  {
+    "uid": 41,
+    "pingcastle_ids": [
+      "S-PwdLastSet-DC"
+    ],
+    "anssi_ids": [
+      "vuln1_password_change_dc_no_change"
+    ],
+    "mitre_ids": [
+      "M1015"
+    ]
+  },
+  {
+    "uid": 42,
+    "pingcastle_ids": [
+      "S-Reversible"
+    ],
+    "purpleknight_ids": [
+      "User accounts that store passwords with reversible encryption"
+    ],
+    "anssi_ids": [
+      "vuln3_reversible_password"
+    ],
+    "mitre_ids": [
+      "T1110.002"
+    ]
+  },
+  {
+    "uid": 43,
+    "pingcastle_ids": [
+      "S-WSUS-HTTP"
+    ],
+    "mitre_ids": [
+      "M1051"
+    ]
+  },
+  {
+    "uid": 44,
+    "pingcastle_ids": [
+      "T-AlgsAES"
+    ],
+    "mitre_ids": [
+      "M1051"
+    ]
+  },
+  {
+    "uid": 45,
+    "purpleknight_ids": [
+      "Objects with constrained delegation configured"
+    ]
+  },
+  {
+    "uid": 46,
+    "purpleknight_ids": [
+      "Privileged users that are disabled"
+    ]
+  },
+  {
+    "uid": 47,
+    "purpleknight_ids": [
+      "Unprivileged users can add computer accounts to domain"
+    ]
+  },
+  {
+    "uid": 48,
+    "purpleknight_ids": [
+      "Unprotected accounts with adminCount=1"
+    ]
+  },
+  {
+    "uid": 49,
+    "purpleknight_ids": [
+      "User accounts with password not required"
+    ]
+  },
+  {
+    "uid": 50,
+    "pingcastle_ids": [
+      "A-NoNetSessionHardening"
+    ],
+    "mitre_ids": [
+      "T1087.001"
+    ]
+  },
+  {
+    "uid": 51,
+    "pingcastle_ids": [
+      "A-DsHeuristicsLDAPSecurity"
+    ],
+    "anssi_ids": [
+      "vuln3_dsheuristics_bad"
+    ],
+    "mitre_ids": [
+      "T1187"
+    ]
+  },
+  {
+    "uid": 52,
+    "pingcastle_ids": [
+      "A-UnixPwd"
+    ],
+    "anssi_ids": [
+      "vuln3_reversible_password"
+    ],
+    "mitre_ids": [
+      "T1552"
+    ]
+  },
+  {
+    "uid": 53,
+    "pingcastle_ids": [
+      "P-OperatorsEmpty"
+    ],
+    "purpleknight_ids": [
+      "Operator Groups that are not empty"
+    ],
+    "mitre_ids": [
+      "M1026"
+    ]
+  }
+]
