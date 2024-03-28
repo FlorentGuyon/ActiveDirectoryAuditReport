@@ -1,4 +1,6 @@
-input/*
-output/*
+input/*.xml
+input/*.html
+output/*.docx
+output/*.pdf
 lib/__pycache__
-assets/templates/*
+assets/templates/*.docx
