@@ -1,6 +1,7 @@
-input/*.xml
-input/*.html
-output/*.docx
-output/*.pdf
+assets/templates/**/*.docx
+assets/templates/**/*.ttf
+input/**/*.html
+input/**/*.xml
 lib/__pycache__
-assets/templates/*.docx
+output/**/*.docx
+output/**/*.pdf
