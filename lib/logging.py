@@ -54,9 +54,9 @@ def log_call(method):
 def update_log_level(log_level:str) -> bool:
 	log_level = log_level.lower()
 	if not log_level in LOG_LEVELS.keys():
-		log(f'Impossible to update the log level to "{log_level}".', "error")
-		print_available_log_levels()
-		return -1
+		log(f'Impossible to update the log level to "{log_level}". Available log levels: {", ".join(LOG_LEVELS.keys())}', "error")
+		return False
 	global LOG_LEVEL
 	LOG_LEVEL = log_level
 	log(f'Log level updated to "{log_level}".')
+	return True
