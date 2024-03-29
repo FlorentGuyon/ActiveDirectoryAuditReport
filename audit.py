@@ -8,19 +8,10 @@ from json import load, loads
 from lib.logging import log, update_log_level, log_call
 
 # PATHS
-PATH_FILE_DIRECTORY = path.dirname(path.abspath(__file__))
-PATH_ASSETS = path.join(PATH_FILE_DIRECTORY, "assets")
-PATH_TEMPLATES = path.join(PATH_ASSETS, "templates")
-PATH_OUTPUT = path.join(PATH_FILE_DIRECTORY, "output")
-PATH_DOCUMENTATIONS = path.join(PATH_ASSETS, "documentations")
+PATH_DIRECTORY = path.dirname(path.abspath(__file__))
 
 # FILES
-FILE_CONFIG = path.join(PATH_FILE_DIRECTORY, "config.txt")
-FILE_RACI = path.join(PATH_ASSETS, "raci", "raci.docx")
-FILE_MAPPED_RISKS = path.join(PATH_ASSETS, "mapped risks", "mapped_risks.json")
-FILE_STYLE_TEMPLATE = path.join(PATH_TEMPLATES, "template_metsys.docx")
-FILE_OUTPUT_DOCX = path.join(PATH_OUTPUT, "ActiveDirectoryAuditReport.docx")
-FILE_OUTPUT_PDF = path.join(PATH_OUTPUT, "ActiveDirectoryAuditReport.pdf")
+PATH_CONFIG = path.join(PATH_DIRECTORY, "config.txt")
 
 # LOADED CONFIGURATION
 config = Config()
@@ -29,7 +20,7 @@ config = Config()
 # Get the the unified (or mapped) IDs of the PingCastle risks IDs
 #
 @log_call
-def get_mapped_risks(pingcastle_ids):
+def get_mapped_risks(pingcastle_ids:list) -> list:
 	#
 	# List of unified risks (risks with a unique ID, mapped with the IDs of each tool)
 	#
@@ -41,11 +32,11 @@ def get_mapped_risks(pingcastle_ids):
 	#
 	# File unifying the ID given by each tool for a same risk
 	#
-	mapped_risks_file = path.join(FILE_MAPPED_RISKS)
+	mapped_risks_file = path.join(config.get("PATH_MAPPED_RISKS"))
 	#
 	# Open the file mapping the IDs of the referentials (PingCastle, ANSSI, ...)
 	#
-	with open(mapped_risks_file, 'r', encoding=config.get("ENCODING_FILE_MAPPED_RISKS")) as mapped_risks_fd:
+	with open(mapped_risks_file, 'r', encoding=config.get("ENCODING_MAPPED_RISKS")) as mapped_risks_fd:
 		#
 		# Convert the JSON text in a JSON object
 		#
@@ -125,7 +116,7 @@ def install_fonts(font_file_list:list) -> bool:
 		#
 		# Write it in the console
 		#
-		print(f"Unable to install the fonts \"{font_file_list}\". Unsupported operating system.")
+		print(f'Unable to install the fonts "{font_file_list}". Unsupported operating system.')
 		#
 		# Quit the function with an error code
 		#
@@ -149,7 +140,7 @@ def install_fonts(font_file_list:list) -> bool:
 			#
 			# Write it in the console
 			#
-			log(f"File \"{file}\" is not a font file.", "info")
+			log(f'File "{file}" is not a font file.', "info")
 			#
 			# Go to the next file
 			#
@@ -161,7 +152,7 @@ def install_fonts(font_file_list:list) -> bool:
 			#
 			# Write it in the console
 			#
-			log(f"Font \"{font_dest_path}\" already installed.", "info")
+			log(f'Font "{font_dest_path}" already installed.', "info")
 			#
 			# Go to the next file
 			#
@@ -177,7 +168,7 @@ def install_fonts(font_file_list:list) -> bool:
 			#
 			# Write it in the console
 			#
-			log(f"Font \"{file}\" installed.", "info")
+			log(f'Font "{file}" installed.', "info")
 	#
 	# Quit the function with a success code
 	#
@@ -215,13 +206,15 @@ def find_files(folder_path: str, extension: str) -> list:
 	return files
 
 #
+# Main program
+#
 @log_call
-def main():
+def main() -> None:
 	#
 	# Load the configuration file
 	# Example: {"LOG_LEVEL": "info", ...}
 	#
-	if not config.load(FILE_CONFIG):
+	if not config.load(PATH_CONFIG):
 		log("Unable to load the configuration file. Exiting the program...", "error")
 		return
 	#
@@ -232,17 +225,12 @@ def main():
 		#
 		# Write it in the console
 		#
-		log(f"Unable to update the log level to \"{config.get('LOG_LEVEL')}\". Default log level used.", "warning")
-	#
-	# Path to the template folder
-	# Example: "MyFirstTemplate"
-	#
-	template_path = path.join(PATH_TEMPLATES, config.get("TEMPLATE_NAME"))
+		log(f'Unable to update the log level to "{config.get("LOG_LEVEL")}". Default log level used.', "warning")
 	#
 	# DOCX template file for the report
 	# Example: "./assets/templates/MyFirstTemplate/MyFirstTemplate.docx"
 	#
-	template_files = find_files(template_path, "docx")
+	template_files = find_files(config.get("PATH_TEMPLATE"), "docx")
 	#
 	# If there is no DOCX template file
 	#
@@ -250,7 +238,7 @@ def main():
 		#
 		# Write it in the console
 		#
-		log(f"Unable to find a DOCX template file in the template folder \"{template_path}\". Exiting the program...", "error")
+		log(f'Unable to find a DOCX template file in the template folder "{config.get("PATH_TEMPLATE")}". Exiting the program...', "error")
 		#
 		# Quit the program
 		#
@@ -259,7 +247,7 @@ def main():
 	# Get the fonts to install to use the tempalte
 	# Example: ["./assets/templates/MyFirstTemplate/fonts/MyFirstFont/MyFirstFont.ttf"]
 	#
-	template_fonts = find_files(template_path, "ttf")
+	template_fonts = find_files(config.get("PATH_TEMPLATE"), "ttf")
 	#
 	# If There is no font to install
 	#
@@ -267,7 +255,7 @@ def main():
 		#
 		# Write it in the console
 		#
-		log(f"No fonts found to install in the template folder \"{template_path}\".", "info")
+		log(f'No fonts found to install in the template folder "{config.get("PATH_TEMPLATE")}".', "info")
 	#
 	# Else, if there are fonts to install
 	#
@@ -333,15 +321,15 @@ def main():
 	#
 	# Define the path to the DOCX verson of the final report
 	#
-	docx_manager.path = FILE_OUTPUT_DOCX
+	docx_manager.path = config.get("PATH_OUTPUT_DOCX")
 	#
 	# Define the path to the PDF version of the final report
 	#
-	docx_manager.export_path = FILE_OUTPUT_PDF
+	docx_manager.export_path = config.get("PATH_OUTPUT_PDF")
 	#
 	# Add the RACI table to the DOCX document
 	#
-	docx_manager.append(FILE_RACI)
+	docx_manager.append(config.get("PATH_RACI"))
 	#
 	# Go to the next page of the DOCX report
 	#
@@ -365,7 +353,7 @@ def main():
 		#
 		# Get the path to the documentation of the current unified risk
 		#
-		documentation_file = path.join(PATH_DOCUMENTATIONS, f'{uid}.docx')
+		documentation_file = path.join(config.get("PATH_DOCUMENTATIONS"), f'{uid}.docx')
 		#
 		# If the file exists
 		#

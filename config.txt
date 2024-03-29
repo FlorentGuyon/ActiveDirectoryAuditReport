@@ -1,17 +1,4 @@
 #
-# Encoding of the mapped_risks.json file
-#
-#   assets
-#   |__mapped risks
-#      |__mapped_risks.json
-#
-# Default:
-#
-#   ENCODING_FILE_MAPPED_RISKS = utf-8
-#
-ENCODING_FILE_MAPPED_RISKS = utf-8
-
-#
 # Level of informations logged during the execution of the program:
 #
 # 	debug 	-> 	All the available logs
@@ -25,6 +12,64 @@ ENCODING_FILE_MAPPED_RISKS = utf-8
 # 	LOG_LEVEL = info
 #
 LOG_LEVEL = info
+
+#
+# Path to the DOCX documentation of the risks
+#
+# Default:
+#
+# 	PATH_DOCUMENTATIONS = ./assets/documentations
+#
+PATH_DOCUMENTATIONS = ./assets/documentations
+
+#
+# Path to the file containing the RACI documentation
+#
+# Default:
+#
+# 	FILE_RACI = ./assets/raci/raci.docx
+#
+PATH_RACI = ./assets/raci/raci.docx
+
+#
+# Path to the file containing the unified risks
+#
+# Default:
+#
+# 	FILE_RACI = ./assets/mapped risks/mapped_risks.json
+#
+PATH_MAPPED_RISKS = ./assets/mapped risks/mapped_risks.json
+
+#
+# Encoding of the mapped_risks.json file
+#
+#   assets
+#   |__mapped risks
+#      |__mapped_risks.json
+#
+# Default:
+#
+#   ENCODING_FILE_MAPPED_RISKS = utf-8
+#
+ENCODING_MAPPED_RISKS = utf-8
+
+#
+# Path to the DOCX verson of the report
+#
+# Default:
+#
+# 	FILE_RACI = ./output/ActiveDirectoryAuditReport.docx
+#
+PATH_OUTPUT_DOCX = ./output/ActiveDirectoryAuditReport.docx
+
+#
+# Path to the PDF verson of the report
+#
+# Default:
+#
+# 	FILE_RACI = ./output/ActiveDirectoryAuditReport.pdf
+#
+PATH_OUTPUT_PDF = ./output/ActiveDirectoryAuditReport.pdf
 
 #
 # Name of folder containing the .docx and .ttf files of the desired template 
@@ -43,6 +88,6 @@ LOG_LEVEL = info
 #
 #	- Command:
 #
-#     TEMPLATE_NAME = MyFirstTemplate
+#     TEMPLATE_NAME = ./assets/templates/MyFirstTemplate
 #
-TEMPLATE_NAME = template_metsys
+PATH_TEMPLATE = ./assets/templates/template_metsys
