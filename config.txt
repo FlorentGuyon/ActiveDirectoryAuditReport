@@ -1,0 +1,48 @@
+#
+# Encoding of the mapped_risks.json file
+#
+#   assets
+#   |__mapped risks
+#      |__mapped_risks.json
+#
+# Default:
+#
+#   ENCODING_FILE_MAPPED_RISKS = utf-8
+#
+ENCODING_FILE_MAPPED_RISKS = utf-8
+
+#
+# Level of informations logged during the execution of the program:
+#
+# 	debug 	-> 	All the available logs
+#	info 	->	Only the steps of the execution of the program
+#	warning ->	Only information that can affect the execution of the program
+#	error 	->	Only the failures of the execution of the program
+#	silent 	->	Nothing
+#
+# Default:
+#
+# 	LOG_LEVEL = info
+#
+LOG_LEVEL = info
+
+#
+# Name of folder containing the .docx and .ttf files of the desired template 
+#
+# Example:
+#
+#   - Folders:
+#
+#     assets
+#     |__templates
+#        |__MyFirstTemplate           <- Name of the template (folder)
+#           |__MyFirstTemplate.docx   <- DOCX document with modified styles (Title 1, ...)
+#           |__fonts	
+#              |__MyFirstFont.ttf     <- Fonts used in the DOCX file
+#              |__...     
+#
+#	- Command:
+#
+#     TEMPLATE_NAME = MyFirstTemplate
+#
+TEMPLATE_NAME = template_metsys
