@@ -21,7 +21,7 @@ class DocxManager():
 	def __init__(self, **kwargs:dict) -> None:
 		super().__init__()
 		self._document = Document()
-		self._style_template = None
+		self._header_file = None
 		self._encoding = "utf-8"
 		self._export_path = Path()
 		self._log_level = "info"
@@ -77,8 +77,8 @@ class DocxManager():
 		return self._saved_to_file
 
 	@property
-	def style_template(self) -> str:
-		return self._style_template
+	def header_file(self) -> str:
+		return self._header_file
 	
 	################################################################### SETTERS
 
@@ -114,12 +114,11 @@ class DocxManager():
 	def saved_to_file(self, saved_to_file:bool) -> None:
 		self._saved_to_file = saved_to_file
 
-	@style_template.setter
-	def style_template(self, style_template:str) -> None:
-		self._style_template = style_template
-		if self.apply_style_from_template() == -1:
-			self._style_template = None
-
+	@header_file.setter
+	def header_file(self, header_file:str) -> None:
+		self._header_file = header_file
+		if self.apply_style_from_header() == -1:
+			self._header_file = None
 	
 	################################################################### METHODS
 
@@ -154,7 +153,8 @@ class DocxManager():
 		try:
 			word_app = client.gencache.EnsureDispatch("Word.Application")
 			doc = word_app.Documents.Open(self.path.abs)
-			doc.SaveAs(export_path, FileFormat=17)
+			# Documentation: https://learn.microsoft.com/en-us/office/vba/api/word.wdsaveformat
+			doc.SaveAs2(export_path, FileFormat=17, ReadOnlyRecommended=True, EmbedTrueTypeFonts=True, SaveNativePictureFormat=True)
 			doc.Close()
 			word_app.Quit()
 		except Exception as e:
@@ -238,11 +238,11 @@ class DocxManager():
 		log(f'Document cleared.')
 
 	@log_call
-	def apply_style_from_template(self) -> bool:
-		if self.load_file(self.style_template) == -1:
-			log(f'Impossible to apply the style from the template at "{self.style_template}"', "Error")
+	def apply_style_from_header(self) -> bool:
+		if self.load_file(self.header_file) == -1:
+			log(f'Impossible to apply the style from the header at "{self.header_file}"', "Error")
 			return -1
-		log(f'Style applied from the template at "{self.style_template}".') 
+		log(f'Style applied from the header at "{self.header_file}".') 
 
 	@log_call
 	def update_table_of_contents(self) -> bool:

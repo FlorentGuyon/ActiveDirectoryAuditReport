@@ -1,11 +1,11 @@
 from argparse import ArgumentParser
-from os import path, name, makedirs, getenv, walk
-from shutil import copy
+from json import load, loads
 from lib.config import Config
 from lib.docx_manager import DocxManager
 from lib.get_risk_ids_from_pingcastle_file import request_file_path, get_risk_ids_from_pingcastle_file
-from json import load, loads
 from lib.logging import log, update_log_level, log_call
+from os import path, name, makedirs, getenv, walk
+from shutil import copy
 
 # PATHS
 PATH_DIRECTORY = path.dirname(path.abspath(__file__))
@@ -179,7 +179,7 @@ def install_fonts(font_file_list:list) -> bool:
 # specific extension
 #
 @log_call
-def find_files(folder_path: str, extension: str) -> list:
+def find_files_by_extension(folder_path: str, extension: str) -> list:
 	#
 	# List of files in the folder, with the expected extension
 	#
@@ -227,27 +227,20 @@ def main() -> None:
 		#
 		log(f'Unable to update the log level to "{config.get("LOG_LEVEL")}". Default log level used.', "warning")
 	#
-	# DOCX template file for the report
-	# Example: "./assets/templates/MyFirstTemplate/MyFirstTemplate.docx"
+	# DOCX header file for the report
+	# Example: "./assets/templates/MyFirstTemplate/header.docx"
 	#
-	template_files = find_files(config.get("PATH_TEMPLATE"), "docx")
+	header_file = path.join(config.get("PATH_TEMPLATE"), "header.docx")
 	#
-	# If there is no DOCX template file
+	# DOCX footer file for the report
+	# Example: "./assets/templates/MyFirstTemplate/footer.docx"
 	#
-	if len(template_files) == 0 :
-		#
-		# Write it in the console
-		#
-		log(f'Unable to find a DOCX template file in the template folder "{config.get("PATH_TEMPLATE")}". Exiting the program...', "error")
-		#
-		# Quit the program
-		#
-		return
+	footer_file = path.join(config.get("PATH_TEMPLATE"), "footer.docx")
 	#
 	# Get the fonts to install to use the tempalte
 	# Example: ["./assets/templates/MyFirstTemplate/fonts/MyFirstFont/MyFirstFont.ttf"]
 	#
-	template_fonts = find_files(config.get("PATH_TEMPLATE"), "ttf")
+	template_fonts = find_files_by_extension(config.get("PATH_TEMPLATE"), "ttf")
 	#
 	# If There is no font to install
 	#
@@ -317,7 +310,7 @@ def main() -> None:
 	#
 	# Add the DOCX template to open in order to use the updated styles
 	#
-	docx_manager.style_template = template_files[0]
+	docx_manager.header_file = header_file
 	#
 	# Define the path to the DOCX verson of the final report
 	#
@@ -378,6 +371,14 @@ def main() -> None:
 			# Write it in the console
 			#
 			log(f'Documentation not found at "{documentation_file}".', "error")
+	#
+	# Go to the next page of the DOCX report
+	#
+	docx_manager.break_page()
+	#
+	# Add the footer of the report
+	#
+	docx_manager.append(footer_file)
 	#
 	# Save the last modifications of the DOCX report
 	#
