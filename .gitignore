@@ -1,7 +1,14 @@
-assets/templates/**/*.docx
-assets/templates/**/*.ttf
-input/**/*.html
-input/**/*.xml
+# Exclude all template files (DOCX, TTF...)
+assets/templates/*
+
+# Exclude all input files (HTML, XML)
+input/*
+
+# Exclude the Python cache folder
 lib/__pycache__
-output/**/*.docx
-output/**/*.pdf
+
+# Exclude all output files (DOCX, PDF)
+output/*
+
+# Exclude all temporary files
+~*
