@@ -388,6 +388,10 @@ def main() -> None:
 	#
 	docx_manager.update_table_of_contents()
 	#
+	# Update the table of figures of the DOCX report
+	#
+	docx_manager.update_table_of_illustrations()
+	#
 	# Export the DOCX report to PDF
 	#
 	docx_manager.export()

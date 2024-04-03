@@ -248,18 +248,47 @@ class DocxManager():
 	def update_table_of_contents(self) -> bool:
 		self.save_to_file()
 		try:
+			# Create a Word application object
 			word = client.gencache.EnsureDispatch("Word.Application")
+			# Open the document
 			doc = word.Documents.Open(self.path.abs)
 			# Assuming there is only one TOC in the document (index 1)
 			doc.TablesOfContents(1).Update()
+			# Save the changes
 			doc.Close(SaveChanges=True)
+			# Exit the application
 			word.Quit()
 			self.saved_to_file = False
 		except Exception as e:
 			log(f'Error while updating the table of contents : {e}', "Error")
 			return -1
+		# Reload the DOCX document with the changes
 		self.load_file()
 		log(f'Table of contents updated.')
+
+	@log_call
+	def update_table_of_illustrations(self) -> None:
+		self.save_to_file()
+		try:
+			# Create a Word application object
+			word = client.Dispatch("Word.Application")
+			# Open the document
+			doc = word.Documents.Open(self.path.abs)
+			# Update the fields (captions, etc)
+			doc.Fields.Update()
+			# Assuming there is only one TOF in the document (index 1)
+			doc.TablesOfFigures(1).Update()
+			# Save the changes
+			doc.Close(SaveChanges=True)
+			# Exit the application
+			word.Quit()
+			self.saved_to_file = False
+		except Exception as e:
+			log(f'Error while updating the table of figures : {e}', "Error")
+			return -1
+		# Reload the DOCX document with the changes
+		self.load_file()
+		log(f'Table of figures updated.')
 
 	@log_call
 	def open_export(self):
