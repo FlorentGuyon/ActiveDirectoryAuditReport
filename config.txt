@@ -36,7 +36,7 @@ PATH_RACI = ./assets/raci/raci.docx
 #
 # Default:
 #
-# 	FILE_RACI = ./assets/mapped risks/mapped_risks.json
+# 	PATH_MAPPED_RISKS = ./assets/mapped risks/mapped_risks.json
 #
 PATH_MAPPED_RISKS = ./assets/mapped risks/mapped_risks.json
 
@@ -58,7 +58,7 @@ ENCODING_MAPPED_RISKS = utf-8
 #
 # Default:
 #
-# 	FILE_RACI = ./output/ActiveDirectoryAuditReport.docx
+# 	PATH_OUTPUT_DOCX = ./output/ActiveDirectoryAuditReport.docx
 #
 PATH_OUTPUT_DOCX = ./output/ActiveDirectoryAuditReport.docx
 
@@ -67,7 +67,7 @@ PATH_OUTPUT_DOCX = ./output/ActiveDirectoryAuditReport.docx
 #
 # Default:
 #
-# 	FILE_RACI = ./output/ActiveDirectoryAuditReport.pdf
+# 	PATH_OUTPUT_PDF = ./output/ActiveDirectoryAuditReport.pdf
 #
 PATH_OUTPUT_PDF = ./output/ActiveDirectoryAuditReport.pdf
 
@@ -81,9 +81,10 @@ PATH_OUTPUT_PDF = ./output/ActiveDirectoryAuditReport.pdf
 #     assets
 #     |__templates
 #        |__MyFirstTemplate           <- Name of the template (folder)
-#           |__MyFirstTemplate.docx   <- DOCX document with modified styles (Title 1, ...)
+#           |__header.docx            <- DOCX document with first pages and modified styles (Title 1, ...)
+#           |__footer.docx            <- DOCX document with last pages
 #           |__fonts	
-#              |__MyFirstFont.ttf     <- Fonts used in the DOCX file
+#              |__MyFirstFont.ttf     <- Fonts used in the DOCX file (some fonts are not embedded in PDF files)
 #              |__...     
 #
 #	- Command:
