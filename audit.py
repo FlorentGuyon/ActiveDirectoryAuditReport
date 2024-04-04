@@ -496,6 +496,10 @@ def main() -> None:
 	#
 	log(f'RACI table added.')
 	#
+	# Add the Risks page
+	#
+	docx_manager.title("Risques", 1)
+	#
 	# Import the PingCastle data
 	#
 	pingcastle_data = xml_to_json(find_files_by_extension("input", "xml")[0])
@@ -679,15 +683,13 @@ def main() -> None:
 	#
 	docx_manager.add_image(path=chart_data["export"]["path"], width=18.5, caption="Risques détectées", alignment="center")
 	#
-	# Add the Risks page
+	# Go to the next page of the DOCX report
 	#
-	docx_manager.title("Risques", 1)
+	docx_manager.break_page()
 	#
 	# Go through all the unified risks
 	#
 	for index, mapped_risk in enumerate(mapped_risks):
-		if index == 3:
-			break
 		#
 		# Get the current unified risk
 		#
