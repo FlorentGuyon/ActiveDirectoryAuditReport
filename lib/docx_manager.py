@@ -1,8 +1,9 @@
 from os import path
 from docx import Document
-from docx.enum.text import WD_BREAK
+from docx.enum.text import WD_BREAK, WD_ALIGN_PARAGRAPH
 from docx.enum.style import WD_STYLE_TYPE
 from docx.oxml.shared import OxmlElement, qn
+from docx.shared import Cm
 from docxcompose.composer import Composer
 from win32com import client
 from subprocess import Popen
@@ -11,7 +12,6 @@ from lib.path import Path
 from lib.logging import log, log_call
 
 ABSOLUTE_FILE_PATH = path.abspath(__file__)
-FILE_NAME = path.basename(__file__)
 
 class DocxManager():
 
@@ -299,6 +299,46 @@ class DocxManager():
 	def title(self, text, level):
 		self.document.add_paragraph(text, style=f"Heading {level}")
 
+	@log_call
+	def add_image(self, path, width=18.5, caption=None, alignment="center") -> bool:
+		try:
+			# Add picture to document
+			paragraph = self.document.add_paragraph()
+			run = paragraph.add_run()
+			run.add_picture(path, width=Cm(width))
+
+			# Set alignment
+			if alignment == 'left':
+				paragraph.alignment = WD_ALIGN_PARAGRAPH.LEFT
+			elif alignment == 'center':
+				paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+			elif alignment == 'right':
+				paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+
+			if caption:
+				paragraph = self.document.add_paragraph(f'Illustration ', style='Caption')
+
+				# numbering field
+				run = paragraph.add_run()
+
+				fldChar = OxmlElement('w:fldChar')
+				fldChar.set(qn('w:fldCharType'), 'begin')
+				run._r.append(fldChar)
+
+				instrText = OxmlElement('w:instrText')
+				instrText.text = f' SEQ Illustration \\* ARABIC'
+				run._r.append(instrText)
+
+				fldChar = OxmlElement('w:fldChar')
+				fldChar.set(qn('w:fldCharType'), 'end')
+				run._r.append(fldChar)
+
+				# caption text
+				paragraph.add_run(f': {caption}')
+		except Exception as e:
+			log(f'Error while exporting the image at "{export_path}" : {e}', "Error")
+			return -1
+		log(f'Image at "{path}" concatenated to the document.')
 
 	#@log_call
 	#def increase_numbering(self, increased_heading_level:int=1) -> None:

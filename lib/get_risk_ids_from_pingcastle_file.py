@@ -3,6 +3,7 @@ from glob import glob
 from bs4 import BeautifulSoup
 from os.path import isfile
 from lib.logging import log_call
+from xml.etree import ElementTree
 
 @log_call
 def get_risk_ids_from_pingcastle_file(file_path:str):

@@ -92,3 +92,38 @@ PATH_OUTPUT_PDF = ./output/ActiveDirectoryAuditReport.pdf
 #     TEMPLATE_NAME = ./assets/templates/MyFirstTemplate
 #
 PATH_TEMPLATE = ./assets/templates/template_metsys
+
+#
+# Path to the charts export folder
+#
+# Example: CHARTS_FOLDER = ./output
+#
+CHARTS_FOLDER = ./output
+
+#
+# Main color used in the charts added to the report
+#
+# Example: CHART_PRIMARY_COLOR = #783CBD
+#
+CHART_PRIMARY_COLOR = #783CBD
+
+#
+# Additional color used in the charts added to the report
+#
+# Example: CHART_SECONDARY_COLOR = #C7ADE5
+#
+CHART_SECONDARY_COLOR = #C7ADE5
+
+#
+# Color of the legend of the charts added to the report
+#
+# Example: CHART_LEGEND_COLOR = #3D3834
+#
+CHART_LEGEND_COLOR = #3D3834
+
+#
+# Font used in the charts added to the report
+#
+# Example: FONT_NAME = Calibri
+#
+FONT_NAME = Calibri
