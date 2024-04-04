@@ -339,7 +339,7 @@ def create_bar_chart(chart_data) -> None:
 		#
 		# Place the legend
 		#
-		legend = pyplot.legend(handles=patches_list, loc='upper center', bbox_to_anchor=(chart_data["style"]["legend"]["x_position_ratio"], chart_data["style"]["legend"]["y_position_ratio"]), ncol=chart_data["style"]["legend"]["columns"])
+		legend = pyplot.legend(handles=patches_list, fontsize=chart_data["style"]["legend"]["font_size"], loc='upper center', bbox_to_anchor=(chart_data["style"]["legend"]["x_position_ratio"], chart_data["style"]["legend"]["y_position_ratio"]), ncol=chart_data["style"]["legend"]["columns"])
 		#
 		# Go through all the legends
 		#
@@ -514,6 +514,7 @@ def main() -> None:
 				"x_position_ratio": 0.5,
 				"y_position_ratio": 0,
 				"font_color" : config.get("CHART_LEGEND_COLOR"),
+				"font_size": config.get("FONT_SIZE"),
 				"transparent": True
 			},
 			"axis": False,
@@ -529,28 +530,28 @@ def main() -> None:
 				"id": "Anomalies",
 				"text": "Anomalies",
 				"alignment": "center",
-				"font_size": 10,
+				"font_size": config.get("FONT_SIZE"),
 				"font_color": config.get("CHART_LEGEND_COLOR")
 			},
 			"PrivilegedAccounts": {
 				"id": "PrivilegedAccounts",
 				"text": "Comptes à privilèges",
 				"alignment": "center",
-				"font_size": 10,
+				"font_size": config.get("FONT_SIZE"),
 				"font_color": config.get("CHART_LEGEND_COLOR")
 			},
 			"StaleObjects": {
 				"id": "StaleObjects",
 				"text": "Objets périmés",
 				"alignment": "center",
-				"font_size": 10,
+				"font_size": config.get("FONT_SIZE"),
 				"font_color": config.get("CHART_LEGEND_COLOR")
 			},
 			"Trusts": {
 				"id": "Trusts",
 				"text": "Relations de confiance",
 				"alignment": "center",
-				"font_size": 10,
+				"font_size": config.get("FONT_SIZE"),
 				"font_color": config.get("CHART_LEGEND_COLOR")
 			}
 		},
@@ -566,7 +567,7 @@ def main() -> None:
 						"label": {
 							"value": 0,
 							"alignment": "center",
-							"font_size": 10,
+							"font_size": config.get("FONT_SIZE"),
 							"font_color": "#ffffff"
 						}
 					},
@@ -576,7 +577,7 @@ def main() -> None:
 						"label": {
 							"value": 0,
 							"alignment": "center",
-							"font_size": 10,
+							"font_size": config.get("FONT_SIZE"),
 							"font_color": "#ffffff"
 						}
 					},
@@ -586,7 +587,7 @@ def main() -> None:
 						"label": {
 							"value": 0,
 							"alignment": "center",
-							"font_size": 10,
+							"font_size": config.get("FONT_SIZE"),
 							"font_color": "#ffffff"
 						}
 					},
@@ -596,7 +597,7 @@ def main() -> None:
 						"label": {
 							"value": 0,
 							"alignment": "center",
-							"font_size": 10,
+							"font_size": config.get("FONT_SIZE"),
 							"font_color": "#ffffff"
 						}
 					}
@@ -613,7 +614,7 @@ def main() -> None:
 						"label": {
 							"value": 70,
 							"alignment": "center",
-							"font_size": 10,
+							"font_size": config.get("FONT_SIZE"),
 							"font_color": "#ffffff"
 						}
 					},
@@ -623,7 +624,7 @@ def main() -> None:
 						"label": {
 							"value": 45,
 							"alignment": "center",
-							"font_size": 10,
+							"font_size": config.get("FONT_SIZE"),
 							"font_color": "#ffffff"
 						}
 					},
@@ -633,7 +634,7 @@ def main() -> None:
 						"label": {
 							"value": 50,
 							"alignment": "center",
-							"font_size": 10,
+							"font_size": config.get("FONT_SIZE"),
 							"font_color": "#ffffff"
 						}
 					},
@@ -643,7 +644,7 @@ def main() -> None:
 						"label": {
 							"value": 12,
 							"alignment": "center",
-							"font_size": 10,
+							"font_size": config.get("FONT_SIZE"),
 							"font_color": "#ffffff"
 						}
 					}
@@ -676,7 +677,7 @@ def main() -> None:
 	#
 	# Add the chart to the report
 	#
-	docx_manager.add_image(path=chart_data["export"]["path"], width=18.5, caption="Risques trouvés", alignment="center")
+	docx_manager.add_image(path=chart_data["export"]["path"], width=18.5, caption="Risques détectées", alignment="center")
 	#
 	# Add the Risks page
 	#
