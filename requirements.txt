@@ -1,6 +1,11 @@
 bs4>=0.0.2
+colorama>=0.4.6
 docxcompose>=1.4.0
-python-docx>=1.1.0
+lxml>=5.1.0
+matplotlib>=3.8.3
+numpy>=1.26.4
 openpyxl>=3.1.2
+pandas>=2.2.1
+python-docx>=1.1.0
 pywin32>=306
 seaborn>=0.13.2
