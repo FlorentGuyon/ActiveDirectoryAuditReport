@@ -5,10 +5,11 @@ from lib.docx_manager import DocxManager
 from lib.get_risk_ids_from_pingcastle_file import request_file_path, get_risk_ids_from_pingcastle_file
 from lib.logging import log, update_log_level, log_call
 from matplotlib import patches, pyplot
-from os import path, name, makedirs, getenv, walk
+from numpy import nan, isnan
+from os import path, name, makedirs, getenv, walk, listdir, remove
 from pandas import DataFrame, merge
 import seaborn as sns
-from shutil import copy
+from shutil import copy, rmtree
 from xml.etree import ElementTree
 
 # PATHS
@@ -19,6 +20,25 @@ PATH_CONFIG = path.join(PATH_DIRECTORY, "config.txt")
 
 # LOADED CONFIGURATION
 config = Config()
+
+#
+# Remove the content of a folder
+#
+@log_call
+def remove_contents(folder_path):
+    # Iterate over all the contents of the folder
+    for item in listdir(folder_path):
+        item_path = path.join(folder_path, item)
+        if "gitkeep" in item_path:
+        	continue
+        # Check if the item is a file
+        if path.isfile(item_path):
+            # Remove the file
+            remove(item_path)
+        # Check if the item is a directory
+        elif path.isdir(item_path):
+            # Remove the directory and its contents recursively
+            rmtree(item_path)
 
 #
 # Get the the unified (or mapped) IDs of the PingCastle risks IDs
@@ -374,6 +394,10 @@ def create_bar_chart(chart_data) -> None:
 #
 @log_call
 def main() -> None:
+	#
+	# Remove the previous report
+	#
+	remove_contents("./output")
 	#
 	# Load the configuration file
 	# Example: {"LOG_LEVEL": "info", ...}
