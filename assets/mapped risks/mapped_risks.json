@@ -13,7 +13,12 @@
     "mitre_ids": [
       "M1015",
       "T1134.005"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 2,
@@ -26,7 +31,12 @@
     ],
     "mitre_ids": [
       "T1134.005"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 4,
+      "average": 5,
+      "maximum": 6
+    }
   },
   {
     "uid": 3,
@@ -41,7 +51,12 @@
     ],
     "mitre_ids": [
       "T1558.001"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 4,
@@ -56,13 +71,23 @@
     ],
     "mitre_ids": [
       "T1558.004"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 5,
     "purpleknight_ids": [
       "AD Certificate Authority with Web Enrollment - PetitPotam and ESC8"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 6,
@@ -78,7 +103,12 @@
     ],
     "mitre_ids": [
       "T1558"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 7,
@@ -91,7 +121,12 @@
     ],
     "mitre_ids": [
       "T1600.001"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 2,
+      "average": 3,
+      "maximum": 4
+    }
   },
   {
     "uid": 8,
@@ -100,7 +135,12 @@
     ],
     "anssi_ids": [
       "vuln1_permissions_naming_context"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 1,
+      "average": 2,
+      "maximum": 3
+    }
   },
   {
     "uid": 9,
@@ -109,7 +149,12 @@
     ],
     "mitre_ids": [
       "T1201"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 10,
@@ -122,7 +167,12 @@
     "mitre_ids": [
       "M1015",
       "T1569"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 11,
@@ -146,7 +196,12 @@
     "mitre_ids": [
       "M1015",
       "M1026"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 2,
+      "average": 3,
+      "maximum": 4
+    }
   },
   {
     "uid": 12,
@@ -161,7 +216,12 @@
     ],
     "mitre_ids": [
       "M1051"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 9,
+      "average": 10,
+      "maximum": 11
+    }
   },
   {
     "uid": 13,
@@ -173,7 +233,12 @@
     ],
     "mitre_ids": [
       "M1018"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 14,
@@ -182,7 +247,12 @@
     ],
     "mitre_ids": [
       "M1015"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 15,
@@ -197,7 +267,12 @@
     ],
     "mitre_ids": [
       "T1557"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 16,
@@ -212,7 +287,12 @@
     ],
     "mitre_ids": [
       "T1003.004"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 17,
@@ -222,7 +302,12 @@
     "mitre_ids": [
       "M1015",
       "T1187"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 18,
@@ -231,7 +316,12 @@
     ],
     "mitre_ids": [
       "M1015"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 19,
@@ -240,7 +330,12 @@
     ],
     "anssi_ids": [
       "vuln1_adcs_template_ control"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 20,
@@ -249,25 +344,45 @@
     ],
     "anssi_ids": [
       "vuln1_trusts_domain_ notfiltered"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 21,
     "purpleknight_ids": [
       "gMSA objects with old passwords"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 22,
     "purpleknight_ids": [
       "Non-privileged users with access to gMSA passwords"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 23,
     "purpleknight_ids": [
       "LDAP signing is not required on Domain Controllers"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 1,
+      "average": 2,
+      "maximum": 3
+    }
   },
   {
     "uid": 24,
@@ -284,13 +399,23 @@
     ],
     "mitre_ids": [
       "T1558.003"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 25,
     "purpleknight_ids": [
       "RC4 or DES encryption type are supported by Domain Controllers"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 26,
@@ -300,7 +425,12 @@
     "anssi_ids": [
       "vuln1_permissions_msdn",
       "vuln1_dnsadmins"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 27,
@@ -309,7 +439,12 @@
     ],
     "mitre_ids": [
       "T1557"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 28,
@@ -322,13 +457,23 @@
     "mitre_ids": [
       "M1026",
       "T1018"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 29,
     "pingcastle_ids": [
       "A-DnsZoneTransfert"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 30,
@@ -338,7 +483,12 @@
     "mitre_ids": [
       "T1069.002",
       "M1026"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 1,
+      "average": 2,
+      "maximum": 3
+    }
   },
   {
     "uid": 31,
@@ -347,7 +497,12 @@
     ],
     "mitre_ids": [
       "T1557.001"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 32,
@@ -356,7 +511,12 @@
     ],
     "mitre_ids": [
       "T1557"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 33,
@@ -372,13 +532,23 @@
     "mitre_ids": [
       "M1025",
       "M1026"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 34,
     "pingcastle_ids": [
       "P-LogonDenied"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 2,
+      "average": 3,
+      "maximum": 4
+    }
   },
   {
     "uid": 35,
@@ -392,7 +562,12 @@
     "mitre_ids": [
       "T1555.005",
       "M1018"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 36,
@@ -401,7 +576,12 @@
     ],
     "mitre_ids": [
       "M1047"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 1,
+      "average": 2,
+      "maximum": 3
+    }
   },
   {
     "uid": 37,
@@ -410,7 +590,12 @@
     ],
     "mitre_ids": [
       "T1557"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 2,
+      "average": 3,
+      "maximum": 4
+    }
   },
   {
     "uid": 38,
@@ -419,7 +604,12 @@
     ],
     "mitre_ids": [
       "T1557"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 1,
+      "average": 2,
+      "maximum": 3
+    }
   },
   {
     "uid": 39,
@@ -436,7 +626,12 @@
     "mitre_ids": [
       "T1210",
       "T1110.003"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 40,
@@ -451,7 +646,12 @@
     ],
     "mitre_ids": [
       "M1015"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 4,
+      "average": 5,
+      "maximum": 6
+    }
   },
   {
     "uid": 41,
@@ -463,7 +663,12 @@
     ],
     "mitre_ids": [
       "M1015"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 42,
@@ -478,7 +683,12 @@
     ],
     "mitre_ids": [
       "T1110.002"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 43,
@@ -487,7 +697,12 @@
     ],
     "mitre_ids": [
       "M1051"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 44,
@@ -496,37 +711,67 @@
     ],
     "mitre_ids": [
       "M1051"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 45,
     "purpleknight_ids": [
       "Objects with constrained delegation configured"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 46,
     "purpleknight_ids": [
       "Privileged users that are disabled"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 47,
     "purpleknight_ids": [
       "Unprivileged users can add computer accounts to domain"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 48,
     "purpleknight_ids": [
       "Unprotected accounts with adminCount=1"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 49,
     "purpleknight_ids": [
       "User accounts with password not required"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 0.5,
+      "maximum": 1.5
+    }
   },
   {
     "uid": 50,
@@ -535,7 +780,12 @@
     ],
     "mitre_ids": [
       "T1087.001"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 51,
@@ -547,7 +797,12 @@
     ],
     "mitre_ids": [
       "T1187"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 52,
@@ -559,7 +814,12 @@
     ],
     "mitre_ids": [
       "T1552"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   },
   {
     "uid": 53,
@@ -571,6 +831,11 @@
     ],
     "mitre_ids": [
       "M1026"
-    ]
+    ],
+    "days_to_fix": {
+      "minimum": 0.5,
+      "average": 1,
+      "maximum": 2
+    }
   }
 ]

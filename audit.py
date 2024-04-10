@@ -56,7 +56,7 @@ def get_mapped_risks(pingcastle_ids:list) -> list:
 	#
 	# File unifying the ID given by each tool for a same risk
 	#
-	mapped_risks_file = path.join(config.get("PATH_MAPPED_RISKS"))
+	mapped_risks_file = config.get("PATH_MAPPED_RISKS")
 	#
 	# Open the file mapping the IDs of the referentials (PingCastle, ANSSI, ...)
 	#
@@ -268,6 +268,61 @@ def xml_to_json(xml_file_path):
     return json_data
 
 #
+# Order the risks from severity 1 to 5
+#
+@log_call
+def order_by_severity(mapped_risks):
+	#
+	# Order the risks in a severity order
+	#
+	ordered_mapped_risks = []
+	default_severity = 5
+	#
+	# Go through the five possible severities
+	#
+	for listed_severity in range(1, 6):
+		#
+		# Go through all the mapped risks
+		#
+		for mapped_risk in mapped_risks:
+			#
+			# Set a default severity for the current risk
+			#
+			max_anssi_severity = default_severity
+			#
+			# If the current risk is not referenced by ANSSI
+			#
+			if "anssi_ids" in mapped_risk.keys():
+				#
+				# Else, go through all the ANSSI IDs corresponding to the current risk
+				#
+				for anssi_id in mapped_risk["anssi_ids"]:
+					#
+					# Get the severity of the current ID
+					#
+					risk_severity = int(anssi_id[4:5])
+					#
+					# If the severity is more important than the current one
+					#
+					if risk_severity < max_anssi_severity:
+						#
+						# Set it as current severity
+						#
+						max_anssi_severity = risk_severity
+			#
+			# If the severity of the risk match the one being listed
+			#
+			if max_anssi_severity == listed_severity:
+				#
+				# Add the current risk to the list
+				#
+				ordered_mapped_risks.append(mapped_risk)
+	#
+	# Return the ordered list
+	#
+	return ordered_mapped_risks
+
+#
 @log_call
 def create_bar_chart(chart_data) -> None:
 	#
@@ -384,6 +439,114 @@ def create_bar_chart(chart_data) -> None:
 		# Remove the grid from the chart
 		#
 		sns.despine()
+	#
+	# Export the chart
+	#
+	pyplot.savefig(chart_data["export"]["path"], format=chart_data["export"]["format"], transparent=chart_data["export"]["keep_transparency"])
+
+#
+@log_call
+def create_line_chart(chart_data) -> None:
+	#
+	# Create the chart with a custom size
+	#
+	pyplot.figure(figsize=(10, 6))
+	#
+	# Remove the title of the chart
+	#
+	pyplot.title(None)
+	#
+	# Set the font of the chart
+	#
+	sns.set(font=chart_data["style"]["font"])
+	#
+	# Add the parts of the lines to the chart
+	#
+	for line_key, line_data in chart_data["lines"].items():
+		for severity, line_part_data in line_data["line_parts"].items():
+			severity_color = chart_data["lines"]["average"]["line_parts"][severity]["legend"]["color"]
+			pyplot.plot(range(0, len(line_part_data["y_values"])), line_part_data["y_values"], color=severity_color, marker=None, linestyle=line_data["line_style"])
+	#
+	# Add the filling between the lines
+	#
+	for severity, line_part_data in chart_data["lines"]["maximum"]["line_parts"].items():
+		y1 = [] 
+		y2 = [] 
+		x1 = []
+		x2 = []
+		severity_color = chart_data["lines"]["average"]["line_parts"][severity]["legend"]["color"]
+
+		for index, value in enumerate(line_part_data["y_values"]):
+			if not isnan(value):
+				x1.append(index)
+				y1.append(value)
+
+		for index, value in enumerate(chart_data["lines"]["minimum"]["line_parts"][severity]["y_values"]):
+			if not isnan(value):
+				x2.append(index)
+				y2.append(value)
+
+		last_y_value = nan
+
+		x2.append(nan)
+		y2.append(nan)
+		
+		for y_index, y_value in enumerate(y1):
+			
+			y2_value = y2[y_index]
+			last_y2_value = y2[y_index-1]
+			last_x2_value = x2[y_index -1]
+
+			if (y_index > 0) and (y_value == last_y_value) and (y2_value != last_y2_value):
+				x2.insert(y_index, last_x2_value)
+				y2.insert(y_index, last_y2_value)
+
+			last_y_value = y_value
+
+		x2.pop()
+		y2.pop()
+
+		pyplot.fill_betweenx(y1, x1, x2, edgecolor=severity_color, label=severity, facecolor=severity_color, alpha=0.4)
+		
+	#
+	# Add a legend to the chart
+	#
+	legend = pyplot.legend(frameon=False, fontsize=chart_data["style"]["legend"]["font_size"], loc='upper center', bbox_to_anchor=(-0.05, 0.6), ncol=1)
+	#
+	# Go through all the legends
+	#
+	for text in legend.get_texts():
+		#
+		# Set the font color of the curent legend
+		#
+		text.set_color(chart_data["style"]["legend"]["font_color"])
+	#
+	# Remove the frame of the chart
+	#
+	pyplot.gca().spines['left'].set_color('none')
+	pyplot.gca().spines['bottom'].set_color('none')
+	pyplot.gca().spines['right'].set_color('none')
+	pyplot.gca().spines['top'].set_color('none')
+	#
+	# Remove the label of the axis
+	#
+	pyplot.xlabel(None)
+	pyplot.ylabel(None)
+	#
+	# Customize the ticks of the X axis
+	#
+	step = 20
+	margin = 0 if (len(chart_data["lines"]["maximum"]["line_parts"]["Niveau 1"]["y_values"]) % step) == 0 else step
+	days_steps = range(0, len(chart_data["lines"]["maximum"]["line_parts"]["Niveau 1"]["y_values"]) +margin, step)
+	pyplot.xticks(days_steps, [f"{days}j" for days in days_steps], size=chart_data["style"]["legend"]["font_size"], color=chart_data["style"]["legend"]["font_color"])
+	#
+	# Remove the ticks of the Y axis
+	#
+	pyplot.yticks([])
+	#
+	# Remove the grid of the chart
+	#
+	sns.despine()
 	#
 	# Export the chart
 	#
@@ -522,7 +685,14 @@ def main() -> None:
 	#
 	# Add the Risks page
 	#
-	docx_manager.title("Risques", 1)
+	docx_manager.title(text="Risques", level=1)
+	#
+	#
+	docx_manager.title(text="Proportion de risques détectés", level=2)
+	#
+	#
+	#
+	docx_manager.text(text="L'illustration ci-dessous représente la proportion de risques détectés et non-détectés, pour chaque catégorie de recherche.")
 	#
 	# Import the PingCastle data
 	#
@@ -711,6 +881,221 @@ def main() -> None:
 	#
 	docx_manager.break_page()
 	#
+	# Create the base structure of the line chart
+	#
+	chart_data = {		
+		"style": {
+			"font": config.get("FONT_NAME"),
+			"background_color": None,
+			"width": 12,
+			"height": 8,
+			"legend": {
+				"show": True,
+				"columns": 1,
+				"x_position_ratio": -0.1,
+				"y_position_ratio": 0.4,
+				"font_color" : config.get("CHART_LEGEND_COLOR"),
+				"font_size": config.get("FONT_SIZE"),
+				"transparent": True
+			},
+			"axis": False,
+			"grid": False
+		},
+		"export": {
+			"format": "tiff",
+			"keep_transparency": True,
+			"path": path.join(config.get("CHARTS_FOLDER"), f"days_to_fix.tiff")
+		},
+		"lines": {
+			"minimum": {
+				"line_parts": {
+					"Niveau 1": {
+						"y_values": []
+					},
+					"Niveau 2": {
+						"y_values": []
+					},
+					"Niveau 3": {
+						"y_values": []
+					},
+					"Niveau 4": {
+						"y_values": []
+					},
+					"Niveau 5": {
+						"y_values": []
+					}
+				},
+				"line_style": "-"
+			},
+			"average": {
+				"line_parts": {
+					"Niveau 1": {
+						"legend": {
+							"value": "Niveau 1",
+							"color": "#63329C"
+						},
+						"y_values": []
+					},
+					"Niveau 2": {
+						"legend": {
+							"value": "Niveau 2",
+							"color": "#783CBD"
+						},
+						"y_values": []
+					},
+					"Niveau 3": {
+						"legend": {
+							"value": "Niveau 3",
+							"color": "#A075D1"
+						},
+						"y_values": []
+					},
+					"Niveau 4": {
+						"legend": {
+							"value": "Niveau 4",
+							"color": "#B491DB"
+						},
+						"y_values": []
+					},
+					"Niveau 5": {
+						"legend": {
+							"value": "Niveau 5",
+							"color": "#C7ADE5"
+						},
+						"y_values": []
+					}
+				},
+				"line_style": "--"
+			},
+			"maximum": {
+				"line_parts": {
+					"Niveau 1": {
+						"y_values": []
+					},
+					"Niveau 2": {
+						"y_values": []
+					},
+					"Niveau 3": {
+						"y_values": []
+					},
+					"Niveau 4": {
+						"y_values": []
+					},
+					"Niveau 5": {
+						"y_values": []
+					}
+				},
+				"line_style": "-"
+			}
+		}
+	}
+	ordered_mapped_risks = order_by_severity(mapped_risks)
+	#
+	# For each line_key of the chart
+	#
+	for line_key, line_data in chart_data["lines"].items():
+		#
+		# Reset the index of the current risk
+		#
+		risk_index = 0
+		#
+		# Reset the count of day passed
+		#
+		day_passed = 0
+		#
+		# As long as there are risks to solve
+		#
+		while risk_index < len(ordered_mapped_risks) -1:
+
+			if ordered_mapped_risks[risk_index]["days_to_fix"][line_key] <= day_passed:
+				risk_index += 1
+				#
+				# Reset the count of day passed
+				#
+				day_passed = 0
+			#
+			# For each of the five severities
+			#
+			for severity in range(1, 6):
+				#
+				# Set a default severity for the current risk
+				#
+				anssi_severity = 5
+				#
+				# If the current risk is not referenced by ANSSI
+				#
+				if "anssi_ids" in ordered_mapped_risks[risk_index].keys():
+					#
+					# Else, go through all the ANSSI IDs corresponding to the current risk
+					#
+					for anssi_id in ordered_mapped_risks[risk_index]["anssi_ids"]:
+						#
+						# Get the severity of the current ID
+						#
+						risk_severity = int(anssi_id[4:5])
+						#
+						# If the severity is more important than the current one
+						#
+						if risk_severity < anssi_severity:
+							#
+							# Set it as current severity
+							#
+							anssi_severity = risk_severity
+				#
+				# If the current risk is of the current severity
+				#
+				if severity == anssi_severity:
+					if (severity > 1) and len(line_data["line_parts"][f"Niveau {severity}"]["y_values"]) > 0 and isnan(line_data["line_parts"][f"Niveau {severity}"]["y_values"][-1]):
+						line_data["line_parts"][f"Niveau {severity}"]["y_values"][-1] = line_data["line_parts"][f"Niveau {severity -1}"]["y_values"][-2]
+					line_data["line_parts"][f"Niveau {severity}"]["y_values"].append(len(mapped_risks) -(risk_index +1))
+				#
+				# Else, if the current risk is not of the current severity
+				#
+				else:
+					#
+					# Add an empty value
+					#
+					line_data["line_parts"][f"Niveau {severity}"]["y_values"].append(nan)
+			#
+			# Increase the count of days passed
+			#
+			day_passed += 1
+
+
+	for line_key in ["minimum", "average"]:
+		for severity in range(1, 6):
+			# Calculate the difference in lengths
+			length_diff = len(chart_data["lines"]["maximum"]["line_parts"][f"Niveau {severity}"]["y_values"]) - len(chart_data["lines"][line_key]["line_parts"][f"Niveau {severity}"]["y_values"])
+
+			# Append nan to the shorter list until both lists have the same size
+			if length_diff > 0:
+			    chart_data["lines"][line_key]["line_parts"][f"Niveau {severity}"]["y_values"] += [nan] * length_diff
+
+	#
+	# Create a bar chart with the risks found compared to the total in each category
+	#
+	create_line_chart(chart_data)
+	#
+	#
+	#
+	docx_manager.title(text="Durée de correction des risques détectés", level=2)
+	#
+	#
+	#
+	docx_manager.text(text="L'illustration ci-dessous représente une estimation minimale, moyenne et maximale, du cumul du nombre de jours nécessaires à la correction des risques détectés, du niveau de sévérité le plus haut, vers le plus bas.")
+	#
+	# Add the chart to the report
+	#
+	docx_manager.add_image(path=chart_data["export"]["path"], width=18.5, caption="Résolution des risques", alignment="center")
+	#
+	# Go to the next page of the DOCX report
+	#
+	docx_manager.break_page()
+	#
+	#
+	#
+	docx_manager.title(text="Détails des risques détectés", level=2)
+	#
 	# Go through all the unified risks
 	#
 	for index, mapped_risk in enumerate(mapped_risks):
@@ -729,7 +1114,7 @@ def main() -> None:
 			#
 			# Add the content of the documentation to the DOCX report
 			#
-			docx_manager.append(documentation_file, heading_offset=1)
+			docx_manager.append(documentation_file, heading_offset=2)
 			#
 			# If there is another documentation to add to the DOCX report
 			#

@@ -298,6 +298,12 @@ class DocxManager():
 	@log_call
 	def title(self, text, level):
 		self.document.add_paragraph(text, style=f"Heading {level}")
+		log(f'Title {level} "{text}" added to the document.')
+
+	@log_call
+	def text(self, text):
+		self.document.add_paragraph(text, style=f"Normal")
+		log(f'Text "{text}" added to the document.')
 
 	@log_call
 	def add_image(self, path, width=18.5, caption=None, alignment="center") -> bool:
