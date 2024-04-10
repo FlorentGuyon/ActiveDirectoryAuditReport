@@ -30,6 +30,11 @@ py audit.py
 |--------|------------|
 | 3.11.4 | OK         |
 
+## Help
+
+- If the following error occurs: ```win32com.gen_py [...] has no attribute 'clsidtopackagemap'```
+    - Delete the following folder and retry: ```C:\Users\<username>\AppData\Local\Temp\gen_py```
+
 ## License
 
 MIT
