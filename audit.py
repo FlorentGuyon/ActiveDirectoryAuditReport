@@ -1138,6 +1138,14 @@ def main() -> None:
 	#
 	# Add the footer of the report
 	#
+	docx_manager.append(config.get("PATH_MAPPED_REFERENCES"))
+	#
+	# Go to the next page of the DOCX report
+	#
+	docx_manager.break_page()
+	#
+	# Add the footer of the report
+	#
 	docx_manager.append(footer_file)
 	#
 	# Save the last modifications of the DOCX report
