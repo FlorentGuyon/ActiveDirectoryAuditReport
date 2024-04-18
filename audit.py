@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+from copy import deepcopy
 from json import load, loads
 from lib.config import Config
 from lib.docx_manager import DocxManager
@@ -48,7 +49,7 @@ def get_mapped_risks(pingcastle_ids:list) -> list:
 	#
 	# List of unified risks (risks with a unique ID, mapped with the IDs of each tool)
 	#
-	filtered_mapped_risks = []
+	filtered_mapped_risks = {}
 	#
 	# List of PingCastle IDs already mapped
 	#
@@ -64,7 +65,12 @@ def get_mapped_risks(pingcastle_ids:list) -> list:
 		#
 		# Convert the JSON text in a JSON object
 		#
-		mapped_risks = load(mapped_risks_fd)
+		mapped_risks = load(mapped_risks_fd) 
+	#
+	#
+	#
+	filtered_mapped_risks = deepcopy(mapped_risks)
+	filtered_mapped_risks["risks"] = []
 	#
 	# Go through all the PingCastle IDs
 	#
@@ -80,7 +86,7 @@ def get_mapped_risks(pingcastle_ids:list) -> list:
 		#
 		# Go through all the unified risks
 		#
-		for mapped_risk in mapped_risks:
+		for mapped_risk in mapped_risks["risks"]:
 			#
 			# If the current unified risk does not have an equivalent
 			# PingCastle ID (the risk is not listed by PingCastle)
@@ -98,7 +104,7 @@ def get_mapped_risks(pingcastle_ids:list) -> list:
 				#
 				# Add the current unified risk to the list of matches
 				#
-				filtered_mapped_risks.append(mapped_risk)
+				filtered_mapped_risks["risks"].append(mapped_risk)
 				#
 				# Add the current PingCastle ID to the list of IDs already listed
 				#
@@ -275,7 +281,8 @@ def order_by_severity(mapped_risks):
 	#
 	# Order the risks in a severity order
 	#
-	ordered_mapped_risks = []
+	ordered_mapped_risks = deepcopy(mapped_risks)
+	ordered_mapped_risks["risks"] = []
 	default_severity = 5
 	#
 	# Go through the five possible severities
@@ -284,7 +291,7 @@ def order_by_severity(mapped_risks):
 		#
 		# Go through all the mapped risks
 		#
-		for mapped_risk in mapped_risks:
+		for mapped_risk in mapped_risks["risks"]:
 			#
 			# Set a default severity for the current risk
 			#
@@ -316,7 +323,7 @@ def order_by_severity(mapped_risks):
 				#
 				# Add the current risk to the list
 				#
-				ordered_mapped_risks.append(mapped_risk)
+				ordered_mapped_risks["risks"].append(mapped_risk)
 	#
 	# Return the ordered list
 	#
@@ -552,6 +559,18 @@ def create_line_chart(chart_data) -> None:
 	#
 	pyplot.savefig(chart_data["export"]["path"], format=chart_data["export"]["format"], transparent=chart_data["export"]["keep_transparency"])
 
+
+
+def get_concepts_from_documentations(mapped_risks, documentation_id: str, concepts: list) -> list:
+
+	for new_concept in mapped_risks["documentations"][documentation_id]["concepts"]:
+		if new_concept not in mapped_risks["documentations"].keys():
+			continue
+		concepts = get_concepts_from_documentations(mapped_risks, new_concept, concepts)
+		concepts.append(new_concept)
+	return concepts
+
+
 #
 # Main program
 #
@@ -653,7 +672,7 @@ def main() -> None:
 	#
 	# Write the list of unified risks ID in the console
 	#
-	log(f'Mapped risk ids : {", ".join([str(mapped_risk["uid"]) for mapped_risk in mapped_risks])}')
+	log(f'Mapped risk ids : {", ".join([str(mapped_risk["uid"]) for mapped_risk in mapped_risks["risks"]])}')
 	#
 	# Create the DOCX Manager object that has all the methods to create and export a DOCX document
 	#
@@ -671,24 +690,24 @@ def main() -> None:
 	#
 	docx_manager.export_path = config.get("PATH_OUTPUT_PDF")
 	#
-	# Add the RACI table to the DOCX document
-	#
-	docx_manager.append(config.get("PATH_RACI"))
-	#
 	# Go to the next page of the DOCX report
 	#
 	docx_manager.break_page()
 	#
+	# Add the RACI table to the DOCX document
+	#
+	#docx_manager.append(config.get("PATH_RACI"))
+	#
+	# Go to the next page of the DOCX report
+	#
+	#docx_manager.break_page()
+	#
 	# Write it in the console
 	#
-	log(f'RACI table added.')
-	#
-	# Add the Risks page
-	#
-	docx_manager.title(text="Risques", level=1)
+	#log(f'RACI table added.')
 	#
 	#
-	docx_manager.title(text="Proportion de risques détectés", level=2)
+	docx_manager.title(text="Proportion de risques détectés", level=1)
 	#
 	#
 	#
@@ -875,7 +894,7 @@ def main() -> None:
 	#
 	# Add the chart to the report
 	#
-	docx_manager.add_image(path=chart_data["export"]["path"], width=18.5, caption="Risques détectées", alignment="center")
+	docx_manager.add_image(path=chart_data["export"]["path"], width=16, caption="Risques détectées", alignment="center")
 	#
 	# Go to the next page of the DOCX report
 	#
@@ -989,6 +1008,9 @@ def main() -> None:
 			}
 		}
 	}
+	#
+	#
+	#
 	ordered_mapped_risks = order_by_severity(mapped_risks)
 	#
 	# For each line_key of the chart
@@ -1005,9 +1027,9 @@ def main() -> None:
 		#
 		# As long as there are risks to solve
 		#
-		while risk_index < len(ordered_mapped_risks) -1:
+		while risk_index < len(ordered_mapped_risks["risks"]) -1:
 
-			if ordered_mapped_risks[risk_index]["days_to_fix"][line_key] <= day_passed:
+			if ordered_mapped_risks["risks"][risk_index]["days_to_fix"][line_key] <= day_passed:
 				risk_index += 1
 				#
 				# Reset the count of day passed
@@ -1024,11 +1046,11 @@ def main() -> None:
 				#
 				# If the current risk is not referenced by ANSSI
 				#
-				if "anssi_ids" in ordered_mapped_risks[risk_index].keys():
+				if "anssi_ids" in ordered_mapped_risks["risks"][risk_index].keys():
 					#
 					# Else, go through all the ANSSI IDs corresponding to the current risk
 					#
-					for anssi_id in ordered_mapped_risks[risk_index]["anssi_ids"]:
+					for anssi_id in ordered_mapped_risks["risks"][risk_index]["anssi_ids"]:
 						#
 						# Get the severity of the current ID
 						#
@@ -1047,7 +1069,7 @@ def main() -> None:
 				if severity == anssi_severity:
 					if (severity > 1) and len(line_data["line_parts"][f"Niveau {severity}"]["y_values"]) > 0 and isnan(line_data["line_parts"][f"Niveau {severity}"]["y_values"][-1]):
 						line_data["line_parts"][f"Niveau {severity}"]["y_values"][-1] = line_data["line_parts"][f"Niveau {severity -1}"]["y_values"][-2]
-					line_data["line_parts"][f"Niveau {severity}"]["y_values"].append(len(mapped_risks) -(risk_index +1))
+					line_data["line_parts"][f"Niveau {severity}"]["y_values"].append(len(mapped_risks["risks"]) -(risk_index +1))
 				#
 				# Else, if the current risk is not of the current severity
 				#
@@ -1078,7 +1100,7 @@ def main() -> None:
 	#
 	#
 	#
-	docx_manager.title(text="Durée de correction des risques détectés", level=2)
+	docx_manager.title(text="Durée de correction des risques détectés", level=1)
 	#
 	#
 	#
@@ -1086,7 +1108,7 @@ def main() -> None:
 	#
 	# Add the chart to the report
 	#
-	docx_manager.add_image(path=chart_data["export"]["path"], width=18.5, caption="Résolution des risques", alignment="center")
+	docx_manager.add_image(path=chart_data["export"]["path"], width=16, caption="Résolution des risques", alignment="center")
 	#
 	# Go to the next page of the DOCX report
 	#
@@ -1094,31 +1116,86 @@ def main() -> None:
 	#
 	#
 	#
-	docx_manager.title(text="Détails des risques détectés", level=2)
+	docx_manager.title(text="Notions abordées", level=1)
+	#
+	#
+	#
+	concepts = []
+	#
+	for risk in mapped_risks["risks"]:
+		if "concepts" not in risk.keys():
+			continue
+
+		for risk_concept in risk["concepts"]:
+			if risk_concept in concepts:
+				continue
+
+			concepts = get_concepts_from_documentations(mapped_risks, risk_concept, concepts)				
+			concepts.append(risk_concept)
+	#
+	#
+	#
+	for documentation_id in concepts:
+		#
+		documentation_path = path.join(config.get("PATH_DOCUMENTATIONS"), mapped_risks["documentations"][documentation_id]["file_name"])
+		#
+		docx_manager.bookmark(documentation_id)
+		#
+		title_level = 2
+		#
+		docx_manager.title(mapped_risks["documentations"][documentation_id]["title"], title_level)
+		#
+		if len(mapped_risks["documentations"][documentation_id]["concepts"]) > 0:
+			#
+			docx_manager.title("Notions", title_level +1)
+			#
+			for concept_id in mapped_risks["documentations"][documentation_id]["concepts"]:
+				#
+				docx_manager.link(mapped_risks["documentations"][concept_id]["title"], f"#{concept_id}", "List Bullet")
+			#
+			docx_manager.text("")
+		#
+		docx_manager.append(documentation_path, heading_offset=title_level)
+		#
+		# Go to the next page of the DOCX report
+		#
+		docx_manager.break_page()
+	#
+	#
+	#
+	docx_manager.title(text="Détails des risques détectés", level=1)
 	#
 	# Go through all the unified risks
 	#
-	for index, mapped_risk in enumerate(mapped_risks):
-		#
-		# Get the current unified risk
-		#
-		uid = mapped_risk["uid"]
+	for index, mapped_risk in enumerate(mapped_risks["risks"]):
 		#
 		# Get the path to the documentation of the current unified risk
 		#
-		documentation_file = path.join(config.get("PATH_DOCUMENTATIONS"), f'{uid}.docx')
+		file_path = path.join(config.get("PATH_DOCUMENTATIONS"), mapped_risk["file_name"])
 		#
 		# If the file exists
 		#
-		if path.isfile(documentation_file):
+		if path.isfile(file_path):
+			#
+			title_level = 2
+			#
+			docx_manager.title(mapped_risk["title"], title_level)
+			#
+			if len(mapped_risk["concepts"]) > 0:
+				#
+				docx_manager.title("Notions", title_level +1)
+				#
+				for concept_id in mapped_risk["concepts"]:
+					#
+					docx_manager.link(mapped_risks["documentations"][concept_id]["title"], f"#{concept_id}", "List Bullet")
 			#
 			# Add the content of the documentation to the DOCX report
 			#
-			docx_manager.append(documentation_file, heading_offset=2)
+			docx_manager.append(file_path, heading_offset=title_level)
 			#
 			# If there is another documentation to add to the DOCX report
 			#
-			if (index +1) < len(mapped_risks):
+			if (index +1) < len(mapped_risks["risks"]):
 				#
 				# Go to the next page of the DOCX report
 				#

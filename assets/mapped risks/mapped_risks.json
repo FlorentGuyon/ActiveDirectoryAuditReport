@@ -1,841 +1,1059 @@
-[
-  {
-    "uid": 1,
-    "pingcastle_ids": [
-      "T-SIDFiltering"
-    ],
-    "purpleknight_ids": [
-      "Outbound forest trust with SID History enabled"
-    ],
-    "anssi_ids": [
-      "vuln1_trusts_forest_sidhistory"
-    ],
-    "mitre_ids": [
-      "M1015",
-      "T1134.005"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 2,
-    "pingcastle_ids": [
-      "T-SIDHistoryUnknownDomain",
-      "S-SIDHistory"
-    ],
-    "anssi_ids": [
-      "vuln3_sidhistory_present"
-    ],
-    "mitre_ids": [
-      "T1134.005"
-    ],
-    "days_to_fix": {
-      "minimum": 4,
-      "average": 5,
-      "maximum": 6
-    }
-  },
-  {
-    "uid": 3,
-    "pingcastle_ids": [
-      "A-Krbtgt"
-    ],
-    "purpleknight_ids": [
-      "Kerberos krbtgt account with old password"
-    ],
-    "anssi_ids": [
-      "vuln2_krbtgt"
-    ],
-    "mitre_ids": [
-      "T1558.001"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 4,
-    "pingcastle_ids": [
-      "S-DesEnabled"
-    ],
-    "purpleknight_ids": [
-      "User accounts that use DES encryption"
-    ],
-    "anssi_ids": [
-      "vuln2_kerberos_properties_deskey"
-    ],
-    "mitre_ids": [
-      "T1558.004"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 5,
-    "purpleknight_ids": [
-      "AD Certificate Authority with Web Enrollment - PetitPotam and ESC8"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 6,
-    "pingcastle_ids": [
-      "A-CertTempCustomSubject"
-    ],
-    "purpleknight_ids": [
-      "Modèles de certificats qui permettent aux demandeurs de spécifier un subjectAltName",
-      "Certificate templates with three or more insecure configurations"
-    ],
-    "anssi_ids": [
-      "vuln1_vuln_adcs_template_auth_enroll_with_name"
-    ],
-    "mitre_ids": [
-      "T1558"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 7,
-    "pingcastle_ids": [
-      "A-WeakRSARootCert2",
-      "A-SHA1RootCert"
-    ],
-    "anssi_ids": [
-      "vuln3_certificates_vuln"
-    ],
-    "mitre_ids": [
-      "T1600.001"
-    ],
-    "days_to_fix": {
-      "minimum": 2,
-      "average": 3,
-      "maximum": 4
-    }
-  },
-  {
-    "uid": 8,
-    "purpleknight_ids": [
-      "Non-default principals with DC Sync rights on the domain"
-    ],
-    "anssi_ids": [
-      "vuln1_permissions_naming_context"
-    ],
-    "days_to_fix": {
-      "minimum": 1,
-      "average": 2,
-      "maximum": 3
-    }
-  },
-  {
-    "uid": 9,
-    "pingcastle_ids": [
-      "A-NoServicePolicy"
-    ],
-    "mitre_ids": [
-      "T1201"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 10,
-    "pingcastle_ids": [
-      "P-Delegated"
-    ],
-    "anssi_ids": [
-      "vuln1_vuln_display_specifier"
-    ],
-    "mitre_ids": [
-      "M1015",
-      "T1569"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 11,
-    "pingcastle_ids": [
-      "S-PwdNeverExpires",
-      "P-AdminPwdTooOld",
-      "S-PwdLastSet-90"
-    ],
-    "purpleknight_ids": [
-      "Admins with old passwords",
-      "Users with Password Never Expires flag set",
-      "Computers with password last set over 90 days ago",
-      "Users with old passwords",
-      "Built-in domain Administrator account with old password (180 days)"
-    ],
-    "anssi_ids": [
-      "vuln2_dont_expire",
-      "vuln1_password_change_priv",
-      "vuln2_password_change_server_no_change_90"
-    ],
-    "mitre_ids": [
-      "M1015",
-      "M1026"
-    ],
-    "days_to_fix": {
-      "minimum": 2,
-      "average": 3,
-      "maximum": 4
-    }
-  },
-  {
-    "uid": 12,
-    "pingcastle_ids": [
-      "S-OS-2003",
-      "S-OS-2008",
-      "S-OS-XP",
-      "S-OS-Win7"
-    ],
-    "purpleknight_ids": [
-      "Computers with older OS versions"
-    ],
-    "mitre_ids": [
-      "M1051"
-    ],
-    "days_to_fix": {
-      "minimum": 9,
-      "average": 10,
-      "maximum": 11
-    }
-  },
-  {
-    "uid": 13,
-    "pingcastle_ids": [
-      "S-ADRegistrationSchema"
-    ],
-    "anssi_ids": [
-      "vuln2_warning_schema_posssuperiors"
-    ],
-    "mitre_ids": [
-      "M1018"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 14,
-    "pingcastle_ids": [
-      "P-DelegationGPOData"
-    ],
-    "mitre_ids": [
-      "M1015"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 15,
-    "pingcastle_ids": [
-      "T-Inactive"
-    ],
-    "purpleknight_ids": [
-      "Trust accounts with old passwords"
-    ],
-    "anssi_ids": [
-      "vuln2_trusts_accounts"
-    ],
-    "mitre_ids": [
-      "T1557"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 16,
-    "pingcastle_ids": [
-      "P-ServiceDomainAdmin"
-    ],
-    "purpleknight_ids": [
-      "Privileged accounts with a password that never expires"
-    ],
-    "anssi_ids": [
-      "vuln1_dont_expire_priv"
-    ],
-    "mitre_ids": [
-      "T1003.004"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 17,
-    "pingcastle_ids": [
-      "P-UnkownDelegation"
-    ],
-    "mitre_ids": [
-      "M1015",
-      "T1187"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 18,
-    "pingcastle_ids": [
-      "S-PwdNotRequired"
-    ],
-    "mitre_ids": [
-      "M1015"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 19,
-    "purpleknight_ids": [
-      "Dangerous control paths expose certificate templates"
-    ],
-    "anssi_ids": [
-      "vuln1_adcs_template_ control"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 20,
-    "purpleknight_ids": [
-      "Domain trust to a third-party domain without quarantine"
-    ],
-    "anssi_ids": [
-      "vuln1_trusts_domain_ notfiltered"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 21,
-    "purpleknight_ids": [
-      "gMSA objects with old passwords"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 22,
-    "purpleknight_ids": [
-      "Non-privileged users with access to gMSA passwords"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 23,
-    "purpleknight_ids": [
-      "LDAP signing is not required on Domain Controllers"
-    ],
-    "days_to_fix": {
-      "minimum": 1,
-      "average": 2,
-      "maximum": 3
-    }
-  },
-  {
-    "uid": 24,
-    "pingcastle_ids": [
-      "P-Kerberoasting"
-    ],
-    "purpleknight_ids": [
-      "Primary users with SPN not supporting AES encryption on Kerberos",
-      "Privileged users with ServicePrincipalNames defined",
-      "Users with ServicePrincipalName defined"
-    ],
-    "anssi_ids": [
-      "vuln1_spn_priv"
-    ],
-    "mitre_ids": [
-      "T1558.003"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 25,
-    "purpleknight_ids": [
-      "RC4 or DES encryption type are supported by Domain Controllers"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 26,
-    "purpleknight_ids": [
-      "Unprivileged principals as DNS Admins"
-    ],
-    "anssi_ids": [
-      "vuln1_permissions_msdn",
-      "vuln1_dnsadmins"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 27,
-    "pingcastle_ids": [
-      "A-DnsZoneAUCreateChild"
-    ],
-    "mitre_ids": [
-      "T1557"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 28,
-    "pingcastle_ids": [
-      "P-DNSAdmin"
-    ],
-    "anssi_ids": [
-      "vuln4_dnsadmins"
-    ],
-    "mitre_ids": [
-      "M1026",
-      "T1018"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 29,
-    "pingcastle_ids": [
-      "A-DnsZoneTransfert"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 30,
-    "pingcastle_ids": [
-      "P-ControlPathIndirectMany"
-    ],
-    "mitre_ids": [
-      "T1069.002",
-      "M1026"
-    ],
-    "days_to_fix": {
-      "minimum": 1,
-      "average": 2,
-      "maximum": 3
-    }
-  },
-  {
-    "uid": 31,
-    "pingcastle_ids": [
-      "S-SMB-v1"
-    ],
-    "mitre_ids": [
-      "T1557.001"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 32,
-    "pingcastle_ids": [
-      "A-CertEnrollHttp"
-    ],
-    "mitre_ids": [
-      "T1557"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 33,
-    "pingcastle_ids": [
-      "P-ProtectedUsers"
-    ],
-    "purpleknight_ids": [
-      "Protected Users group not in use"
-    ],
-    "anssi_ids": [
-      "vuln3_protected_users"
-    ],
-    "mitre_ids": [
-      "M1025",
-      "M1026"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 34,
-    "pingcastle_ids": [
-      "P-LogonDenied"
-    ],
-    "days_to_fix": {
-      "minimum": 2,
-      "average": 3,
-      "maximum": 4
-    }
-  },
-  {
-    "uid": 35,
-    "pingcastle_ids": [
-      "A-LAPS-Joined-Computers",
-      "S-ADRegistration"
-    ],
-    "purpleknight_ids": [
-      "Changes to MS LAPS read permissions"
-    ],
-    "mitre_ids": [
-      "T1555.005",
-      "M1018"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 36,
-    "pingcastle_ids": [
-      "A-AuditDC"
-    ],
-    "mitre_ids": [
-      "M1047"
-    ],
-    "days_to_fix": {
-      "minimum": 1,
-      "average": 2,
-      "maximum": 3
-    }
-  },
-  {
-    "uid": 37,
-    "pingcastle_ids": [
-      "A-DCLdapsChannelBinding"
-    ],
-    "mitre_ids": [
-      "T1557"
-    ],
-    "days_to_fix": {
-      "minimum": 2,
-      "average": 3,
-      "maximum": 4
-    }
-  },
-  {
-    "uid": 38,
-    "pingcastle_ids": [
-      "A-DCLdapSign"
-    ],
-    "mitre_ids": [
-      "T1557"
-    ],
-    "days_to_fix": {
-      "minimum": 1,
-      "average": 2,
-      "maximum": 3
-    }
-  },
-  {
-    "uid": 39,
-    "pingcastle_ids": [
-      "A-PreWin2000Other",
-      "A-PreWin2000AuthenticatedUsers"
-    ],
-    "purpleknight_ids": [
-      "Changes to PreWindows 2000 Compatible Access Group membership"
-    ],
-    "anssi_ids": [
-      "vuln3_compatible_2000_not_default"
-    ],
-    "mitre_ids": [
-      "T1210",
-      "T1110.003"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 40,
-    "pingcastle_ids": [
-      "P-UnconstrainedDelegation"
-    ],
-    "purpleknight_ids": [
-      "Computer or user accounts with unconstrained delegation"
-    ],
-    "anssi_ids": [
-      "vuln2_delegation_t4d"
-    ],
-    "mitre_ids": [
-      "M1015"
-    ],
-    "days_to_fix": {
-      "minimum": 4,
-      "average": 5,
-      "maximum": 6
-    }
-  },
-  {
-    "uid": 41,
-    "pingcastle_ids": [
-      "S-PwdLastSet-DC"
-    ],
-    "anssi_ids": [
-      "vuln1_password_change_dc_no_change"
-    ],
-    "mitre_ids": [
-      "M1015"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 42,
-    "pingcastle_ids": [
-      "S-Reversible"
-    ],
-    "purpleknight_ids": [
-      "User accounts that store passwords with reversible encryption"
-    ],
-    "anssi_ids": [
-      "vuln3_reversible_password"
-    ],
-    "mitre_ids": [
-      "T1110.002"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 43,
-    "pingcastle_ids": [
-      "S-WSUS-HTTP"
-    ],
-    "mitre_ids": [
-      "M1051"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 44,
-    "pingcastle_ids": [
-      "T-AlgsAES"
-    ],
-    "mitre_ids": [
-      "M1051"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 45,
-    "purpleknight_ids": [
-      "Objects with constrained delegation configured"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 46,
-    "purpleknight_ids": [
-      "Privileged users that are disabled"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 47,
-    "purpleknight_ids": [
-      "Unprivileged users can add computer accounts to domain"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 48,
-    "purpleknight_ids": [
-      "Unprotected accounts with adminCount=1"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 49,
-    "purpleknight_ids": [
-      "User accounts with password not required"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 0.5,
-      "maximum": 1.5
-    }
-  },
-  {
-    "uid": 50,
-    "pingcastle_ids": [
-      "A-NoNetSessionHardening"
-    ],
-    "mitre_ids": [
-      "T1087.001"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 51,
-    "pingcastle_ids": [
-      "A-DsHeuristicsLDAPSecurity"
-    ],
-    "anssi_ids": [
-      "vuln3_dsheuristics_bad"
-    ],
-    "mitre_ids": [
-      "T1187"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 52,
-    "pingcastle_ids": [
-      "A-UnixPwd"
-    ],
-    "anssi_ids": [
-      "vuln3_reversible_password"
-    ],
-    "mitre_ids": [
-      "T1552"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  },
-  {
-    "uid": 53,
-    "pingcastle_ids": [
-      "P-OperatorsEmpty"
-    ],
-    "purpleknight_ids": [
-      "Operator Groups that are not empty"
-    ],
-    "mitre_ids": [
-      "M1026"
-    ],
-    "days_to_fix": {
-      "minimum": 0.5,
-      "average": 1,
-      "maximum": 2
-    }
-  }
-]
+{
+    "documentations": {
+        "fsmo": {
+            "id": "fsmo",
+            "title": "Rôles d’opérations à maître unique flottant (FSMO)",
+            "file_name": "fsmo.docx",
+            "concepts": []
+        },
+        "acl": {
+            "id": "acl",
+            "title": "Liste de contrôle d’accès (ACL)",
+            "file_name": "acl.docx",
+            "concepts": []
+        },
+        "rid": {
+            "id": "rid",
+            "title": "Identificateur relatif (RID)",
+            "file_name": "rid.docx",
+            "concepts": [
+                "fsmo"
+            ]
+        },
+        "sid": {
+            "id": "Identificateur de sécurité (SID)",
+            "title": "Listes d'accès (ACL)",
+            "file_name": "sid.docx",
+            "concepts": [
+                "rid",
+                "acl"
+            ]
+        },
+        "sid_history": {
+            "id": "sid_history",
+            "title": "Historique d’identificateurs de sécurité (SID History)",
+            "file_name": "sid_history.docx",
+            "concepts": [
+                "sid"
+            ]
+        },
+        "trust": {
+            "id": "trust",
+            "title": "Relation de confiance (Trust)",
+            "file_name": "trust.docx",
+            "concepts": [
+            ]
+        },
+        "sid_filtering": {
+            "id": "sid_filtering",
+            "title": "Filtrage des identificateurs de sécurité (SID Filtering)",
+            "file_name": "sid_filtering.docx",
+            "concepts": [
+                "sid_history",
+                "trust"
+            ]
+        }  
+    },
+    "risks": [
+        {
+            "uid": 1,
+            "file_name": "external_trust_without_sid_filtering.docx",
+            "title": "Relation de confiance externe sans filtrage d’identificateurs de sécurité",
+            "pingcastle_ids": [
+                "T-SIDFiltering"
+            ],
+            "purpleknight_ids": [
+                "Outbound forest trust with SID History enabled"
+            ],
+            "anssi_ids": [
+                "vuln1_trusts_forest_sidhistory"
+            ],
+            "mitre_ids": [
+                "M1015",
+                "T1134.005"
+            ],
+            "concepts": [
+                "sid_filtering"
+            ],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 2,
+            "file_name": "2.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "T-SIDHistoryUnknownDomain",
+                "S-SIDHistory"
+            ],
+            "anssi_ids": [
+                "vuln3_sidhistory_present"
+            ],
+            "mitre_ids": [
+                "T1134.005"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 4,
+                "average": 5,
+                "maximum": 6
+            }
+        },
+        {
+            "uid": 3,
+            "file_name": "3.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-Krbtgt"
+            ],
+            "purpleknight_ids": [
+                "Kerberos krbtgt account with old password"
+            ],
+            "anssi_ids": [
+                "vuln2_krbtgt"
+            ],
+            "mitre_ids": [
+                "T1558.001"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 4,
+            "file_name": "4.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-DesEnabled"
+            ],
+            "purpleknight_ids": [
+                "User accounts that use DES encryption"
+            ],
+            "anssi_ids": [
+                "vuln2_kerberos_properties_deskey"
+            ],
+            "mitre_ids": [
+                "T1558.004"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 5,
+            "file_name": "5.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "AD Certificate Authority with Web Enrollment - PetitPotam and ESC8"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 6,
+            "file_name": "6.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-CertTempCustomSubject"
+            ],
+            "purpleknight_ids": [
+                "Modèles de certificats qui permettent aux demandeurs de spécifier un subjectAltName",
+                "Certificate templates with three or more insecure configurations"
+            ],
+            "anssi_ids": [
+                "vuln1_vuln_adcs_template_auth_enroll_with_name"
+            ],
+            "mitre_ids": [
+                "T1558"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 7,
+            "file_name": "7.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-WeakRSARootCert2",
+                "A-SHA1RootCert"
+            ],
+            "anssi_ids": [
+                "vuln3_certificates_vuln"
+            ],
+            "mitre_ids": [
+                "T1600.001"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 2,
+                "average": 3,
+                "maximum": 4
+            }
+        },
+        {
+            "uid": 8,
+            "file_name": "8.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "Non-default principals with DC Sync rights on the domain"
+            ],
+            "anssi_ids": [
+                "vuln1_permissions_naming_context"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 1,
+                "average": 2,
+                "maximum": 3
+            }
+        },
+        {
+            "uid": 9,
+            "file_name": "9.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-NoServicePolicy"
+            ],
+            "mitre_ids": [
+                "T1201"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 10,
+            "file_name": "10.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-Delegated"
+            ],
+            "anssi_ids": [
+                "vuln1_vuln_display_specifier"
+            ],
+            "mitre_ids": [
+                "M1015",
+                "T1569"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 11,
+            "file_name": "11.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-PwdNeverExpires",
+                "P-AdminPwdTooOld",
+                "S-PwdLastSet-90"
+            ],
+            "purpleknight_ids": [
+                "Admins with old passwords",
+                "Users with Password Never Expires flag set",
+                "Computers with password last set over 90 days ago",
+                "Users with old passwords",
+                "Built-in domain Administrator account with old password (180 days)"
+            ],
+            "anssi_ids": [
+                "vuln2_dont_expire",
+                "vuln1_password_change_priv",
+                "vuln2_password_change_server_no_change_90"
+            ],
+            "mitre_ids": [
+                "M1015",
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 2,
+                "average": 3,
+                "maximum": 4
+            }
+        },
+        {
+            "uid": 12,
+            "file_name": "12.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-OS-2003",
+                "S-OS-2008",
+                "S-OS-XP",
+                "S-OS-Win7"
+            ],
+            "purpleknight_ids": [
+                "Computers with older OS versions"
+            ],
+            "mitre_ids": [
+                "M1051"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 9,
+                "average": 10,
+                "maximum": 11
+            }
+        },
+        {
+            "uid": 13,
+            "file_name": "13.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-ADRegistrationSchema"
+            ],
+            "anssi_ids": [
+                "vuln2_warning_schema_posssuperiors"
+            ],
+            "mitre_ids": [
+                "M1018"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 14,
+            "file_name": "14.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DelegationGPOData"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 15,
+            "file_name": "15.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "T-Inactive"
+            ],
+            "purpleknight_ids": [
+                "Trust accounts with old passwords"
+            ],
+            "anssi_ids": [
+                "vuln2_trusts_accounts"
+            ],
+            "mitre_ids": [
+                "T1557"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 16,
+            "file_name": "16.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-ServiceDomainAdmin"
+            ],
+            "purpleknight_ids": [
+                "Privileged accounts with a password that never expires"
+            ],
+            "anssi_ids": [
+                "vuln1_dont_expire_priv"
+            ],
+            "mitre_ids": [
+                "T1003.004"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 17,
+            "file_name": "17.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-UnkownDelegation"
+            ],
+            "mitre_ids": [
+                "M1015",
+                "T1187"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 18,
+            "file_name": "18.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-PwdNotRequired"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 19,
+            "file_name": "19.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "Dangerous control paths expose certificate templates"
+            ],
+            "anssi_ids": [
+                "vuln1_adcs_template_ control"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 20,
+            "file_name": "20.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "Domain trust to a third-party domain without quarantine"
+            ],
+            "anssi_ids": [
+                "vuln1_trusts_domain_ notfiltered"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 21,
+            "file_name": "21.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "gMSA objects with old passwords"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 22,
+            "file_name": "22.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "Non-privileged users with access to gMSA passwords"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 23,
+            "file_name": "23.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "LDAP signing is not required on Domain Controllers"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 1,
+                "average": 2,
+                "maximum": 3
+            }
+        },
+        {
+            "uid": 24,
+            "file_name": "24.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-Kerberoasting"
+            ],
+            "purpleknight_ids": [
+                "Primary users with SPN not supporting AES encryption on Kerberos",
+                "Privileged users with ServicePrincipalNames defined",
+                "Users with ServicePrincipalName defined"
+            ],
+            "anssi_ids": [
+                "vuln1_spn_priv"
+            ],
+            "mitre_ids": [
+                "T1558.003"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 25,
+            "file_name": "25.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "RC4 or DES encryption type are supported by Domain Controllers"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 26,
+            "file_name": "26.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "Unprivileged principals as DNS Admins"
+            ],
+            "anssi_ids": [
+                "vuln1_permissions_msdn",
+                "vuln1_dnsadmins"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 27,
+            "file_name": "27.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DnsZoneAUCreateChild"
+            ],
+            "mitre_ids": [
+                "T1557"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 28,
+            "file_name": "28.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DNSAdmin"
+            ],
+            "anssi_ids": [
+                "vuln4_dnsadmins"
+            ],
+            "mitre_ids": [
+                "M1026",
+                "T1018"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 29,
+            "file_name": "29.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DnsZoneTransfert"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 30,
+            "file_name": "30.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-ControlPathIndirectMany"
+            ],
+            "mitre_ids": [
+                "T1069.002",
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 1,
+                "average": 2,
+                "maximum": 3
+            }
+        },
+        {
+            "uid": 31,
+            "file_name": "31.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-SMB-v1"
+            ],
+            "mitre_ids": [
+                "T1557.001"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 32,
+            "file_name": "32.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-CertEnrollHttp"
+            ],
+            "mitre_ids": [
+                "T1557"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 33,
+            "file_name": "33.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-ProtectedUsers"
+            ],
+            "purpleknight_ids": [
+                "Protected Users group not in use"
+            ],
+            "anssi_ids": [
+                "vuln3_protected_users"
+            ],
+            "mitre_ids": [
+                "M1025",
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 34,
+            "file_name": "34.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-LogonDenied"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 2,
+                "average": 3,
+                "maximum": 4
+            }
+        },
+        {
+            "uid": 35,
+            "file_name": "35.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-LAPS-Joined-Computers",
+                "S-ADRegistration"
+            ],
+            "purpleknight_ids": [
+                "Changes to MS LAPS read permissions"
+            ],
+            "mitre_ids": [
+                "T1555.005",
+                "M1018"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 36,
+            "file_name": "36.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-AuditDC"
+            ],
+            "mitre_ids": [
+                "M1047"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 1,
+                "average": 2,
+                "maximum": 3
+            }
+        },
+        {
+            "uid": 37,
+            "file_name": "37.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DCLdapsChannelBinding"
+            ],
+            "mitre_ids": [
+                "T1557"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 2,
+                "average": 3,
+                "maximum": 4
+            }
+        },
+        {
+            "uid": 38,
+            "file_name": "38.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DCLdapSign"
+            ],
+            "mitre_ids": [
+                "T1557"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 1,
+                "average": 2,
+                "maximum": 3
+            }
+        },
+        {
+            "uid": 39,
+            "file_name": "39.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-PreWin2000Other",
+                "A-PreWin2000AuthenticatedUsers"
+            ],
+            "purpleknight_ids": [
+                "Changes to PreWindows 2000 Compatible Access Group membership"
+            ],
+            "anssi_ids": [
+                "vuln3_compatible_2000_not_default"
+            ],
+            "mitre_ids": [
+                "T1210",
+                "T1110.003"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 40,
+            "file_name": "40.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-UnconstrainedDelegation"
+            ],
+            "purpleknight_ids": [
+                "Computer or user accounts with unconstrained delegation"
+            ],
+            "anssi_ids": [
+                "vuln2_delegation_t4d"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 4,
+                "average": 5,
+                "maximum": 6
+            }
+        },
+        {
+            "uid": 41,
+            "file_name": "41.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-PwdLastSet-DC"
+            ],
+            "anssi_ids": [
+                "vuln1_password_change_dc_no_change"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 42,
+            "file_name": "42.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-Reversible"
+            ],
+            "purpleknight_ids": [
+                "User accounts that store passwords with reversible encryption"
+            ],
+            "anssi_ids": [
+                "vuln3_reversible_password"
+            ],
+            "mitre_ids": [
+                "T1110.002"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 43,
+            "file_name": "43.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-WSUS-HTTP"
+            ],
+            "mitre_ids": [
+                "M1051"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 44,
+            "file_name": "44.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "T-AlgsAES"
+            ],
+            "mitre_ids": [
+                "M1051"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 45,
+            "file_name": "45.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "Objects with constrained delegation configured"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 46,
+            "file_name": "46.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "Privileged users that are disabled"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 47,
+            "file_name": "47.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "Unprivileged users can add computer accounts to domain"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 48,
+            "file_name": "48.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "Unprotected accounts with adminCount=1"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 49,
+            "file_name": "49.docx",
+            "title": "Untitled",
+            "purpleknight_ids": [
+                "User accounts with password not required"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
+            "uid": 50,
+            "file_name": "50.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-NoNetSessionHardening"
+            ],
+            "mitre_ids": [
+                "T1087.001"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 51,
+            "file_name": "51.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DsHeuristicsLDAPSecurity"
+            ],
+            "anssi_ids": [
+                "vuln3_dsheuristics_bad"
+            ],
+            "mitre_ids": [
+                "T1187"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 52,
+            "file_name": "52.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-UnixPwd"
+            ],
+            "anssi_ids": [
+                "vuln3_reversible_password"
+            ],
+            "mitre_ids": [
+                "T1552"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 53,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-OperatorsEmpty"
+            ],
+            "purpleknight_ids": [
+                "Operator Groups that are not empty"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        }
+    ]
+}

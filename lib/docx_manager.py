@@ -1,13 +1,17 @@
 from os import path
+import docx
 from docx import Document
 from docx.enum.text import WD_BREAK, WD_ALIGN_PARAGRAPH
 from docx.enum.style import WD_STYLE_TYPE
+from docx.opc import constants
 from docx.oxml.shared import OxmlElement, qn
 from docx.shared import Cm
+from docx.text import run, hyperlink
 from docxcompose.composer import Composer
 from win32com import client
 from subprocess import Popen
 from lxml import etree
+from lxml.etree import Element
 from lib.path import Path
 from lib.logging import log, log_call
 
@@ -301,9 +305,39 @@ class DocxManager():
 		log(f'Title {level} "{text}" added to the document.')
 
 	@log_call
-	def text(self, text):
-		self.document.add_paragraph(text, style=f"Normal")
+	def text(self, text, style="Normal"):
+		self.document.add_paragraph(text, style=style)
 		log(f'Text "{text}" added to the document.')
+
+	@log_call
+	def link(self, text, url, style=None):
+		paragraph = self.document.add_paragraph(style=style)
+
+		# This gets access to the document.xml.rels file and gets a new relation id value
+		part = paragraph.part
+		r_id = part.relate_to(url, constants.RELATIONSHIP_TYPE.HYPERLINK, is_external=("#" in url))
+
+		# Create the w:hyperlink tag and add needed values
+		hyperlink = OxmlElement('w:hyperlink')
+		hyperlink.set(qn('r:id'), r_id, )
+
+		# Create a new run object (a wrapper over a 'w:r' element)
+		new_run = run.Run(
+			OxmlElement('w:r'), paragraph)
+		new_run.text = text
+		new_run.style = "Hyperlink"
+
+		# Join all the xml elements together
+		hyperlink.append(new_run._element)
+		paragraph._p.append(hyperlink)
+
+		log(f'Link to "{text}" added to the document.')
+
+	@log_call
+	def bookmark(self, name):
+		el = [el for el in self.document._element[0] if el.tag.endswith('}p')][-1]
+		el.append(Element(qn('w:bookmarkStart'),{qn('w:id'):'0',qn('w:name'):name}))
+		el.append(Element(qn('w:bookmarkEnd'),{qn('w:id'):'0'}))
 
 	@log_call
 	def add_image(self, path, width=18.5, caption=None, alignment="center") -> bool:
