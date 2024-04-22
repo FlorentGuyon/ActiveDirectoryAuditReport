@@ -58,7 +58,7 @@
         {
             "uid": 1,
             "file_name": "external_trust_without_sid_filtering.docx",
-            "title": "Relation de confiance externe sans filtrage d’identificateurs de sécurité",
+            "title": "Relation de confiance externe sans filtrage des identificateurs de sécurité",
             "pingcastle_ids": [
                 "T-SIDFiltering"
             ],
@@ -76,15 +76,15 @@
                 "sid_filtering"
             ],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 0.5,
-                "maximum": 1.5
+                "minimum": 1,
+                "average": 1,
+                "maximum": 2
             }
         },
         {
             "uid": 2,
-            "file_name": "2.docx",
-            "title": "Untitled",
+            "file_name": "unknown_domain_in_sid_history.docx",
+            "title": "Domaine inconnu dans un historique d'identificateurs de sécurité",
             "pingcastle_ids": [
                 "T-SIDHistoryUnknownDomain",
                 "S-SIDHistory"
@@ -95,11 +95,13 @@
             "mitre_ids": [
                 "T1134.005"
             ],
-            "concepts": [],
+            "concepts": [
+                "sid_history"
+            ],
             "days_to_fix": {
-                "minimum": 4,
-                "average": 5,
-                "maximum": 6
+                "minimum": 1,
+                "average": 1,
+                "maximum": 2
             }
         },
         {
