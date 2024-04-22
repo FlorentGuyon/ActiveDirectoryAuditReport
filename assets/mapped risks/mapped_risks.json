@@ -21,8 +21,8 @@
             ]
         },
         "sid": {
-            "id": "Identificateur de sécurité (SID)",
-            "title": "Listes d'accès (ACL)",
+            "id": "sid",
+            "title": "Identificateur de sécurité (SID)",
             "file_name": "sid.docx",
             "concepts": [
                 "rid",
@@ -39,7 +39,7 @@
         },
         "trust": {
             "id": "trust",
-            "title": "Relation de confiance (Trust)",
+            "title": "Relation d'approbation (Trust)",
             "file_name": "trust.docx",
             "concepts": [
             ]

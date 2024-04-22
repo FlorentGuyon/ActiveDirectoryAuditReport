@@ -1139,11 +1139,11 @@ def main() -> None:
 		#
 		documentation_path = path.join(config.get("PATH_DOCUMENTATIONS"), mapped_risks["documentations"][documentation_id]["file_name"])
 		#
-		docx_manager.bookmark(documentation_id)
-		#
 		title_level = 2
 		#
 		docx_manager.title(mapped_risks["documentations"][documentation_id]["title"], title_level)
+		#
+		docx_manager.bookmark(documentation_id)
 		#
 		if len(mapped_risks["documentations"][documentation_id]["concepts"]) > 0:
 			#
