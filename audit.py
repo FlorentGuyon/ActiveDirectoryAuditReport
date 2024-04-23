@@ -1207,7 +1207,7 @@ def main() -> None:
 			#
 			# Write it in the console
 			#
-			log(f'Documentation not found at "{documentation_file}".', "error")
+			log(f'Documentation not found at "{file_path}".', "error")
 	#
 	# Go to the next page of the DOCX report
 	#

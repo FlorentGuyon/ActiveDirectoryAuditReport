@@ -52,6 +52,12 @@
                 "sid_history",
                 "trust"
             ]
+        },
+        "kerberos": {
+            "id": "kerberos",
+            "title": "Kerberos",
+            "file_name": "kerberos.docx",
+            "concepts": []
         }  
     },
     "risks": [
@@ -63,10 +69,12 @@
                 "T-SIDFiltering"
             ],
             "purpleknight_ids": [
-                "Outbound forest trust with SID History enabled"
+                "Outbound forest trust with SID History enabled",
+                "Domain trust to a third-party domain without quarantine"
             ],
             "anssi_ids": [
-                "vuln1_trusts_forest_sidhistory"
+                "vuln1_trusts_forest_sidhistory",
+                "vuln1_trusts_domain_notfiltered"
             ],
             "mitre_ids": [
                 "M1015",
@@ -106,8 +114,8 @@
         },
         {
             "uid": 3,
-            "file_name": "3.docx",
-            "title": "Untitled",
+            "file_name": "old_kerberos_password.docx",
+            "title": "Vieux mot de passe Kerberos",
             "pingcastle_ids": [
                 "A-Krbtgt"
             ],
@@ -120,7 +128,9 @@
             "mitre_ids": [
                 "T1558.001"
             ],
-            "concepts": [],
+            "concepts": [
+                "kerberos"
+            ],
             "days_to_fix": {
                 "minimum": 0.5,
                 "average": 0.5,
@@ -452,23 +462,6 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
-        },
-        {
-            "uid": 20,
-            "file_name": "20.docx",
-            "title": "Untitled",
-            "purpleknight_ids": [
-                "Domain trust to a third-party domain without quarantine"
-            ],
-            "anssi_ids": [
-                "vuln1_trusts_domain_ notfiltered"
-            ],
-            "concepts": [],
-            "days_to_fix": {
-                "minimum": 0.5,
-                "average": 0.5,
-                "maximum": 1.5
             }
         },
         {
