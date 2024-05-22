@@ -706,13 +706,6 @@ def main() -> None:
 	#
 	#log(f'RACI table added.')
 	#
-	#
-	docx_manager.title(text="Proportion de risques détectés", level=1)
-	#
-	#
-	#
-	docx_manager.text(text="L'illustration ci-dessous représente la proportion de risques détectés et non-détectés, pour chaque catégorie de recherche.")
-	#
 	# Import the PingCastle data
 	#
 	pingcastle_data = xml_to_json(find_files_by_extension("input", "xml")[0])
@@ -827,9 +820,9 @@ def main() -> None:
 				"categories": {
 					"Anomalies": {
 						"id": "Anomalies",
-						"value": -70,
+						"value": -71,
 						"label": {
-							"value": 70,
+							"value": 71,
 							"alignment": "center",
 							"font_size": config.get("FONT_SIZE"),
 							"font_color": "#ffffff"
@@ -891,6 +884,21 @@ def main() -> None:
 	# Create a bar chart with the risks found compared to the total in each category
 	#
 	create_bar_chart(chart_data)
+	#
+	# Add the title of the chart
+	#
+	docx_manager.title(text="Proportion de risques détectés", level=1)
+	#
+	# Calculate some stats for the description of the chart
+	#
+	total_risks_to_detect = sum([chart_data["stacked_bars"][0]["categories"][category]["value"] + (-chart_data["stacked_bars"][1]["categories"][category]["value"]) for category in chart_data["categories"].keys()])
+	total_risks_detected = sum([chart_data["stacked_bars"][0]["categories"][category]["value"] for category in chart_data["categories"].keys()])
+	detected_risks_ratio = int(round(total_risks_detected * 100 / total_risks_to_detect, 0))
+	#
+	# Add the description of the chart
+	#
+	docx_manager.text(text=f"Les risques détectables lors de cet audit sont catégorisés en fonction du type de donnée qui est à l'origine du risque. Les catégories sont \"Anomalies\", \"Comptes à privilèges\", \"Objets périmés\" et \"Relations de confiance\". Au total, {total_risks_to_detect} risques étaient détectables lors de cet audit, dont {total_risks_detected} ont été détectés, soit {detected_risks_ratio}% de tests positifs (présentant une anomalie).")
+	docx_manager.text(text=f"\nL'illustration ci-dessous représente la proportion de risques détectés et non-détectés lors de cet audit, pour chacune des quatre catégories:")
 	#
 	# Add the chart to the report
 	#
@@ -1009,7 +1017,7 @@ def main() -> None:
 		}
 	}
 	#
-	#
+	# 
 	#
 	ordered_mapped_risks = order_by_severity(mapped_risks)
 	#
@@ -1082,8 +1090,16 @@ def main() -> None:
 			# Increase the count of days passed
 			#
 			day_passed += 1
-
-
+	#
+	# Prepare some stats for the description of the chart
+	#
+	min_estimation = len(chart_data["lines"]["minimum"]["line_parts"][f"Niveau 5"]["y_values"])
+	avg_estimation = len(chart_data["lines"]["average"]["line_parts"][f"Niveau 5"]["y_values"])
+	max_estimation = len(chart_data["lines"]["maximum"]["line_parts"][f"Niveau 5"]["y_values"])
+	avg_estimation_months = int(round(avg_estimation / (5 * 4), 0))
+	#
+	#
+	#
 	for line_key in ["minimum", "average"]:
 		for severity in range(1, 6):
 			# Calculate the difference in lengths
@@ -1098,13 +1114,15 @@ def main() -> None:
 	#
 	create_line_chart(chart_data)
 	#
-	#
+	# Add the title of the chart
 	#
 	docx_manager.title(text="Durée de correction des risques détectés", level=1)
 	#
+	# Add the description of the chart
 	#
-	#
-	docx_manager.text(text="L'illustration ci-dessous représente une estimation minimale, moyenne et maximale, du cumul du nombre de jours nécessaires à la correction des risques détectés, du niveau de sévérité le plus haut, vers le plus bas.")
+	docx_manager.text(text="La durée de correction d'une anomalie peut dépendre de beaucoup d'élements tels que la taille du système d'information, les protocoles de sécurité autour de celui-ci, ou encore la disponibilité des équipes compétentes. Il est donc impossible de prédire exactement la date à laquelle toutes les anomalies seraient corrigées. Cependant, il est possible d'utiliser le retour d'expérience de précédents audit Active Directory pour en dégager une tendance.")
+	docx_manager.text(text="\nL'illustration ci-dessous représente les estimations de l'avancée de la correction des anomalies dans le temps. la ligne continue de gauche représente l'estimation optimiste, la ligne discontinue centrale représente l'estimation moyenne et la ligne continue de droite représente l'estimation péssimiste. Les trois estimations débutent en un point commun, en haut à gauche, qui représente le cumul, en hauteur, des anomalies à corriger. Celles-ci déscendent d'une hauteur pour chaque anomalie corrigée. Finalement, les estimations se terminent en bas à droite, lorsque toutes les anomalies sont corrigées. L'écart horizontal entre le point de départ et d'arrivée d'une estimation représente le temps nécessaire à la correction de toutes les anomalies.")
+	docx_manager.text(text=f"\nDans le cas de cet audit, la durée de correction des {total_risks_detected} anomalies est estimée entre {min_estimation} et {max_estimation} jours, avec une moyenne de {avg_estimation} jours, soit environ {avg_estimation_months} mois.")
 	#
 	# Add the chart to the report
 	#
@@ -1114,11 +1132,11 @@ def main() -> None:
 	#
 	docx_manager.break_page()
 	#
-	#
+	# 
 	#
 	docx_manager.title(text="Notions abordées", level=1)
 	#
-	#
+	# 
 	#
 	concepts = []
 	#
