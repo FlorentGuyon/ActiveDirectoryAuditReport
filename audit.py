@@ -830,9 +830,9 @@ def main() -> None:
 					},
 					"PrivilegedAccounts": {
 						"id": "PrivilegedAccounts",
-						"value": -45,
+						"value": -46,
 						"label": {
-							"value": 45,
+							"value": 46,
 							"alignment": "center",
 							"font_size": config.get("FONT_SIZE"),
 							"font_color": "#ffffff"
@@ -840,9 +840,9 @@ def main() -> None:
 					},
 					"StaleObjects": {
 						"id": "StaleObjects",
-						"value": -50,
+						"value": -51,
 						"label": {
-							"value": 50,
+							"value": 51,
 							"alignment": "center",
 							"font_size": config.get("FONT_SIZE"),
 							"font_color": "#ffffff"

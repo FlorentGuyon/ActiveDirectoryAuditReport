@@ -58,7 +58,13 @@
             "title": "Kerberos",
             "file_name": "kerberos.docx",
             "concepts": []
-        }  
+        },
+        "spn": {
+            "id": "spn",
+            "title": "Noms de principaux de services (SPN)",
+            "file_name": "spn.docx",
+            "concepts": []
+        }
     },
     "risks": [
         {
@@ -95,12 +101,14 @@
             "title": "Domaine inconnu dans un historique d'identificateurs de sécurité",
             "pingcastle_ids": [
                 "T-SIDHistoryUnknownDomain",
-                "S-SIDHistory"
+                "S-SIDHistory",
+                "T-SIDHistorySameDomain"
             ],
             "anssi_ids": [
                 "vuln3_sidhistory_present"
             ],
             "mitre_ids": [
+                "M1015",
                 "T1134.005"
             ],
             "concepts": [
@@ -164,8 +172,14 @@
             "uid": 5,
             "file_name": "5.docx",
             "title": "Untitled",
+            "pingcastle_ids": [
+                "A-CertEnrollHttp"
+            ],
             "purpleknight_ids": [
                 "AD Certificate Authority with Web Enrollment - PetitPotam and ESC8"
+            ],
+            "mitre_ids": [
+                "T1557"
             ],
             "concepts": [],
             "days_to_fix": {
@@ -179,7 +193,11 @@
             "file_name": "6.docx",
             "title": "Untitled",
             "pingcastle_ids": [
-                "A-CertTempCustomSubject"
+                "A-CertTempCustomSubject",
+                "A-CertTempNoSecurity",
+                "A-CertTempAnyone",
+                "A-CertTempAgent",
+                "A-CertTempAnyPurpose"
             ],
             "purpleknight_ids": [
                 "Modèles de certificats qui permettent aux demandeurs de spécifier un subjectAltName",
@@ -189,6 +207,7 @@
                 "vuln1_vuln_adcs_template_auth_enroll_with_name"
             ],
             "mitre_ids": [
+                "M1558",
                 "T1558"
             ],
             "concepts": [],
@@ -204,7 +223,16 @@
             "title": "Untitled",
             "pingcastle_ids": [
                 "A-WeakRSARootCert2",
-                "A-SHA1RootCert"
+                "A-SHA1RootCert",
+                "A-CertWeakRsaComponent",
+                "A-MD4IntermediateCert",
+                "A-MD5IntermediateCert",
+                "A-SHA0IntermediateCert",
+                "A-SHA1IntermediateCert",
+                "A-MD2RootCert",
+                "A-MD4RootCert",
+                "A-MD5RootCert",
+                "A-SHA0RootCert"
             ],
             "anssi_ids": [
                 "vuln3_certificates_vuln"
@@ -311,10 +339,16 @@
             "file_name": "12.docx",
             "title": "Untitled",
             "pingcastle_ids": [
+                "S-OS-2000",
                 "S-OS-2003",
                 "S-OS-2008",
+                "S-OS-Vista",
+                "S-OS-2012",
                 "S-OS-XP",
-                "S-OS-Win7"
+                "S-OS-NT",
+                "S-OS-Win7",
+                "S-OS-Win8",
+                "S-OS-W10"
             ],
             "purpleknight_ids": [
                 "Computers with older OS versions"
@@ -371,7 +405,8 @@
             "file_name": "15.docx",
             "title": "Untitled",
             "pingcastle_ids": [
-                "T-Inactive"
+                "T-Inactive",
+                "T-AzureADSSO"
             ],
             "purpleknight_ids": [
                 "Trust accounts with old passwords"
@@ -403,6 +438,7 @@
                 "vuln1_dont_expire_priv"
             ],
             "mitre_ids": [
+                "M1026",
                 "T1003.004"
             ],
             "concepts": [],
@@ -508,8 +544,8 @@
         },
         {
             "uid": 24,
-            "file_name": "24.docx",
-            "title": "Untitled",
+            "file_name": "admin_accounts_vulnerable_to_kerberoast_attack.docx",
+            "title": "Comptes administrateurs vulnérables à l'attaque Kerberoast",
             "pingcastle_ids": [
                 "P-Kerberoasting"
             ],
@@ -524,7 +560,10 @@
             "mitre_ids": [
                 "T1558.003"
             ],
-            "concepts": [],
+            "concepts": [
+                "kerberos",
+                "spn"
+            ],
             "days_to_fix": {
                 "minimum": 0.5,
                 "average": 1,
@@ -642,23 +681,6 @@
             ],
             "mitre_ids": [
                 "T1557.001"
-            ],
-            "concepts": [],
-            "days_to_fix": {
-                "minimum": 0.5,
-                "average": 0.5,
-                "maximum": 1.5
-            }
-        },
-        {
-            "uid": 32,
-            "file_name": "32.docx",
-            "title": "Untitled",
-            "pingcastle_ids": [
-                "A-CertEnrollHttp"
-            ],
-            "mitre_ids": [
-                "T1557"
             ],
             "concepts": [],
             "days_to_fix": {
@@ -817,7 +839,8 @@
                 "vuln2_delegation_t4d"
             ],
             "mitre_ids": [
-                "M1015"
+                "M1015",
+                "T1187"
             ],
             "concepts": [],
             "days_to_fix": {
@@ -851,7 +874,10 @@
             "file_name": "42.docx",
             "title": "Untitled",
             "pingcastle_ids": [
-                "S-Reversible"
+                "S-Reversible",
+                "S-C-Reversible",
+                "A-UnixPwd",
+                "A-ReversiblePwd"
             ],
             "purpleknight_ids": [
                 "User accounts that store passwords with reversible encryption"
@@ -860,7 +886,8 @@
                 "vuln3_reversible_password"
             ],
             "mitre_ids": [
-                "T1110.002"
+                "T1110.002",
+                "T1552"
             ],
             "concepts": [],
             "days_to_fix": {
@@ -1015,13 +1042,13 @@
             "file_name": "52.docx",
             "title": "Untitled",
             "pingcastle_ids": [
-                "A-UnixPwd"
+                "S-Inactive"
             ],
             "anssi_ids": [
-                "vuln3_reversible_password"
+                "vuln1_user_accounts_dormant"
             ],
             "mitre_ids": [
-                "T1552"
+                "M1018"
             ],
             "concepts": [],
             "days_to_fix": {
@@ -1042,6 +1069,1704 @@
             ],
             "mitre_ids": [
                 "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 54,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-C-Inactive"
+            ],
+            "anssi_ids": [
+                "vuln3_password_change_inactive_servers"
+            ],
+            "mitre_ids": [
+                "M1018"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 55,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-DC-SubnetMissing"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 56,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-PrimaryGroup",
+                "S-C-PrimaryGroup"
+            ],
+            "anssi_ids": [
+                "vuln3_primary_group_id_nochange"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 57,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-NoPreAuth",
+                "S-NoPreAuthAdmin"
+            ],
+            "anssi_ids": [
+                "vuln2_kerberos_properties_preauth"
+            ],
+            "mitre_ids": [
+                "T1558.004"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 58,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-JavaSchema"
+            ],
+            "anssi_ids": [
+                "vuln1_kerberos_properties_preauth_priv"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 59,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-DefaultOUChanged"
+            ],
+            "mitre_ids": [
+                "M1018"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 60,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-KerberosArmoring",
+                "S-KerberosArmoringDC"
+            ],
+            "mitre_ids": [
+                "M1558"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 61,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-FunctionalLevel1",
+                "S-FunctionalLevel3",
+                "S-FunctionalLevel4"
+            ],
+            "anssi_ids": [
+                "vuln1_functional_level",
+                "vuln3_functional_level"
+            ],
+            "mitre_ids": [
+                "M1051"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 62,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-DC-2000",
+                "S-DC-2003",
+                "S-DC-2008",
+                "S-DC-2012"
+            ],
+            "mitre_ids": [
+                "M1051"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 63,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-AesNotEnabled"
+            ],
+            "anssi_ids": [
+                "vuln3_kerberos_properties_encryption"
+            ],
+            "mitre_ids": [
+                "T1558.004"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 64,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-OldNtlm"
+            ],
+            "mitre_ids": [
+                "T1557.001"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 65,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-DCRegistration"
+            ],
+            "mitre_ids": [
+                "T1207"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 66,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-Duplicate"
+            ],
+            "mitre_ids": [
+                "M1051"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 67,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-Vuln-MS14-068"
+            ],
+            "mitre_ids": [
+                "M1051"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 68,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-Vuln-MS17_010"
+            ],
+            "mitre_ids": [
+                "M1051"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 69,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-DC-NotUpdated"
+            ],
+            "mitre_ids": [
+                "M1051"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 70,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-WSUS-UserProxy"
+            ],
+            "mitre_ids": [
+                "M1051"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 71,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-WSUS-NoPinning"
+            ],
+            "mitre_ids": [
+                "M1051"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 72,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DisplaySpecifier"
+            ],
+            "anssi_ids": [
+                "vuln1_display_specifier"  
+            ],
+            "mitre_ids": [
+                "M1569"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 73,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DCOwner"
+            ],
+            "anssi_ids": [
+                "vuln3_owner"  
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 74,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DangerousExtendedRight"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 75,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DsHeuristicsDoListObject"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 76,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DNSDelegation"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 77,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DelegationLoginScript"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 78,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DelegationKeyAdmin"
+            ],
+            "anssi_ids": [
+                "vuln2_adupdate_bad"  
+            ],
+            "mitre_ids": [
+                "T111",
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 79,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-ExchangePrivEsc"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 80,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-ExchangeAdminSDHolder"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 81,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DelegationFileDeployed"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 82,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DsHeuristicsAdminSDExMask",
+                "A-DsHeuristicsAllowAnonNSPI"
+            ],
+            "anssi_ids": [
+                "vuln1_dsheuristics_bad"  
+            ],
+            "mitre_ids": [
+                "T1110.003",
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 83,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-LoginDCEveryone"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 84,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-RecoveryModeUnprotected"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 85,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-Inactive"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 86,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-AdminLogin"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 87,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-AdminNum"
+            ],
+            "anssi_ids": [
+                "vuln1_privileged_members"  
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 88,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-AdminEmailOn"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 89,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-ControlPathIndirectEveryone"
+            ],
+            "mitre_ids": [
+                "T1069.002"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 90,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DelegationEveryone"
+            ],
+            "mitre_ids": [
+                "T1187",
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 91,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-UP-DelegationDCt2a4d"
+            ],
+            "anssi_ids": [
+                "vuln1_delegation_t2a4d"  
+            ],
+            "mitre_ids": [
+                "T1187",
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 92,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DelegationDCa2d2"
+            ],
+            "anssi_ids": [
+                "vuln1_delegation_a2d2"  
+            ],
+            "mitre_ids": [
+                "T1187",
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 93,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-DelegationDCsourcedeleg"
+            ],
+            "anssi_ids": [
+                "vuln1_delegation_sourcedeleg"  
+            ],
+            "mitre_ids": [
+                "T1187",
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 94,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-SchemaAdmin"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 95,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-UnprotectedOU"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 96,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-RecycleBin"
+            ],
+            "mitre_ids": [
+                "M1047"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 97,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-TrustedCredManAccessPrivilege"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 98,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-PrivilegeEveryone"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 99,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-RODCRevealOnDemand"
+            ],
+            "anssi_ids": [
+                "vuln3_rodc_reveal"  
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 100,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-RODCAdminRevealed"
+            ],
+            "anssi_ids": [
+                "vuln2_rodc_priv_revealed"  
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 101,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-RODCSYSVOLWrite"
+            ],
+            "mitre_ids": [
+                "T1207",
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 102,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-RODCNeverReveal"
+            ],
+            "anssi_ids": [
+                "vuln3_rodc_never_reveal"  
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 103,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-RODCAllowedGroup"
+            ],
+            "anssi_ids": [
+                "vuln3_rodc_allowed_group"  
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 104,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-RODCDeniedGroup"
+            ],
+            "anssi_ids": [
+                "vuln3_rodc_denied_group"  
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 105,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "P-RODCKrbtgtOrphan"
+            ],
+            "anssi_ids": [
+                "vuln3_rodc_orphan_krbtgt"  
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 106,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "T-Downlevel"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 107,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "S-Domain$$$"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 108,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "T-SIDHistoryDangerous"
+            ],
+            "anssi_ids": [
+                "vuln2_sidhistory_dangerous"  
+            ],
+            "mitre_ids": [
+                "T1134.005",
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 109,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "T-FileDeployedOutOfDomain"
+            ],
+            "mitre_ids": [
+                "T1210"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 110,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "T-TGTDelegation"
+            ],
+            "anssi_ids": [
+                "vuln3_trusts_tgt_deleg"  
+            ],
+            "mitre_ids": [
+                "T1187",
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 111,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "T-ScriptOutOfDomain"
+            ],
+            "mitre_ids": [
+                "T1210"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 112,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-AuditPowershell"
+            ],
+            "mitre_ids": [
+                "M1047"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 113,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-BackupMetadata"
+            ],
+            "mitre_ids": [
+                "M1053"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 114,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-NotEnoughDC"
+            ],
+            "mitre_ids": [
+                "M1053"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 115,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-WeakRSARootCert",
+                "A-CertWeakDSA",
+                "A-MD2IntermediateCert",
+                "A-CertROCA"
+            ],
+            "anssi_ids": [
+                "vuln1_certificates_vuln"  
+            ],
+            "mitre_ids": [
+                "T1600.001"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 116,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-CertEnrollChannelBinding"
+            ],
+            "mitre_ids": [
+                "M1557"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 117,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DCLdapsProtocol"
+            ],
+            "mitre_ids": [
+                "T1600.001"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 118,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DCLdapsProtocolAdvanced"
+            ],
+            "mitre_ids": [
+                "T1600.001"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 119,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-WSUS-SslProtocol"
+            ],
+            "mitre_ids": [
+                "T1600.001"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 120,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-MembershipEveryone"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 121,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-LMHashAuthorized"
+            ],
+            "mitre_ids": [
+                "T1110.002"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 122,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DnsZoneUpdate1",
+                "A-DnsZoneUpdate2"
+            ],
+            "anssi_ids": [
+                "vuln1_dnszone_bad_prop"  
+            ],
+            "mitre_ids": [
+                "M1157"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 123,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-NoGPOLLMNR"
+            ],
+            "mitre_ids": [
+                "T1557.001"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 124,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-NTFRSOnSysvol"
+            ],
+            "anssi_ids": [
+                "vuln2_sysvol_ntfrs"  
+            ],
+            "mitre_ids": [
+                "T1563"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 125,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-SMB2SignatureNotEnabled"
+            ],
+            "mitre_ids": [
+                "M1557"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 126,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-SMB2SignatureNotRequired"
+            ],
+            "mitre_ids": [
+                "M1557"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 127,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-LDAPSigningDisabled"
+            ],
+            "mitre_ids": [
+                "M1557"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 128,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-HardenedPaths"
+            ],
+            "mitre_ids": [
+                "M1557.001"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 129,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-SmartCardPwdRotation"
+            ],
+            "anssi_ids": [
+                "vuln4_smartcard_expire_passwords"  
+            ],
+            "mitre_ids": [
+                "T1110.002"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 130,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-SmartCardRequired"
+            ],
+            "mitre_ids": [
+                "T1110.002"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 131,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-ProtectedUsers"
+            ],
+            "mitre_ids": [
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 132,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-LAPS-Not-Installed"
+            ],
+            "mitre_ids": [
+                "T1078.003",
+                "M1026"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 133,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DCRefuseComputerPwdChange"
+            ],
+            "mitre_ids": [
+                "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 134,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DC-Spooler"
+            ],
+            "mitre_ids": [
+                "T1187"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 135,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DC-WebClient"
+            ],
+            "mitre_ids": [
+                "T1187"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 136,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DC-Coerce"
+            ],
+            "mitre_ids": [
+                "T1187"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 137,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-PwdGPO"
+            ],
+            "mitre_ids": [
+                "T1552.006"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 138,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-DsHeuristicsAnonymous",
+                "A-DsHeuristicsDoNotVerifyUniqueness"
+            ],
+            "anssi_ids": [
+                "vuln2_dsheuristics_bad"  
+            ],
+            "mitre_ids": [
+                "T1110.003",
+                "T1187"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 139,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-AnonymousAuthorizedGPO"
+            ],
+            "mitre_ids": [
+                "T1110.003"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 140,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-PreWin2000Anonymous"
+            ],
+            "anssi_ids": [
+                "vuln2_compatible_2000_anonymous"  
+            ],
+            "mitre_ids": [
+                "T1110.003"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 141,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                ""
+            ],
+            "mitre_ids": [
+                "1"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 142,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-NullSession"
+            ],
+            "mitre_ids": [
+                "T1110.003"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 143,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-AdminSDHolder"
+            ],
+            "anssi_ids": [
+                "vuln2_privileged_members_no_admincount"  
+            ],
+            "mitre_ids": [
+                "M1022"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 144,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-LimitBlankPasswordUse"
+            ],
+            "mitre_ids": [
+                "T1110.003"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 145,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-MinPwdLen"
+            ],
+            "anssi_ids": [
+                "vuln2_privileged_members_password"  
+            ],
+            "mitre_ids": [
+                "T1201"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 146,
+            "file_name": "53.docx",
+            "title": "Untitled",
+            "pingcastle_ids": [
+                "A-Guest"
+            ],
+            "mitre_ids": [
+                "T1078.003",
+                "M1015"
             ],
             "concepts": [],
             "days_to_fix": {
