@@ -64,11 +64,32 @@
             "title": "Noms de principaux de services (SPN)",
             "file_name": "spn.docx",
             "concepts": []
+        },
+        "ntlm": {
+            "id": "ntlm",
+            "title": "New Technology LAN Manager (NTLM)",
+            "file_name": "ntlm.docx",
+            "concepts": []
+        },
+        "digital_signature": {
+            "id": "digital_signature",
+            "title": "Signature numérique",
+            "file_name": "digital_signature.docx",
+            "concepts": []
+        },
+        "certificate": {
+            "id": "certificate",
+            "title": "Certificats",
+            "file_name": "certificate.docx",
+            "concepts": [
+                "digital_signature"
+            ]
         }
     },
     "risks": [
         {
             "uid": 1,
+            "severity": 1,
             "file_name": "external_trust_without_sid_filtering.docx",
             "title": "Relation de confiance externe sans filtrage des identificateurs de sécurité",
             "pingcastle_ids": [
@@ -97,6 +118,7 @@
         },
         {
             "uid": 2,
+            "severity": 3,
             "file_name": "unknown_domain_in_sid_history.docx",
             "title": "Domaine inconnu dans un historique d'identificateurs de sécurité",
             "pingcastle_ids": [
@@ -122,6 +144,7 @@
         },
         {
             "uid": 3,
+            "severity": 2,
             "file_name": "old_kerberos_password.docx",
             "title": "Vieux mot de passe Kerberos",
             "pingcastle_ids": [
@@ -147,8 +170,9 @@
         },
         {
             "uid": 4,
-            "file_name": "4.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-DesEnabled"
             ],
@@ -170,8 +194,9 @@
         },
         {
             "uid": 5,
-            "file_name": "5.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "web_enrollement_certificate.docx",
+            "title": "Autorité de certification Active Directory avec inscription WEB",
             "pingcastle_ids": [
                 "A-CertEnrollHttp"
             ],
@@ -181,7 +206,10 @@
             "mitre_ids": [
                 "T1557"
             ],
-            "concepts": [],
+            "concepts": [
+                "certificate",
+                "ntlm"
+            ],
             "days_to_fix": {
                 "minimum": 0.5,
                 "average": 0.5,
@@ -190,8 +218,9 @@
         },
         {
             "uid": 6,
-            "file_name": "6.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-CertTempCustomSubject",
                 "A-CertTempNoSecurity",
@@ -204,7 +233,7 @@
                 "Certificate templates with three or more insecure configurations"
             ],
             "anssi_ids": [
-                "vuln1_vuln_adcs_template_auth_enroll_with_name"
+                "vuln1_adcs_template_auth_enroll_with_name"
             ],
             "mitre_ids": [
                 "M1558",
@@ -219,8 +248,9 @@
         },
         {
             "uid": 7,
-            "file_name": "7.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-WeakRSARootCert2",
                 "A-SHA1RootCert",
@@ -240,7 +270,10 @@
             "mitre_ids": [
                 "T1600.001"
             ],
-            "concepts": [],
+            "concepts": [
+                "digital_signature",
+                "certificate"
+            ],
             "days_to_fix": {
                 "minimum": 2,
                 "average": 3,
@@ -249,8 +282,9 @@
         },
         {
             "uid": 8,
-            "file_name": "8.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "Non-default principals with DC Sync rights on the domain"
             ],
@@ -266,8 +300,9 @@
         },
         {
             "uid": 9,
-            "file_name": "9.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-NoServicePolicy"
             ],
@@ -283,13 +318,14 @@
         },
         {
             "uid": 10,
-            "file_name": "10.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-Delegated"
             ],
             "anssi_ids": [
-                "vuln1_vuln_display_specifier"
+                "vuln1_display_specifier"
             ],
             "mitre_ids": [
                 "M1015",
@@ -304,8 +340,9 @@
         },
         {
             "uid": 11,
-            "file_name": "11.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-PwdNeverExpires",
                 "P-AdminPwdTooOld",
@@ -313,10 +350,12 @@
             ],
             "purpleknight_ids": [
                 "Admins with old passwords",
+                "Enabled admin accounts that are inactive",
                 "Users with Password Never Expires flag set",
                 "Computers with password last set over 90 days ago",
                 "Users with old passwords",
-                "Built-in domain Administrator account with old password (180 days)"
+                "Built-in domain Administrator account with old password (180 days)",
+                "SSO computer account with password last set over 90 days ago"
             ],
             "anssi_ids": [
                 "vuln2_dont_expire",
@@ -336,8 +375,9 @@
         },
         {
             "uid": 12,
-            "file_name": "12.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-OS-2000",
                 "S-OS-2003",
@@ -365,8 +405,9 @@
         },
         {
             "uid": 13,
-            "file_name": "13.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-ADRegistrationSchema"
             ],
@@ -385,8 +426,9 @@
         },
         {
             "uid": 14,
-            "file_name": "14.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DelegationGPOData"
             ],
@@ -402,8 +444,9 @@
         },
         {
             "uid": 15,
-            "file_name": "15.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "T-Inactive",
                 "T-AzureADSSO"
@@ -426,8 +469,9 @@
         },
         {
             "uid": 16,
-            "file_name": "16.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-ServiceDomainAdmin"
             ],
@@ -450,8 +494,9 @@
         },
         {
             "uid": 17,
-            "file_name": "17.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-UnkownDelegation"
             ],
@@ -468,8 +513,9 @@
         },
         {
             "uid": 18,
-            "file_name": "18.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-PwdNotRequired"
             ],
@@ -485,8 +531,9 @@
         },
         {
             "uid": 19,
-            "file_name": "19.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "Dangerous control paths expose certificate templates"
             ],
@@ -502,8 +549,9 @@
         },
         {
             "uid": 21,
-            "file_name": "21.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "gMSA objects with old passwords"
             ],
@@ -516,8 +564,9 @@
         },
         {
             "uid": 22,
-            "file_name": "22.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "Non-privileged users with access to gMSA passwords"
             ],
@@ -530,8 +579,9 @@
         },
         {
             "uid": 23,
-            "file_name": "23.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "LDAP signing is not required on Domain Controllers"
             ],
@@ -544,6 +594,7 @@
         },
         {
             "uid": 24,
+            "severity": 1,
             "file_name": "admin_accounts_vulnerable_to_kerberoast_attack.docx",
             "title": "Comptes administrateurs vulnérables à l'attaque Kerberoast",
             "pingcastle_ids": [
@@ -572,8 +623,9 @@
         },
         {
             "uid": 25,
-            "file_name": "25.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "RC4 or DES encryption type are supported by Domain Controllers"
             ],
@@ -586,8 +638,9 @@
         },
         {
             "uid": 26,
-            "file_name": "26.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "Unprivileged principals as DNS Admins"
             ],
@@ -604,8 +657,9 @@
         },
         {
             "uid": 27,
-            "file_name": "27.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DnsZoneAUCreateChild"
             ],
@@ -621,8 +675,9 @@
         },
         {
             "uid": 28,
-            "file_name": "28.docx",
-            "title": "Untitled",
+            "severity": 4,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DNSAdmin"
             ],
@@ -642,8 +697,9 @@
         },
         {
             "uid": 29,
-            "file_name": "29.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DnsZoneTransfert"
             ],
@@ -656,8 +712,9 @@
         },
         {
             "uid": 30,
-            "file_name": "30.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-ControlPathIndirectMany"
             ],
@@ -674,8 +731,9 @@
         },
         {
             "uid": 31,
-            "file_name": "31.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-SMB-v1"
             ],
@@ -690,9 +748,34 @@
             }
         },
         {
+            "uid": 32,
+            "severity": 1,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
+            "pingcastle_ids": [
+                "S-DC-Inactive"
+            ],
+            "purpleknight_ids": [
+                "Domain controllers that have not authenticated to the domain for more than 45 days"
+            ],
+            "anssi_ids": [
+                "vuln1_password_change_inactive_dc"
+            ],
+            "mitre_ids": [
+                "M1018"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 0.5,
+                "maximum": 1.5
+            }
+        },
+        {
             "uid": 33,
-            "file_name": "33.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-ProtectedUsers"
             ],
@@ -715,8 +798,9 @@
         },
         {
             "uid": 34,
-            "file_name": "34.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-LogonDenied"
             ],
@@ -729,8 +813,9 @@
         },
         {
             "uid": 35,
-            "file_name": "35.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-LAPS-Joined-Computers",
                 "S-ADRegistration"
@@ -751,8 +836,9 @@
         },
         {
             "uid": 36,
-            "file_name": "36.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-AuditDC"
             ],
@@ -768,8 +854,9 @@
         },
         {
             "uid": 37,
-            "file_name": "37.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DCLdapsChannelBinding"
             ],
@@ -785,8 +872,9 @@
         },
         {
             "uid": 38,
-            "file_name": "38.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DCLdapSign"
             ],
@@ -802,8 +890,9 @@
         },
         {
             "uid": 39,
-            "file_name": "39.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-PreWin2000Other",
                 "A-PreWin2000AuthenticatedUsers"
@@ -827,8 +916,9 @@
         },
         {
             "uid": 40,
-            "file_name": "40.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-UnconstrainedDelegation"
             ],
@@ -851,8 +941,9 @@
         },
         {
             "uid": 41,
-            "file_name": "41.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-PwdLastSet-DC"
             ],
@@ -871,8 +962,9 @@
         },
         {
             "uid": 42,
-            "file_name": "42.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-Reversible",
                 "S-C-Reversible",
@@ -898,8 +990,9 @@
         },
         {
             "uid": 43,
-            "file_name": "43.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-WSUS-HTTP"
             ],
@@ -915,8 +1008,9 @@
         },
         {
             "uid": 44,
-            "file_name": "44.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "T-AlgsAES"
             ],
@@ -932,8 +1026,9 @@
         },
         {
             "uid": 45,
-            "file_name": "45.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "Objects with constrained delegation configured"
             ],
@@ -946,8 +1041,9 @@
         },
         {
             "uid": 46,
-            "file_name": "46.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "Privileged users that are disabled"
             ],
@@ -960,8 +1056,9 @@
         },
         {
             "uid": 47,
-            "file_name": "47.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "Unprivileged users can add computer accounts to domain"
             ],
@@ -974,8 +1071,9 @@
         },
         {
             "uid": 48,
-            "file_name": "48.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "Unprotected accounts with adminCount=1"
             ],
@@ -988,8 +1086,9 @@
         },
         {
             "uid": 49,
-            "file_name": "49.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "purpleknight_ids": [
                 "User accounts with password not required"
             ],
@@ -1002,8 +1101,9 @@
         },
         {
             "uid": 50,
-            "file_name": "50.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-NoNetSessionHardening"
             ],
@@ -1019,8 +1119,9 @@
         },
         {
             "uid": 51,
-            "file_name": "51.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DsHeuristicsLDAPSecurity"
             ],
@@ -1039,8 +1140,9 @@
         },
         {
             "uid": 52,
-            "file_name": "52.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-Inactive"
             ],
@@ -1059,8 +1161,9 @@
         },
         {
             "uid": 53,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-OperatorsEmpty"
             ],
@@ -1079,8 +1182,9 @@
         },
         {
             "uid": 54,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-C-Inactive"
             ],
@@ -1099,8 +1203,9 @@
         },
         {
             "uid": 55,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-DC-SubnetMissing"
             ],
@@ -1116,13 +1221,18 @@
         },
         {
             "uid": 56,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-PrimaryGroup",
                 "S-C-PrimaryGroup"
             ],
+            "purpleknight_ids": [
+                "Users and computers with non-default Primary Group IDs"
+            ],
             "anssi_ids": [
+                "vuln1_primary_group_id_1000",
                 "vuln3_primary_group_id_nochange"
             ],
             "mitre_ids": [
@@ -1137,14 +1247,19 @@
         },
         {
             "uid": 57,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-NoPreAuth",
                 "S-NoPreAuthAdmin"
             ],
+            "purpleknight_ids": [
+                "Users with Kerberos pre-authentication disabled"
+            ],
             "anssi_ids": [
-                "vuln2_kerberos_properties_preauth"
+                "vuln1_kerberos_properties_preauth_priv",
+                "vuln2_kerberos_prop- erties_preauth"
             ],
             "mitre_ids": [
                 "T1558.004"
@@ -1158,13 +1273,11 @@
         },
         {
             "uid": 58,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-JavaSchema"
-            ],
-            "anssi_ids": [
-                "vuln1_kerberos_properties_preauth_priv"
             ],
             "mitre_ids": [
                 "M1015"
@@ -1178,8 +1291,9 @@
         },
         {
             "uid": 59,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-DefaultOUChanged"
             ],
@@ -1195,8 +1309,9 @@
         },
         {
             "uid": 60,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-KerberosArmoring",
                 "S-KerberosArmoringDC"
@@ -1213,8 +1328,9 @@
         },
         {
             "uid": 61,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-FunctionalLevel1",
                 "S-FunctionalLevel3",
@@ -1236,8 +1352,9 @@
         },
         {
             "uid": 62,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-DC-2000",
                 "S-DC-2003",
@@ -1256,8 +1373,9 @@
         },
         {
             "uid": 63,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-AesNotEnabled"
             ],
@@ -1276,8 +1394,9 @@
         },
         {
             "uid": 64,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-OldNtlm"
             ],
@@ -1293,8 +1412,9 @@
         },
         {
             "uid": 65,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-DCRegistration"
             ],
@@ -1310,8 +1430,9 @@
         },
         {
             "uid": 66,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-Duplicate"
             ],
@@ -1327,8 +1448,9 @@
         },
         {
             "uid": 67,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-Vuln-MS14-068"
             ],
@@ -1344,8 +1466,9 @@
         },
         {
             "uid": 68,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-Vuln-MS17_010"
             ],
@@ -1361,8 +1484,9 @@
         },
         {
             "uid": 69,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-DC-NotUpdated"
             ],
@@ -1378,8 +1502,9 @@
         },
         {
             "uid": 70,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-WSUS-UserProxy"
             ],
@@ -1395,8 +1520,9 @@
         },
         {
             "uid": 71,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-WSUS-NoPinning"
             ],
@@ -1412,8 +1538,9 @@
         },
         {
             "uid": 72,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DisplaySpecifier"
             ],
@@ -1432,8 +1559,9 @@
         },
         {
             "uid": 73,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DCOwner"
             ],
@@ -1452,8 +1580,9 @@
         },
         {
             "uid": 74,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DangerousExtendedRight"
             ],
@@ -1469,8 +1598,9 @@
         },
         {
             "uid": 75,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DsHeuristicsDoListObject"
             ],
@@ -1486,8 +1616,9 @@
         },
         {
             "uid": 76,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DNSDelegation"
             ],
@@ -1503,8 +1634,9 @@
         },
         {
             "uid": 77,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DelegationLoginScript"
             ],
@@ -1520,10 +1652,14 @@
         },
         {
             "uid": 78,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DelegationKeyAdmin"
+            ],
+            "purpleknight_ids": [
+                "Enterprise Key Admins with full access to domain"
             ],
             "anssi_ids": [
                 "vuln2_adupdate_bad"  
@@ -1541,8 +1677,9 @@
         },
         {
             "uid": 79,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-ExchangePrivEsc"
             ],
@@ -1558,8 +1695,9 @@
         },
         {
             "uid": 80,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-ExchangeAdminSDHolder"
             ],
@@ -1575,8 +1713,9 @@
         },
         {
             "uid": 81,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DelegationFileDeployed"
             ],
@@ -1592,11 +1731,15 @@
         },
         {
             "uid": 82,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DsHeuristicsAdminSDExMask",
                 "A-DsHeuristicsAllowAnonNSPI"
+            ],
+            "purpleknight_ids": [
+                "Anonymous NSPI access to AD enabled"
             ],
             "anssi_ids": [
                 "vuln1_dsheuristics_bad"  
@@ -1614,8 +1757,9 @@
         },
         {
             "uid": 83,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-LoginDCEveryone"
             ],
@@ -1631,8 +1775,9 @@
         },
         {
             "uid": 84,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-RecoveryModeUnprotected"
             ],
@@ -1648,8 +1793,9 @@
         },
         {
             "uid": 85,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-Inactive"
             ],
@@ -1665,8 +1811,9 @@
         },
         {
             "uid": 86,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-AdminLogin"
             ],
@@ -1682,10 +1829,14 @@
         },
         {
             "uid": 87,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-AdminNum"
+            ],
+            "purpleknight_ids": [
+                "Forest contains more than 50 privileged accounts"
             ],
             "anssi_ids": [
                 "vuln1_privileged_members"  
@@ -1702,8 +1853,9 @@
         },
         {
             "uid": 88,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-AdminEmailOn"
             ],
@@ -1719,8 +1871,9 @@
         },
         {
             "uid": 89,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-ControlPathIndirectEveryone"
             ],
@@ -1736,8 +1889,9 @@
         },
         {
             "uid": 90,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DelegationEveryone"
             ],
@@ -1754,10 +1908,14 @@
         },
         {
             "uid": 91,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-UP-DelegationDCt2a4d"
+            ],
+            "purpleknight_ids": [
+                "Principals with constrained delegation using protocol transition enabled for a DC service"
             ],
             "anssi_ids": [
                 "vuln1_delegation_t2a4d"  
@@ -1775,10 +1933,17 @@
         },
         {
             "uid": 92,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DelegationDCa2d2"
+            ],
+            "purpleknight_ids": [
+                "Accounts with altSecurityIdentities configured",
+                "Accounts with Constrained Delegation configured to ghost SPN",
+                "Accounts with Constrained Delegation configured to krbtgt",
+                "krbtgt account with Resource-Based Constrained Delegation (RBCD) enabled"
             ],
             "anssi_ids": [
                 "vuln1_delegation_a2d2"  
@@ -1796,10 +1961,14 @@
         },
         {
             "uid": 93,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-DelegationDCsourcedeleg"
+            ],
+            "purpleknight_ids": [
+                "Domain controllers with Resource-Based Constrained Delegation (RBCD) enabled"
             ],
             "anssi_ids": [
                 "vuln1_delegation_sourcedeleg"  
@@ -1817,8 +1986,9 @@
         },
         {
             "uid": 94,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-SchemaAdmin"
             ],
@@ -1834,8 +2004,9 @@
         },
         {
             "uid": 95,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-UnprotectedOU"
             ],
@@ -1851,8 +2022,9 @@
         },
         {
             "uid": 96,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-RecycleBin"
             ],
@@ -1868,8 +2040,9 @@
         },
         {
             "uid": 97,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-TrustedCredManAccessPrivilege"
             ],
@@ -1885,8 +2058,9 @@
         },
         {
             "uid": 98,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-PrivilegeEveryone"
             ],
@@ -1902,8 +2076,9 @@
         },
         {
             "uid": 99,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-RODCRevealOnDemand"
             ],
@@ -1922,10 +2097,14 @@
         },
         {
             "uid": 100,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-RODCAdminRevealed"
+            ],
+            "purpleknight_ids": [
+                "Risky RODC credential caching"
             ],
             "anssi_ids": [
                 "vuln2_rodc_priv_revealed"  
@@ -1942,8 +2121,9 @@
         },
         {
             "uid": 101,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-RODCSYSVOLWrite"
             ],
@@ -1960,8 +2140,9 @@
         },
         {
             "uid": 102,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-RODCNeverReveal"
             ],
@@ -1980,8 +2161,9 @@
         },
         {
             "uid": 103,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-RODCAllowedGroup"
             ],
@@ -2000,8 +2182,9 @@
         },
         {
             "uid": 104,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-RODCDeniedGroup"
             ],
@@ -2020,8 +2203,9 @@
         },
         {
             "uid": 105,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "P-RODCKrbtgtOrphan"
             ],
@@ -2040,8 +2224,9 @@
         },
         {
             "uid": 106,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "T-Downlevel"
             ],
@@ -2057,8 +2242,9 @@
         },
         {
             "uid": 107,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "S-Domain$$$"
             ],
@@ -2074,10 +2260,14 @@
         },
         {
             "uid": 108,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "T-SIDHistoryDangerous"
+            ],
+            "purpleknight_ids": [
+                "Well-known privileged SIDs in sIDHistory"
             ],
             "anssi_ids": [
                 "vuln2_sidhistory_dangerous"  
@@ -2095,8 +2285,9 @@
         },
         {
             "uid": 109,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "T-FileDeployedOutOfDomain"
             ],
@@ -2112,8 +2303,9 @@
         },
         {
             "uid": 110,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 3,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "T-TGTDelegation"
             ],
@@ -2133,8 +2325,9 @@
         },
         {
             "uid": 111,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "T-ScriptOutOfDomain"
             ],
@@ -2150,8 +2343,9 @@
         },
         {
             "uid": 112,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-AuditPowershell"
             ],
@@ -2167,8 +2361,9 @@
         },
         {
             "uid": 113,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-BackupMetadata"
             ],
@@ -2184,8 +2379,9 @@
         },
         {
             "uid": 114,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-NotEnoughDC"
             ],
@@ -2201,13 +2397,17 @@
         },
         {
             "uid": 115,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-WeakRSARootCert",
                 "A-CertWeakDSA",
                 "A-MD2IntermediateCert",
                 "A-CertROCA"
+            ],
+            "purpleknight_ids": [
+                "Weak certificate encryption"
             ],
             "anssi_ids": [
                 "vuln1_certificates_vuln"  
@@ -2224,8 +2424,9 @@
         },
         {
             "uid": 116,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-CertEnrollChannelBinding"
             ],
@@ -2241,8 +2442,9 @@
         },
         {
             "uid": 117,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DCLdapsProtocol"
             ],
@@ -2258,8 +2460,9 @@
         },
         {
             "uid": 118,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DCLdapsProtocolAdvanced"
             ],
@@ -2275,8 +2478,9 @@
         },
         {
             "uid": 119,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-WSUS-SslProtocol"
             ],
@@ -2292,8 +2496,9 @@
         },
         {
             "uid": 120,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-MembershipEveryone"
             ],
@@ -2309,8 +2514,9 @@
         },
         {
             "uid": 121,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-LMHashAuthorized"
             ],
@@ -2326,11 +2532,15 @@
         },
         {
             "uid": 122,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DnsZoneUpdate1",
                 "A-DnsZoneUpdate2"
+            ],
+            "purpleknight_ids": [
+                "Unsecured DNS configuration"
             ],
             "anssi_ids": [
                 "vuln1_dnszone_bad_prop"  
@@ -2347,8 +2557,9 @@
         },
         {
             "uid": 123,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-NoGPOLLMNR"
             ],
@@ -2364,10 +2575,14 @@
         },
         {
             "uid": 124,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-NTFRSOnSysvol"
+            ],
+            "purpleknight_ids": [
+                "NTFRS SYSVOL replication"
             ],
             "anssi_ids": [
                 "vuln2_sysvol_ntfrs"  
@@ -2384,8 +2599,9 @@
         },
         {
             "uid": 125,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-SMB2SignatureNotEnabled"
             ],
@@ -2401,8 +2617,9 @@
         },
         {
             "uid": 126,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-SMB2SignatureNotRequired"
             ],
@@ -2418,8 +2635,9 @@
         },
         {
             "uid": 127,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-LDAPSigningDisabled"
             ],
@@ -2435,8 +2653,9 @@
         },
         {
             "uid": 128,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-HardenedPaths"
             ],
@@ -2452,8 +2671,9 @@
         },
         {
             "uid": 129,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 4,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-SmartCardPwdRotation"
             ],
@@ -2472,8 +2692,9 @@
         },
         {
             "uid": 130,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-SmartCardRequired"
             ],
@@ -2489,8 +2710,9 @@
         },
         {
             "uid": 131,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-ProtectedUsers"
             ],
@@ -2506,8 +2728,9 @@
         },
         {
             "uid": 132,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-LAPS-Not-Installed"
             ],
@@ -2524,8 +2747,9 @@
         },
         {
             "uid": 133,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DCRefuseComputerPwdChange"
             ],
@@ -2541,8 +2765,9 @@
         },
         {
             "uid": 134,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DC-Spooler"
             ],
@@ -2558,8 +2783,9 @@
         },
         {
             "uid": 135,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DC-WebClient"
             ],
@@ -2575,8 +2801,9 @@
         },
         {
             "uid": 136,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DC-Coerce"
             ],
@@ -2592,8 +2819,9 @@
         },
         {
             "uid": 137,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-PwdGPO"
             ],
@@ -2609,8 +2837,9 @@
         },
         {
             "uid": 138,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-DsHeuristicsAnonymous",
                 "A-DsHeuristicsDoNotVerifyUniqueness"
@@ -2631,8 +2860,9 @@
         },
         {
             "uid": 139,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-AnonymousAuthorizedGPO"
             ],
@@ -2648,10 +2878,14 @@
         },
         {
             "uid": 140,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-PreWin2000Anonymous"
+            ],
+            "purpleknight_ids": [
+                "Anonymous access to Active Directory enabled"
             ],
             "anssi_ids": [
                 "vuln2_compatible_2000_anonymous"  
@@ -2668,14 +2902,9 @@
         },
         {
             "uid": 141,
-            "file_name": "53.docx",
-            "title": "Untitled",
-            "pingcastle_ids": [
-                ""
-            ],
-            "mitre_ids": [
-                "1"
-            ],
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2685,8 +2914,9 @@
         },
         {
             "uid": 142,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-NullSession"
             ],
@@ -2702,8 +2932,9 @@
         },
         {
             "uid": 143,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-AdminSDHolder"
             ],
@@ -2722,8 +2953,9 @@
         },
         {
             "uid": 144,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-LimitBlankPasswordUse"
             ],
@@ -2739,10 +2971,14 @@
         },
         {
             "uid": 145,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 2,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-MinPwdLen"
+            ],
+            "purpleknight_ids": [
+                "Privileged users with weak password policy"
             ],
             "anssi_ids": [
                 "vuln2_privileged_members_password"  
@@ -2759,14 +2995,129 @@
         },
         {
             "uid": 146,
-            "file_name": "53.docx",
-            "title": "Untitled",
+            "severity": 9,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
             "pingcastle_ids": [
                 "A-Guest"
             ],
             "mitre_ids": [
                 "T1078.003",
                 "M1015"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 147,
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
+            "purpleknight_ids": [
+                "Users and computers with non-default Primary Group IDs"
+            ],
+            "anssi_ids": [
+                "vuln1_primary_group_id_1000",
+                "vuln3_primary_group_id_nochange"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 148,
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
+            "purpleknight_ids": [
+                "Non-default access to DPAPI key"
+            ],
+            "anssi_ids": [
+                "vuln1_permissions_dpapi"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 149,
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
+            "purpleknight_ids": [
+                "Permission changes on AdminSDHolder object",
+                "Privileged objects with unprivileged owners"
+            ],
+            "anssi_ids": [
+                "vuln1_permissions_ adminsdholder",
+                "vuln1_privileged_members_perm"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 150,
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
+            "purpleknight_ids": [
+                "Domain controllers in an inconsistent state"
+            ],
+            "anssi_ids": [
+                "vuln1_dc_inconsistent_uac"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 151,
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
+            "purpleknight_ids": [
+                "Non-default access to gMSA root key"
+            ],
+            "anssi_ids": [
+                "vuln1_permissions_gmsa_keys",
+                "vuln2_permissions_gmsa_keys"
+            ],
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            }
+        },
+        {
+            "uid": 152,
+            "severity": 1,
+            "file_name": "squelette documentation.docx",
+            "title": "En écriture...",
+            "purpleknight_ids": [
+                "GPO linking delegation at the AD Site level",
+                "GPO linking delegation at the domain controller OU level",
+                "GPO linking delegation at the domain level"
+            ],
+            "anssi_ids": [
+                "vuln1_permissions_gpo_priv"
             ],
             "concepts": [],
             "days_to_fix": {
