@@ -41,8 +41,7 @@
             "id": "trust",
             "title": "Relation d'approbation (Trust)",
             "file_name": "trust.docx",
-            "concepts": [
-            ]
+            "concepts": []
         },
         "sid_filtering": {
             "id": "sid_filtering",
@@ -86,27 +85,51 @@
             ]
         }
     },
+    "frameworks": {
+        "pingcastle": {
+            "id": "pingcastle",
+            "name": "PingCastle",
+            "link": "https://pingcastle.com/"
+        },
+        "purpleknight": {
+            "id": "purpleknight",
+            "name": "PurpleKnight",
+            "link": "https://www.semperis.com/"
+        },
+        "anssi": {
+            "id": "anssi",
+            "name": "ANSSI",
+            "link": "https://www.cert.ssi.gouv.fr/"
+        },
+        "mitre_att&ck": {
+            "id": "mitre_att&ck",
+            "name": "MITRE ATT&CK",
+            "link": "https://attack.mitre.org/"
+        }
+    },
     "risks": [
         {
             "uid": 1,
             "severity": 1,
             "file_name": "external_trust_without_sid_filtering.docx",
             "title": "Relation de confiance externe sans filtrage des identificateurs de sécurité",
-            "pingcastle_ids": [
-                "T-SIDFiltering"
-            ],
-            "purpleknight_ids": [
-                "Outbound forest trust with SID History enabled",
-                "Domain trust to a third-party domain without quarantine"
-            ],
-            "anssi_ids": [
-                "vuln1_trusts_forest_sidhistory",
-                "vuln1_trusts_domain_notfiltered"
-            ],
-            "mitre_ids": [
-                "M1015",
-                "T1134.005"
-            ],
+            "frameworks": {
+                "pingcastle": [
+                    "T-SIDFiltering"
+                ],
+                "purpleknight": [
+                    "Outbound forest trust with SID History enabled",
+                    "Domain trust to a third-party domain without quarantine"
+                ],
+                "anssi": [
+                    "vuln1_trusts_forest_sidhistory",
+                    "vuln1_trusts_domain_notfiltered"
+                ],
+                "mitre_att&ck": [
+                    "M1015",
+                    "T1134.005"
+                ]
+            },
             "concepts": [
                 "sid_filtering"
             ],
@@ -121,18 +144,20 @@
             "severity": 3,
             "file_name": "unknown_domain_in_sid_history.docx",
             "title": "Domaine inconnu dans un historique d'identificateurs de sécurité",
-            "pingcastle_ids": [
-                "T-SIDHistoryUnknownDomain",
-                "S-SIDHistory",
-                "T-SIDHistorySameDomain"
-            ],
-            "anssi_ids": [
-                "vuln3_sidhistory_present"
-            ],
-            "mitre_ids": [
-                "M1015",
-                "T1134.005"
-            ],
+            "frameworks": {
+                "pingcastle": [
+                    "T-SIDHistoryUnknownDomain",
+                    "S-SIDHistory",
+                    "T-SIDHistorySameDomain"
+                ],
+                "anssi": [
+                    "vuln3_sidhistory_present"
+                ],
+                "mitre_att&ck": [
+                    "M1015",
+                    "T1134.005"
+                ]
+            },
             "concepts": [
                 "sid_history"
             ],
@@ -147,18 +172,20 @@
             "severity": 2,
             "file_name": "old_kerberos_password.docx",
             "title": "Vieux mot de passe Kerberos",
-            "pingcastle_ids": [
-                "A-Krbtgt"
-            ],
-            "purpleknight_ids": [
-                "Kerberos krbtgt account with old password"
-            ],
-            "anssi_ids": [
-                "vuln2_krbtgt"
-            ],
-            "mitre_ids": [
-                "T1558.001"
-            ],
+            "frameworks": {
+                "pingcastle": [
+                    "A-Krbtgt"
+                ],
+                "purpleknight": [
+                    "Kerberos krbtgt account with old password"
+                ],
+                "anssi": [
+                    "vuln2_krbtgt"
+                ],
+                "mitre_att&ck": [
+                    "T1558.001"
+                ]
+            },
             "concepts": [
                 "kerberos"
             ],
@@ -172,19 +199,21 @@
             "uid": 4,
             "severity": 2,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-DesEnabled"
-            ],
-            "purpleknight_ids": [
-                "User accounts that use DES encryption"
-            ],
-            "anssi_ids": [
-                "vuln2_kerberos_properties_deskey"
-            ],
-            "mitre_ids": [
-                "T1558.004"
-            ],
+            "title": "4",
+            "frameworks": {
+                "pingcastle": [
+                    "S-DesEnabled"
+                ],
+                "purpleknight": [
+                    "User accounts that use DES encryption"
+                ],
+                "anssi": [
+                    "vuln2_kerberos_properties_deskey"
+                ],
+                "mitre_att&ck": [
+                    "T1558.004"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -197,15 +226,17 @@
             "severity": 9,
             "file_name": "web_enrollement_certificate.docx",
             "title": "Autorité de certification Active Directory avec inscription WEB",
-            "pingcastle_ids": [
-                "A-CertEnrollHttp"
-            ],
-            "purpleknight_ids": [
-                "AD Certificate Authority with Web Enrollment - PetitPotam and ESC8"
-            ],
-            "mitre_ids": [
-                "T1557"
-            ],
+            "frameworks": {
+                "pingcastle": [
+                    "A-CertEnrollHttp"
+                ],
+                "purpleknight": [
+                    "AD Certificate Authority with Web Enrollment - PetitPotam and ESC8"
+                ],
+                "mitre_att&ck": [
+                    "T1557"
+                ]
+            },
             "concepts": [
                 "certificate",
                 "ntlm"
@@ -220,25 +251,27 @@
             "uid": 6,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-CertTempCustomSubject",
-                "A-CertTempNoSecurity",
-                "A-CertTempAnyone",
-                "A-CertTempAgent",
-                "A-CertTempAnyPurpose"
-            ],
-            "purpleknight_ids": [
-                "Modèles de certificats qui permettent aux demandeurs de spécifier un subjectAltName",
-                "Certificate templates with three or more insecure configurations"
-            ],
-            "anssi_ids": [
-                "vuln1_adcs_template_auth_enroll_with_name"
-            ],
-            "mitre_ids": [
-                "M1558",
-                "T1558"
-            ],
+            "title": "6",
+            "frameworks": {
+                "pingcastle": [
+                    "A-CertTempCustomSubject",
+                    "A-CertTempNoSecurity",
+                    "A-CertTempAnyone",
+                    "A-CertTempAgent",
+                    "A-CertTempAnyPurpose"
+                ],
+                "purpleknight": [
+                    "Modèles de certificats qui permettent aux demandeurs de spécifier un subjectAltName",
+                    "Certificate templates with three or more insecure configurations"
+                ],
+                "anssi": [
+                    "vuln1_adcs_template_auth_enroll_with_name"
+                ],
+                "mitre_att&ck": [
+                    "M1558",
+                    "T1558"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -250,26 +283,28 @@
             "uid": 7,
             "severity": 3,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-WeakRSARootCert2",
-                "A-SHA1RootCert",
-                "A-CertWeakRsaComponent",
-                "A-MD4IntermediateCert",
-                "A-MD5IntermediateCert",
-                "A-SHA0IntermediateCert",
-                "A-SHA1IntermediateCert",
-                "A-MD2RootCert",
-                "A-MD4RootCert",
-                "A-MD5RootCert",
-                "A-SHA0RootCert"
-            ],
-            "anssi_ids": [
-                "vuln3_certificates_vuln"
-            ],
-            "mitre_ids": [
-                "T1600.001"
-            ],
+            "title": "7",
+            "frameworks": {
+                "pingcastle": [
+                    "A-WeakRSARootCert2",
+                    "A-SHA1RootCert",
+                    "A-CertWeakRsaComponent",
+                    "A-MD4IntermediateCert",
+                    "A-MD5IntermediateCert",
+                    "A-SHA0IntermediateCert",
+                    "A-SHA1IntermediateCert",
+                    "A-MD2RootCert",
+                    "A-MD4RootCert",
+                    "A-MD5RootCert",
+                    "A-SHA0RootCert"
+                ],
+                "anssi": [
+                    "vuln3_certificates_vuln"
+                ],
+                "mitre_att&ck": [
+                    "T1600.001"
+                ]
+            },
             "concepts": [
                 "digital_signature",
                 "certificate"
@@ -284,13 +319,15 @@
             "uid": 8,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Non-default principals with DC Sync rights on the domain"
-            ],
-            "anssi_ids": [
-                "vuln1_permissions_naming_context"
-            ],
+            "title": "8",
+            "frameworks": {
+                "purpleknight": [
+                    "Non-default principals with DC Sync rights on the domain"
+                ],
+                "anssi": [
+                    "vuln1_permissions_naming_context"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 1,
@@ -302,13 +339,15 @@
             "uid": 9,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-NoServicePolicy"
-            ],
-            "mitre_ids": [
-                "T1201"
-            ],
+            "title": "9",
+            "frameworks": {
+                "pingcastle": [
+                    "A-NoServicePolicy"
+                ],
+                "mitre_att&ck": [
+                    "T1201"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -320,17 +359,19 @@
             "uid": 10,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-Delegated"
-            ],
-            "anssi_ids": [
-                "vuln1_display_specifier"
-            ],
-            "mitre_ids": [
-                "M1015",
-                "T1569"
-            ],
+            "title": "10",
+            "frameworks": {
+                "pingcastle": [
+                    "P-Delegated"
+                ],
+                "anssi": [
+                    "vuln1_display_specifier"
+                ],
+                "mitre_att&ck": [
+                    "M1015",
+                    "T1569"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -342,30 +383,32 @@
             "uid": 11,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-PwdNeverExpires",
-                "P-AdminPwdTooOld",
-                "S-PwdLastSet-90"
-            ],
-            "purpleknight_ids": [
-                "Admins with old passwords",
-                "Enabled admin accounts that are inactive",
-                "Users with Password Never Expires flag set",
-                "Computers with password last set over 90 days ago",
-                "Users with old passwords",
-                "Built-in domain Administrator account with old password (180 days)",
-                "SSO computer account with password last set over 90 days ago"
-            ],
-            "anssi_ids": [
-                "vuln2_dont_expire",
-                "vuln1_password_change_priv",
-                "vuln2_password_change_server_no_change_90"
-            ],
-            "mitre_ids": [
-                "M1015",
-                "M1026"
-            ],
+            "title": "11",
+            "frameworks": {
+                "pingcastle": [
+                    "S-PwdNeverExpires",
+                    "P-AdminPwdTooOld",
+                    "S-PwdLastSet-90"
+                ],
+                "purpleknight": [
+                    "Admins with old passwords",
+                    "Enabled admin accounts that are inactive",
+                    "Users with Password Never Expires flag set",
+                    "Computers with password last set over 90 days ago",
+                    "Users with old passwords",
+                    "Built-in domain Administrator account with old password (180 days)",
+                    "SSO computer account with password last set over 90 days ago"
+                ],
+                "anssi": [
+                    "vuln2_dont_expire",
+                    "vuln1_password_change_priv",
+                    "vuln2_password_change_server_no_change_90"
+                ],
+                "mitre_att&ck": [
+                    "M1015",
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 2,
@@ -377,25 +420,27 @@
             "uid": 12,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-OS-2000",
-                "S-OS-2003",
-                "S-OS-2008",
-                "S-OS-Vista",
-                "S-OS-2012",
-                "S-OS-XP",
-                "S-OS-NT",
-                "S-OS-Win7",
-                "S-OS-Win8",
-                "S-OS-W10"
-            ],
-            "purpleknight_ids": [
-                "Computers with older OS versions"
-            ],
-            "mitre_ids": [
-                "M1051"
-            ],
+            "title": "12",
+            "frameworks": {
+                "pingcastle": [
+                    "S-OS-2000",
+                    "S-OS-2003",
+                    "S-OS-2008",
+                    "S-OS-Vista",
+                    "S-OS-2012",
+                    "S-OS-XP",
+                    "S-OS-NT",
+                    "S-OS-Win7",
+                    "S-OS-Win8",
+                    "S-OS-W10"
+                ],
+                "purpleknight": [
+                    "Computers with older OS versions"
+                ],
+                "mitre_att&ck": [
+                    "M1051"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 9,
@@ -407,16 +452,18 @@
             "uid": 13,
             "severity": 2,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-ADRegistrationSchema"
-            ],
-            "anssi_ids": [
-                "vuln2_warning_schema_posssuperiors"
-            ],
-            "mitre_ids": [
-                "M1018"
-            ],
+            "title": "13",
+            "frameworks": {
+                "pingcastle": [
+                    "S-ADRegistrationSchema"
+                ],
+                "anssi": [
+                    "vuln2_warning_schema_posssuperiors"
+                ],
+                "mitre_att&ck": [
+                    "M1018"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -428,13 +475,15 @@
             "uid": 14,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DelegationGPOData"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "14",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DelegationGPOData"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -446,20 +495,22 @@
             "uid": 15,
             "severity": 2,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "T-Inactive",
-                "T-AzureADSSO"
-            ],
-            "purpleknight_ids": [
-                "Trust accounts with old passwords"
-            ],
-            "anssi_ids": [
-                "vuln2_trusts_accounts"
-            ],
-            "mitre_ids": [
-                "T1557"
-            ],
+            "title": "15",
+            "frameworks": {
+                "pingcastle": [
+                    "T-Inactive",
+                    "T-AzureADSSO"
+                ],
+                "purpleknight": [
+                    "Trust accounts with old passwords"
+                ],
+                "anssi": [
+                    "vuln2_trusts_accounts"
+                ],
+                "mitre_att&ck": [
+                    "T1557"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -471,20 +522,22 @@
             "uid": 16,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-ServiceDomainAdmin"
-            ],
-            "purpleknight_ids": [
-                "Privileged accounts with a password that never expires"
-            ],
-            "anssi_ids": [
-                "vuln1_dont_expire_priv"
-            ],
-            "mitre_ids": [
-                "M1026",
-                "T1003.004"
-            ],
+            "title": "16",
+            "frameworks": {
+                "pingcastle": [
+                    "P-ServiceDomainAdmin"
+                ],
+                "purpleknight": [
+                    "Privileged accounts with a password that never expires"
+                ],
+                "anssi": [
+                    "vuln1_dont_expire_priv"
+                ],
+                "mitre_att&ck": [
+                    "M1026",
+                    "T1003.004"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -496,14 +549,16 @@
             "uid": 17,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-UnkownDelegation"
-            ],
-            "mitre_ids": [
-                "M1015",
-                "T1187"
-            ],
+            "title": "17",
+            "frameworks": {
+                "pingcastle": [
+                    "P-UnkownDelegation"
+                ],
+                "mitre_att&ck": [
+                    "M1015",
+                    "T1187"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -515,13 +570,15 @@
             "uid": 18,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-PwdNotRequired"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "18",
+            "frameworks": {
+                "pingcastle": [
+                    "S-PwdNotRequired"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -533,13 +590,15 @@
             "uid": 19,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Dangerous control paths expose certificate templates"
-            ],
-            "anssi_ids": [
-                "vuln1_adcs_template_ control"
-            ],
+            "title": "19",
+            "frameworks": {
+                "purpleknight": [
+                    "Dangerous control paths expose certificate templates"
+                ],
+                "anssi": [
+                    "vuln1_adcs_template_ control"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -551,10 +610,12 @@
             "uid": 21,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "gMSA objects with old passwords"
-            ],
+            "title": "21",
+            "frameworks": {
+                "purpleknight": [
+                    "gMSA objects with old passwords"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -566,10 +627,12 @@
             "uid": 22,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Non-privileged users with access to gMSA passwords"
-            ],
+            "title": "22",
+            "frameworks": {
+                "purpleknight": [
+                    "Non-privileged users with access to gMSA passwords"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -581,10 +644,12 @@
             "uid": 23,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "LDAP signing is not required on Domain Controllers"
-            ],
+            "title": "23",
+            "frameworks": {
+                "purpleknight": [
+                    "LDAP signing is not required on Domain Controllers"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 1,
@@ -597,20 +662,22 @@
             "severity": 1,
             "file_name": "admin_accounts_vulnerable_to_kerberoast_attack.docx",
             "title": "Comptes administrateurs vulnérables à l'attaque Kerberoast",
-            "pingcastle_ids": [
-                "P-Kerberoasting"
-            ],
-            "purpleknight_ids": [
-                "Primary users with SPN not supporting AES encryption on Kerberos",
-                "Privileged users with ServicePrincipalNames defined",
-                "Users with ServicePrincipalName defined"
-            ],
-            "anssi_ids": [
-                "vuln1_spn_priv"
-            ],
-            "mitre_ids": [
-                "T1558.003"
-            ],
+            "frameworks": {
+                "pingcastle": [
+                    "P-Kerberoasting"
+                ],
+                "purpleknight": [
+                    "Primary users with SPN not supporting AES encryption on Kerberos",
+                    "Privileged users with ServicePrincipalNames defined",
+                    "Users with ServicePrincipalName defined"
+                ],
+                "anssi": [
+                    "vuln1_spn_priv"
+                ],
+                "mitre_att&ck": [
+                    "T1558.003"
+                ]
+            },
             "concepts": [
                 "kerberos",
                 "spn"
@@ -625,10 +692,12 @@
             "uid": 25,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "RC4 or DES encryption type are supported by Domain Controllers"
-            ],
+            "title": "25",
+            "frameworks": {
+                "purpleknight": [
+                    "RC4 or DES encryption type are supported by Domain Controllers"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -640,14 +709,16 @@
             "uid": 26,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Unprivileged principals as DNS Admins"
-            ],
-            "anssi_ids": [
-                "vuln1_permissions_msdn",
-                "vuln1_dnsadmins"
-            ],
+            "title": "26",
+            "frameworks": {
+                "purpleknight": [
+                    "Unprivileged principals as DNS Admins"
+                ],
+                "anssi": [
+                    "vuln1_permissions_msdn",
+                    "vuln1_dnsadmins"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -658,14 +729,16 @@
         {
             "uid": 27,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DnsZoneAUCreateChild"
-            ],
-            "mitre_ids": [
-                "T1557"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "27",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DnsZoneAUCreateChild"
+                ],
+                "mitre_att&ck": [
+                    "T1557"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -676,18 +749,20 @@
         {
             "uid": 28,
             "severity": 4,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DNSAdmin"
-            ],
-            "anssi_ids": [
-                "vuln4_dnsadmins"
-            ],
-            "mitre_ids": [
-                "M1026",
-                "T1018"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "28",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DNSAdmin"
+                ],
+                "anssi": [
+                    "vuln4_dnsadmins"
+                ],
+                "mitre_att&ck": [
+                    "M1026",
+                    "T1018"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -698,11 +773,13 @@
         {
             "uid": 29,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DnsZoneTransfert"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "29",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DnsZoneTransfert"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -713,15 +790,17 @@
         {
             "uid": 30,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-ControlPathIndirectMany"
-            ],
-            "mitre_ids": [
-                "T1069.002",
-                "M1026"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "30",
+            "frameworks": {
+                "pingcastle": [
+                    "P-ControlPathIndirectMany"
+                ],
+                "mitre_att&ck": [
+                    "T1069.002",
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 1,
@@ -732,14 +811,16 @@
         {
             "uid": 31,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-SMB-v1"
-            ],
-            "mitre_ids": [
-                "T1557.001"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "31",
+            "frameworks": {
+                "pingcastle": [
+                    "S-SMB-v1"
+                ],
+                "mitre_att&ck": [
+                    "T1557.001"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -750,20 +831,22 @@
         {
             "uid": 32,
             "severity": 1,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-DC-Inactive"
-            ],
-            "purpleknight_ids": [
-                "Domain controllers that have not authenticated to the domain for more than 45 days"
-            ],
-            "anssi_ids": [
-                "vuln1_password_change_inactive_dc"
-            ],
-            "mitre_ids": [
-                "M1018"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "32",
+            "frameworks": {
+                "pingcastle": [
+                    "S-DC-Inactive"
+                ],
+                "purpleknight": [
+                    "Domain controllers that have not authenticated to the domain for more than 45 days"
+                ],
+                "anssi": [
+                    "vuln1_password_change_inactive_dc"
+                ],
+                "mitre_att&ck": [
+                    "M1018"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -774,21 +857,23 @@
         {
             "uid": 33,
             "severity": 3,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-ProtectedUsers"
-            ],
-            "purpleknight_ids": [
-                "Protected Users group not in use"
-            ],
-            "anssi_ids": [
-                "vuln3_protected_users"
-            ],
-            "mitre_ids": [
-                "M1025",
-                "M1026"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "33",
+            "frameworks": {
+                "pingcastle": [
+                    "P-ProtectedUsers"
+                ],
+                "purpleknight": [
+                    "Protected Users group not in use"
+                ],
+                "anssi": [
+                    "vuln3_protected_users"
+                ],
+                "mitre_att&ck": [
+                    "M1025",
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -799,11 +884,13 @@
         {
             "uid": 34,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-LogonDenied"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "34",
+            "frameworks": {
+                "pingcastle": [
+                    "P-LogonDenied"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 2,
@@ -814,19 +901,21 @@
         {
             "uid": 35,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-LAPS-Joined-Computers",
-                "S-ADRegistration"
-            ],
-            "purpleknight_ids": [
-                "Changes to MS LAPS read permissions"
-            ],
-            "mitre_ids": [
-                "T1555.005",
-                "M1018"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "35",
+            "frameworks": {
+                "pingcastle": [
+                    "A-LAPS-Joined-Computers",
+                    "S-ADRegistration"
+                ],
+                "purpleknight": [
+                    "Changes to MS LAPS read permissions"
+                ],
+                "mitre_att&ck": [
+                    "T1555.005",
+                    "M1018"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -837,14 +926,16 @@
         {
             "uid": 36,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-AuditDC"
-            ],
-            "mitre_ids": [
-                "M1047"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "36",
+            "frameworks": {
+                "pingcastle": [
+                    "A-AuditDC"
+                ],
+                "mitre_att&ck": [
+                    "M1047"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 1,
@@ -855,14 +946,16 @@
         {
             "uid": 37,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DCLdapsChannelBinding"
-            ],
-            "mitre_ids": [
-                "T1557"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "37",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DCLdapsChannelBinding"
+                ],
+                "mitre_att&ck": [
+                    "T1557"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 2,
@@ -873,14 +966,16 @@
         {
             "uid": 38,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DCLdapSign"
-            ],
-            "mitre_ids": [
-                "T1557"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "38",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DCLdapSign"
+                ],
+                "mitre_att&ck": [
+                    "T1557"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 1,
@@ -891,22 +986,24 @@
         {
             "uid": 39,
             "severity": 3,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-PreWin2000Other",
-                "A-PreWin2000AuthenticatedUsers"
-            ],
-            "purpleknight_ids": [
-                "Changes to PreWindows 2000 Compatible Access Group membership"
-            ],
-            "anssi_ids": [
-                "vuln3_compatible_2000_not_default"
-            ],
-            "mitre_ids": [
-                "T1210",
-                "T1110.003"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "39",
+            "frameworks": {
+                "pingcastle": [
+                    "A-PreWin2000Other",
+                    "A-PreWin2000AuthenticatedUsers"
+                ],
+                "purpleknight": [
+                    "Changes to PreWindows 2000 Compatible Access Group membership"
+                ],
+                "anssi": [
+                    "vuln3_compatible_2000_not_default"
+                ],
+                "mitre_att&ck": [
+                    "T1210",
+                    "T1110.003"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -917,21 +1014,23 @@
         {
             "uid": 40,
             "severity": 2,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-UnconstrainedDelegation"
-            ],
-            "purpleknight_ids": [
-                "Computer or user accounts with unconstrained delegation"
-            ],
-            "anssi_ids": [
-                "vuln2_delegation_t4d"
-            ],
-            "mitre_ids": [
-                "M1015",
-                "T1187"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "40",
+            "frameworks": {
+                "pingcastle": [
+                    "P-UnconstrainedDelegation"
+                ],
+                "purpleknight": [
+                    "Computer or user accounts with unconstrained delegation"
+                ],
+                "anssi": [
+                    "vuln2_delegation_t4d"
+                ],
+                "mitre_att&ck": [
+                    "M1015",
+                    "T1187"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 4,
@@ -942,17 +1041,19 @@
         {
             "uid": 41,
             "severity": 1,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-PwdLastSet-DC"
-            ],
-            "anssi_ids": [
-                "vuln1_password_change_dc_no_change"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "41",
+            "frameworks": {
+                "pingcastle": [
+                    "S-PwdLastSet-DC"
+                ],
+                "anssi": [
+                    "vuln1_password_change_dc_no_change"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -963,24 +1064,26 @@
         {
             "uid": 42,
             "severity": 3,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-Reversible",
-                "S-C-Reversible",
-                "A-UnixPwd",
-                "A-ReversiblePwd"
-            ],
-            "purpleknight_ids": [
-                "User accounts that store passwords with reversible encryption"
-            ],
-            "anssi_ids": [
-                "vuln3_reversible_password"
-            ],
-            "mitre_ids": [
-                "T1110.002",
-                "T1552"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "42",
+            "frameworks": {
+                "pingcastle": [
+                    "S-Reversible",
+                    "S-C-Reversible",
+                    "A-UnixPwd",
+                    "A-ReversiblePwd"
+                ],
+                "purpleknight": [
+                    "User accounts that store passwords with reversible encryption"
+                ],
+                "anssi": [
+                    "vuln3_reversible_password"
+                ],
+                "mitre_att&ck": [
+                    "T1110.002",
+                    "T1552"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -991,14 +1094,16 @@
         {
             "uid": 43,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-WSUS-HTTP"
-            ],
-            "mitre_ids": [
-                "M1051"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "43",
+            "frameworks": {
+                "pingcastle": [
+                    "S-WSUS-HTTP"
+                ],
+                "mitre_att&ck": [
+                    "M1051"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1009,14 +1114,16 @@
         {
             "uid": 44,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "T-AlgsAES"
-            ],
-            "mitre_ids": [
-                "M1051"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "44",
+            "frameworks": {
+                "pingcastle": [
+                    "T-AlgsAES"
+                ],
+                "mitre_att&ck": [
+                    "M1051"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1027,11 +1134,13 @@
         {
             "uid": 45,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Objects with constrained delegation configured"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "45",
+            "frameworks": {
+                "purpleknight": [
+                    "Objects with constrained delegation configured"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1042,11 +1151,13 @@
         {
             "uid": 46,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Privileged users that are disabled"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "46",
+            "frameworks": {
+                "purpleknight": [
+                    "Privileged users that are disabled"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1057,11 +1168,13 @@
         {
             "uid": 47,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Unprivileged users can add computer accounts to domain"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "47",
+            "frameworks": {
+                "purpleknight": [
+                    "Unprivileged users can add computer accounts to domain"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1072,11 +1185,13 @@
         {
             "uid": 48,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Unprotected accounts with adminCount=1"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "48",
+            "frameworks": {
+                "purpleknight": [
+                    "Unprotected accounts with adminCount=1"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1087,11 +1202,13 @@
         {
             "uid": 49,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "User accounts with password not required"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "49",
+            "frameworks": {
+                "purpleknight": [
+                    "User accounts with password not required"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1102,14 +1219,16 @@
         {
             "uid": 50,
             "severity": 9,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-NoNetSessionHardening"
-            ],
-            "mitre_ids": [
-                "T1087.001"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "50",
+            "frameworks": {
+                "pingcastle": [
+                    "A-NoNetSessionHardening"
+                ],
+                "mitre_att&ck": [
+                    "T1087.001"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1120,17 +1239,19 @@
         {
             "uid": 51,
             "severity": 3,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DsHeuristicsLDAPSecurity"
-            ],
-            "anssi_ids": [
-                "vuln3_dsheuristics_bad"
-            ],
-            "mitre_ids": [
-                "T1187"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "51",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DsHeuristicsLDAPSecurity"
+                ],
+                "anssi": [
+                    "vuln3_dsheuristics_bad"
+                ],
+                "mitre_att&ck": [
+                    "T1187"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1141,17 +1262,19 @@
         {
             "uid": 52,
             "severity": 1,
-            "file_name": "squelette documentation",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-Inactive"
-            ],
-            "anssi_ids": [
-                "vuln1_user_accounts_dormant"
-            ],
-            "mitre_ids": [
-                "M1018"
-            ],
+            "file_name": "squelette documentation.docx",
+            "title": "52",
+            "frameworks": {
+                "pingcastle": [
+                    "S-Inactive"
+                ],
+                "anssi": [
+                    "vuln1_user_accounts_dormant"
+                ],
+                "mitre_att&ck": [
+                    "M1018"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1163,16 +1286,18 @@
             "uid": 53,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-OperatorsEmpty"
-            ],
-            "purpleknight_ids": [
-                "Operator Groups that are not empty"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "53",
+            "frameworks": {
+                "pingcastle": [
+                    "P-OperatorsEmpty"
+                ],
+                "purpleknight": [
+                    "Operator Groups that are not empty"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1184,16 +1309,18 @@
             "uid": 54,
             "severity": 3,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-C-Inactive"
-            ],
-            "anssi_ids": [
-                "vuln3_password_change_inactive_servers"
-            ],
-            "mitre_ids": [
-                "M1018"
-            ],
+            "title": "54",
+            "frameworks": {
+                "pingcastle": [
+                    "S-C-Inactive"
+                ],
+                "anssi": [
+                    "vuln3_password_change_inactive_servers"
+                ],
+                "mitre_att&ck": [
+                    "M1018"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1205,13 +1332,15 @@
             "uid": 55,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-DC-SubnetMissing"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "55",
+            "frameworks": {
+                "pingcastle": [
+                    "S-DC-SubnetMissing"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1223,21 +1352,23 @@
             "uid": 56,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-PrimaryGroup",
-                "S-C-PrimaryGroup"
-            ],
-            "purpleknight_ids": [
-                "Users and computers with non-default Primary Group IDs"
-            ],
-            "anssi_ids": [
-                "vuln1_primary_group_id_1000",
-                "vuln3_primary_group_id_nochange"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "56",
+            "frameworks": {
+                "pingcastle": [
+                    "S-PrimaryGroup",
+                    "S-C-PrimaryGroup"
+                ],
+                "purpleknight": [
+                    "Users and computers with non-default Primary Group IDs"
+                ],
+                "anssi": [
+                    "vuln1_primary_group_id_1000",
+                    "vuln3_primary_group_id_nochange"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1249,21 +1380,23 @@
             "uid": 57,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-NoPreAuth",
-                "S-NoPreAuthAdmin"
-            ],
-            "purpleknight_ids": [
-                "Users with Kerberos pre-authentication disabled"
-            ],
-            "anssi_ids": [
-                "vuln1_kerberos_properties_preauth_priv",
-                "vuln2_kerberos_prop- erties_preauth"
-            ],
-            "mitre_ids": [
-                "T1558.004"
-            ],
+            "title": "57",
+            "frameworks": {
+                "pingcastle": [
+                    "S-NoPreAuth",
+                    "S-NoPreAuthAdmin"
+                ],
+                "purpleknight": [
+                    "Users with Kerberos pre-authentication disabled"
+                ],
+                "anssi": [
+                    "vuln1_kerberos_properties_preauth_priv",
+                    "vuln2_kerberos_prop- erties_preauth"
+                ],
+                "mitre_att&ck": [
+                    "T1558.004"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1275,13 +1408,15 @@
             "uid": 58,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-JavaSchema"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "58",
+            "frameworks": {
+                "pingcastle": [
+                    "S-JavaSchema"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1293,13 +1428,15 @@
             "uid": 59,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-DefaultOUChanged"
-            ],
-            "mitre_ids": [
-                "M1018"
-            ],
+            "title": "59",
+            "frameworks": {
+                "pingcastle": [
+                    "S-DefaultOUChanged"
+                ],
+                "mitre_att&ck": [
+                    "M1018"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1311,14 +1448,16 @@
             "uid": 60,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-KerberosArmoring",
-                "S-KerberosArmoringDC"
-            ],
-            "mitre_ids": [
-                "M1558"
-            ],
+            "title": "60",
+            "frameworks": {
+                "pingcastle": [
+                    "S-KerberosArmoring",
+                    "S-KerberosArmoringDC"
+                ],
+                "mitre_att&ck": [
+                    "M1558"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1330,19 +1469,21 @@
             "uid": 61,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-FunctionalLevel1",
-                "S-FunctionalLevel3",
-                "S-FunctionalLevel4"
-            ],
-            "anssi_ids": [
-                "vuln1_functional_level",
-                "vuln3_functional_level"
-            ],
-            "mitre_ids": [
-                "M1051"
-            ],
+            "title": "61",
+            "frameworks": {
+                "pingcastle": [
+                    "S-FunctionalLevel1",
+                    "S-FunctionalLevel3",
+                    "S-FunctionalLevel4"
+                ],
+                "anssi": [
+                    "vuln1_functional_level",
+                    "vuln3_functional_level"
+                ],
+                "mitre_att&ck": [
+                    "M1051"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1354,16 +1495,18 @@
             "uid": 62,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-DC-2000",
-                "S-DC-2003",
-                "S-DC-2008",
-                "S-DC-2012"
-            ],
-            "mitre_ids": [
-                "M1051"
-            ],
+            "title": "62",
+            "frameworks": {
+                "pingcastle": [
+                    "S-DC-2000",
+                    "S-DC-2003",
+                    "S-DC-2008",
+                    "S-DC-2012"
+                ],
+                "mitre_att&ck": [
+                    "M1051"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1375,16 +1518,18 @@
             "uid": 63,
             "severity": 3,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-AesNotEnabled"
-            ],
-            "anssi_ids": [
-                "vuln3_kerberos_properties_encryption"
-            ],
-            "mitre_ids": [
-                "T1558.004"
-            ],
+            "title": "63",
+            "frameworks": {
+                "pingcastle": [
+                    "S-AesNotEnabled"
+                ],
+                "anssi": [
+                    "vuln3_kerberos_properties_encryption"
+                ],
+                "mitre_att&ck": [
+                    "T1558.004"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1396,13 +1541,15 @@
             "uid": 64,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-OldNtlm"
-            ],
-            "mitre_ids": [
-                "T1557.001"
-            ],
+            "title": "64",
+            "frameworks": {
+                "pingcastle": [
+                    "S-OldNtlm"
+                ],
+                "mitre_att&ck": [
+                    "T1557.001"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1414,13 +1561,15 @@
             "uid": 65,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-DCRegistration"
-            ],
-            "mitre_ids": [
-                "T1207"
-            ],
+            "title": "65",
+            "frameworks": {
+                "pingcastle": [
+                    "S-DCRegistration"
+                ],
+                "mitre_att&ck": [
+                    "T1207"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1432,13 +1581,15 @@
             "uid": 66,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-Duplicate"
-            ],
-            "mitre_ids": [
-                "M1051"
-            ],
+            "title": "66",
+            "frameworks": {
+                "pingcastle": [
+                    "S-Duplicate"
+                ],
+                "mitre_att&ck": [
+                    "M1051"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1450,13 +1601,15 @@
             "uid": 67,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-Vuln-MS14-068"
-            ],
-            "mitre_ids": [
-                "M1051"
-            ],
+            "title": "67",
+            "frameworks": {
+                "pingcastle": [
+                    "S-Vuln-MS14-068"
+                ],
+                "mitre_att&ck": [
+                    "M1051"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1468,13 +1621,15 @@
             "uid": 68,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-Vuln-MS17_010"
-            ],
-            "mitre_ids": [
-                "M1051"
-            ],
+            "title": "68",
+            "frameworks": {
+                "pingcastle": [
+                    "S-Vuln-MS17_010"
+                ],
+                "mitre_att&ck": [
+                    "M1051"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1486,13 +1641,15 @@
             "uid": 69,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-DC-NotUpdated"
-            ],
-            "mitre_ids": [
-                "M1051"
-            ],
+            "title": "69",
+            "frameworks": {
+                "pingcastle": [
+                    "S-DC-NotUpdated"
+                ],
+                "mitre_att&ck": [
+                    "M1051"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1504,13 +1661,15 @@
             "uid": 70,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-WSUS-UserProxy"
-            ],
-            "mitre_ids": [
-                "M1051"
-            ],
+            "title": "70",
+            "frameworks": {
+                "pingcastle": [
+                    "S-WSUS-UserProxy"
+                ],
+                "mitre_att&ck": [
+                    "M1051"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1522,13 +1681,15 @@
             "uid": 71,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-WSUS-NoPinning"
-            ],
-            "mitre_ids": [
-                "M1051"
-            ],
+            "title": "71",
+            "frameworks": {
+                "pingcastle": [
+                    "S-WSUS-NoPinning"
+                ],
+                "mitre_att&ck": [
+                    "M1051"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1540,16 +1701,18 @@
             "uid": 72,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DisplaySpecifier"
-            ],
-            "anssi_ids": [
-                "vuln1_display_specifier"  
-            ],
-            "mitre_ids": [
-                "M1569"
-            ],
+            "title": "72",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DisplaySpecifier"
+                ],
+                "anssi": [
+                    "vuln1_display_specifier"  
+                ],
+                "mitre_att&ck": [
+                    "M1569"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1561,16 +1724,18 @@
             "uid": 73,
             "severity": 3,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DCOwner"
-            ],
-            "anssi_ids": [
-                "vuln3_owner"  
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "73",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DCOwner"
+                ],
+                "anssi": [
+                    "vuln3_owner"  
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1582,13 +1747,15 @@
             "uid": 74,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DangerousExtendedRight"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "74",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DangerousExtendedRight"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1600,13 +1767,15 @@
             "uid": 75,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DsHeuristicsDoListObject"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "75",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DsHeuristicsDoListObject"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1618,13 +1787,15 @@
             "uid": 76,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DNSDelegation"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "76",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DNSDelegation"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1636,13 +1807,15 @@
             "uid": 77,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DelegationLoginScript"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "77",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DelegationLoginScript"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1654,20 +1827,22 @@
             "uid": 78,
             "severity": 2,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DelegationKeyAdmin"
-            ],
-            "purpleknight_ids": [
-                "Enterprise Key Admins with full access to domain"
-            ],
-            "anssi_ids": [
-                "vuln2_adupdate_bad"  
-            ],
-            "mitre_ids": [
-                "T111",
-                "M1015"
-            ],
+            "title": "78",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DelegationKeyAdmin"
+                ],
+                "purpleknight": [
+                    "Enterprise Key Admins with full access to domain"
+                ],
+                "anssi": [
+                    "vuln2_adupdate_bad"  
+                ],
+                "mitre_att&ck": [
+                    "T111",
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1679,13 +1854,15 @@
             "uid": 79,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-ExchangePrivEsc"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "79",
+            "frameworks": {
+                "pingcastle": [
+                    "P-ExchangePrivEsc"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1697,13 +1874,15 @@
             "uid": 80,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-ExchangeAdminSDHolder"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "80",
+            "frameworks": {
+                "pingcastle": [
+                    "P-ExchangeAdminSDHolder"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1715,13 +1894,15 @@
             "uid": 81,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DelegationFileDeployed"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "81",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DelegationFileDeployed"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1733,21 +1914,23 @@
             "uid": 82,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DsHeuristicsAdminSDExMask",
-                "A-DsHeuristicsAllowAnonNSPI"
-            ],
-            "purpleknight_ids": [
-                "Anonymous NSPI access to AD enabled"
-            ],
-            "anssi_ids": [
-                "vuln1_dsheuristics_bad"  
-            ],
-            "mitre_ids": [
-                "T1110.003",
-                "M1026"
-            ],
+            "title": "82",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DsHeuristicsAdminSDExMask",
+                    "A-DsHeuristicsAllowAnonNSPI"
+                ],
+                "purpleknight": [
+                    "Anonymous NSPI access to AD enabled"
+                ],
+                "anssi": [
+                    "vuln1_dsheuristics_bad"  
+                ],
+                "mitre_att&ck": [
+                    "T1110.003",
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1759,13 +1942,15 @@
             "uid": 83,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-LoginDCEveryone"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "83",
+            "frameworks": {
+                "pingcastle": [
+                    "P-LoginDCEveryone"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1777,13 +1962,15 @@
             "uid": 84,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-RecoveryModeUnprotected"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "84",
+            "frameworks": {
+                "pingcastle": [
+                    "P-RecoveryModeUnprotected"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1795,13 +1982,15 @@
             "uid": 85,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-Inactive"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "85",
+            "frameworks": {
+                "pingcastle": [
+                    "P-Inactive"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1813,13 +2002,15 @@
             "uid": 86,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-AdminLogin"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "86",
+            "frameworks": {
+                "pingcastle": [
+                    "P-AdminLogin"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1831,19 +2022,21 @@
             "uid": 87,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-AdminNum"
-            ],
-            "purpleknight_ids": [
-                "Forest contains more than 50 privileged accounts"
-            ],
-            "anssi_ids": [
-                "vuln1_privileged_members"  
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "87",
+            "frameworks": {
+                "pingcastle": [
+                    "P-AdminNum"
+                ],
+                "purpleknight": [
+                    "Forest contains more than 50 privileged accounts"
+                ],
+                "anssi": [
+                    "vuln1_privileged_members"  
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1855,13 +2048,15 @@
             "uid": 88,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-AdminEmailOn"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "88",
+            "frameworks": {
+                "pingcastle": [
+                    "P-AdminEmailOn"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1873,13 +2068,15 @@
             "uid": 89,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-ControlPathIndirectEveryone"
-            ],
-            "mitre_ids": [
-                "T1069.002"
-            ],
+            "title": "89",
+            "frameworks": {
+                "pingcastle": [
+                    "P-ControlPathIndirectEveryone"
+                ],
+                "mitre_att&ck": [
+                    "T1069.002"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1891,14 +2088,16 @@
             "uid": 90,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DelegationEveryone"
-            ],
-            "mitre_ids": [
-                "T1187",
-                "M1015"
-            ],
+            "title": "90",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DelegationEveryone"
+                ],
+                "mitre_att&ck": [
+                    "T1187",
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1910,20 +2109,22 @@
             "uid": 91,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-UP-DelegationDCt2a4d"
-            ],
-            "purpleknight_ids": [
-                "Principals with constrained delegation using protocol transition enabled for a DC service"
-            ],
-            "anssi_ids": [
-                "vuln1_delegation_t2a4d"  
-            ],
-            "mitre_ids": [
-                "T1187",
-                "M1015"
-            ],
+            "title": "91",
+            "frameworks": {
+                "pingcastle": [
+                    "P-UP-DelegationDCt2a4d"
+                ],
+                "purpleknight": [
+                    "Principals with constrained delegation using protocol transition enabled for a DC service"
+                ],
+                "anssi": [
+                    "vuln1_delegation_t2a4d"  
+                ],
+                "mitre_att&ck": [
+                    "T1187",
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1935,23 +2136,25 @@
             "uid": 92,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DelegationDCa2d2"
-            ],
-            "purpleknight_ids": [
-                "Accounts with altSecurityIdentities configured",
-                "Accounts with Constrained Delegation configured to ghost SPN",
-                "Accounts with Constrained Delegation configured to krbtgt",
-                "krbtgt account with Resource-Based Constrained Delegation (RBCD) enabled"
-            ],
-            "anssi_ids": [
-                "vuln1_delegation_a2d2"  
-            ],
-            "mitre_ids": [
-                "T1187",
-                "M1015"
-            ],
+            "title": "92",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DelegationDCa2d2"
+                ],
+                "purpleknight": [
+                    "Accounts with altSecurityIdentities configured",
+                    "Accounts with Constrained Delegation configured to ghost SPN",
+                    "Accounts with Constrained Delegation configured to krbtgt",
+                    "krbtgt account with Resource-Based Constrained Delegation (RBCD) enabled"
+                ],
+                "anssi": [
+                    "vuln1_delegation_a2d2"  
+                ],
+                "mitre_att&ck": [
+                    "T1187",
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1963,20 +2166,22 @@
             "uid": 93,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-DelegationDCsourcedeleg"
-            ],
-            "purpleknight_ids": [
-                "Domain controllers with Resource-Based Constrained Delegation (RBCD) enabled"
-            ],
-            "anssi_ids": [
-                "vuln1_delegation_sourcedeleg"  
-            ],
-            "mitre_ids": [
-                "T1187",
-                "M1015"
-            ],
+            "title": "93",
+            "frameworks": {
+                "pingcastle": [
+                    "P-DelegationDCsourcedeleg"
+                ],
+                "purpleknight": [
+                    "Domain controllers with Resource-Based Constrained Delegation (RBCD) enabled"
+                ],
+                "anssi": [
+                    "vuln1_delegation_sourcedeleg"  
+                ],
+                "mitre_att&ck": [
+                    "T1187",
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -1988,13 +2193,15 @@
             "uid": 94,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-SchemaAdmin"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "94",
+            "frameworks": {
+                "pingcastle": [
+                    "P-SchemaAdmin"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2006,13 +2213,15 @@
             "uid": 95,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-UnprotectedOU"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "95",
+            "frameworks": {
+                "pingcastle": [
+                    "P-UnprotectedOU"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2024,13 +2233,15 @@
             "uid": 96,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-RecycleBin"
-            ],
-            "mitre_ids": [
-                "M1047"
-            ],
+            "title": "96",
+            "frameworks": {
+                "pingcastle": [
+                    "P-RecycleBin"
+                ],
+                "mitre_att&ck": [
+                    "M1047"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2042,13 +2253,15 @@
             "uid": 97,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-TrustedCredManAccessPrivilege"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "97",
+            "frameworks": {
+                "pingcastle": [
+                    "P-TrustedCredManAccessPrivilege"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2060,13 +2273,15 @@
             "uid": 98,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-PrivilegeEveryone"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "98",
+            "frameworks": {
+                "pingcastle": [
+                    "P-PrivilegeEveryone"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2078,16 +2293,18 @@
             "uid": 99,
             "severity": 3,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-RODCRevealOnDemand"
-            ],
-            "anssi_ids": [
-                "vuln3_rodc_reveal"  
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "9",
+            "frameworks": {
+                "pingcastle": [
+                    "P-RODCRevealOnDemand"
+                ],
+                "anssi": [
+                    "vuln3_rodc_reveal"  
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2099,19 +2316,21 @@
             "uid": 100,
             "severity": 2,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-RODCAdminRevealed"
-            ],
-            "purpleknight_ids": [
-                "Risky RODC credential caching"
-            ],
-            "anssi_ids": [
-                "vuln2_rodc_priv_revealed"  
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "100",
+            "frameworks": {
+                "pingcastle": [
+                    "P-RODCAdminRevealed"
+                ],
+                "purpleknight": [
+                    "Risky RODC credential caching"
+                ],
+                "anssi": [
+                    "vuln2_rodc_priv_revealed"  
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2123,14 +2342,16 @@
             "uid": 101,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-RODCSYSVOLWrite"
-            ],
-            "mitre_ids": [
-                "T1207",
-                "M1015"
-            ],
+            "title": "101",
+            "frameworks": {
+                "pingcastle": [
+                    "P-RODCSYSVOLWrite"
+                ],
+                "mitre_att&ck": [
+                    "T1207",
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2142,16 +2363,18 @@
             "uid": 102,
             "severity": 3,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-RODCNeverReveal"
-            ],
-            "anssi_ids": [
-                "vuln3_rodc_never_reveal"  
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "102",
+            "frameworks": {
+                "pingcastle": [
+                    "P-RODCNeverReveal"
+                ],
+                "anssi": [
+                    "vuln3_rodc_never_reveal"  
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2163,16 +2386,18 @@
             "uid": 103,
             "severity": 3,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-RODCAllowedGroup"
-            ],
-            "anssi_ids": [
-                "vuln3_rodc_allowed_group"  
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "103",
+            "frameworks": {
+                "pingcastle": [
+                    "P-RODCAllowedGroup"
+                ],
+                "anssi": [
+                    "vuln3_rodc_allowed_group"  
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2184,16 +2409,18 @@
             "uid": 104,
             "severity": 3,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-RODCDeniedGroup"
-            ],
-            "anssi_ids": [
-                "vuln3_rodc_denied_group"  
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "104",
+            "frameworks": {
+                "pingcastle": [
+                    "P-RODCDeniedGroup"
+                ],
+                "anssi": [
+                    "vuln3_rodc_denied_group"  
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2205,16 +2432,18 @@
             "uid": 105,
             "severity": 3,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "P-RODCKrbtgtOrphan"
-            ],
-            "anssi_ids": [
-                "vuln3_rodc_orphan_krbtgt"  
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "105",
+            "frameworks": {
+                "pingcastle": [
+                    "P-RODCKrbtgtOrphan"
+                ],
+                "anssi": [
+                    "vuln3_rodc_orphan_krbtgt"  
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2226,13 +2455,15 @@
             "uid": 106,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "T-Downlevel"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "106",
+            "frameworks": {
+                "pingcastle": [
+                    "T-Downlevel"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2244,13 +2475,15 @@
             "uid": 107,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "S-Domain$$$"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "107",
+            "frameworks": {
+                "pingcastle": [
+                    "S-Domain$$$"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2262,20 +2495,22 @@
             "uid": 108,
             "severity": 2,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "T-SIDHistoryDangerous"
-            ],
-            "purpleknight_ids": [
-                "Well-known privileged SIDs in sIDHistory"
-            ],
-            "anssi_ids": [
-                "vuln2_sidhistory_dangerous"  
-            ],
-            "mitre_ids": [
-                "T1134.005",
-                "M1015"
-            ],
+            "title": "108",
+            "frameworks": {
+                "pingcastle": [
+                    "T-SIDHistoryDangerous"
+                ],
+                "purpleknight": [
+                    "Well-known privileged SIDs in sIDHistory"
+                ],
+                "anssi": [
+                    "vuln2_sidhistory_dangerous"  
+                ],
+                "mitre_att&ck": [
+                    "T1134.005",
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2287,13 +2522,15 @@
             "uid": 109,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "T-FileDeployedOutOfDomain"
-            ],
-            "mitre_ids": [
-                "T1210"
-            ],
+            "title": "109",
+            "frameworks": {
+                "pingcastle": [
+                    "T-FileDeployedOutOfDomain"
+                ],
+                "mitre_att&ck": [
+                    "T1210"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2305,17 +2542,19 @@
             "uid": 110,
             "severity": 3,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "T-TGTDelegation"
-            ],
-            "anssi_ids": [
-                "vuln3_trusts_tgt_deleg"  
-            ],
-            "mitre_ids": [
-                "T1187",
-                "M1015"
-            ],
+            "title": "110",
+            "frameworks": {
+                "pingcastle": [
+                    "T-TGTDelegation"
+                ],
+                "anssi": [
+                    "vuln3_trusts_tgt_deleg"  
+                ],
+                "mitre_att&ck": [
+                    "T1187",
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2327,13 +2566,15 @@
             "uid": 111,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "T-ScriptOutOfDomain"
-            ],
-            "mitre_ids": [
-                "T1210"
-            ],
+            "title": "111",
+            "frameworks": {
+                "pingcastle": [
+                    "T-ScriptOutOfDomain"
+                ],
+                "mitre_att&ck": [
+                    "T1210"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2345,13 +2586,15 @@
             "uid": 112,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-AuditPowershell"
-            ],
-            "mitre_ids": [
-                "M1047"
-            ],
+            "title": "112",
+            "frameworks": {
+                "pingcastle": [
+                    "A-AuditPowershell"
+                ],
+                "mitre_att&ck": [
+                    "M1047"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2363,13 +2606,15 @@
             "uid": 113,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-BackupMetadata"
-            ],
-            "mitre_ids": [
-                "M1053"
-            ],
+            "title": "113",
+            "frameworks": {
+                "pingcastle": [
+                    "A-BackupMetadata"
+                ],
+                "mitre_att&ck": [
+                    "M1053"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2381,13 +2626,15 @@
             "uid": 114,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-NotEnoughDC"
-            ],
-            "mitre_ids": [
-                "M1053"
-            ],
+            "title": "114",
+            "frameworks": {
+                "pingcastle": [
+                    "A-NotEnoughDC"
+                ],
+                "mitre_att&ck": [
+                    "M1053"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2399,22 +2646,24 @@
             "uid": 115,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-WeakRSARootCert",
-                "A-CertWeakDSA",
-                "A-MD2IntermediateCert",
-                "A-CertROCA"
-            ],
-            "purpleknight_ids": [
-                "Weak certificate encryption"
-            ],
-            "anssi_ids": [
-                "vuln1_certificates_vuln"  
-            ],
-            "mitre_ids": [
-                "T1600.001"
-            ],
+            "title": "115",
+            "frameworks": {
+                "pingcastle": [
+                    "A-WeakRSARootCert",
+                    "A-CertWeakDSA",
+                    "A-MD2IntermediateCert",
+                    "A-CertROCA"
+                ],
+                "purpleknight": [
+                    "Weak certificate encryption"
+                ],
+                "anssi": [
+                    "vuln1_certificates_vuln"  
+                ],
+                "mitre_att&ck": [
+                    "T1600.001"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2426,13 +2675,15 @@
             "uid": 116,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-CertEnrollChannelBinding"
-            ],
-            "mitre_ids": [
-                "M1557"
-            ],
+            "title": "116",
+            "frameworks": {
+                "pingcastle": [
+                    "A-CertEnrollChannelBinding"
+                ],
+                "mitre_att&ck": [
+                    "M1557"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2444,13 +2695,15 @@
             "uid": 117,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DCLdapsProtocol"
-            ],
-            "mitre_ids": [
-                "T1600.001"
-            ],
+            "title": "117",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DCLdapsProtocol"
+                ],
+                "mitre_att&ck": [
+                    "T1600.001"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2462,13 +2715,15 @@
             "uid": 118,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DCLdapsProtocolAdvanced"
-            ],
-            "mitre_ids": [
-                "T1600.001"
-            ],
+            "title": "118",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DCLdapsProtocolAdvanced"
+                ],
+                "mitre_att&ck": [
+                    "T1600.001"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2480,13 +2735,15 @@
             "uid": 119,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-WSUS-SslProtocol"
-            ],
-            "mitre_ids": [
-                "T1600.001"
-            ],
+            "title": "119",
+            "frameworks": {
+                "pingcastle": [
+                    "A-WSUS-SslProtocol"
+                ],
+                "mitre_att&ck": [
+                    "T1600.001"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2498,13 +2755,15 @@
             "uid": 120,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-MembershipEveryone"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "120",
+            "frameworks": {
+                "pingcastle": [
+                    "A-MembershipEveryone"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2516,13 +2775,15 @@
             "uid": 121,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-LMHashAuthorized"
-            ],
-            "mitre_ids": [
-                "T1110.002"
-            ],
+            "title": "121",
+            "frameworks": {
+                "pingcastle": [
+                    "A-LMHashAuthorized"
+                ],
+                "mitre_att&ck": [
+                    "T1110.002"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2534,20 +2795,22 @@
             "uid": 122,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DnsZoneUpdate1",
-                "A-DnsZoneUpdate2"
-            ],
-            "purpleknight_ids": [
-                "Unsecured DNS configuration"
-            ],
-            "anssi_ids": [
-                "vuln1_dnszone_bad_prop"  
-            ],
-            "mitre_ids": [
-                "M1157"
-            ],
+            "title": "122",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DnsZoneUpdate1",
+                    "A-DnsZoneUpdate2"
+                ],
+                "purpleknight": [
+                    "Unsecured DNS configuration"
+                ],
+                "anssi": [
+                    "vuln1_dnszone_bad_prop"  
+                ],
+                "mitre_att&ck": [
+                    "M1157"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2559,13 +2822,15 @@
             "uid": 123,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-NoGPOLLMNR"
-            ],
-            "mitre_ids": [
-                "T1557.001"
-            ],
+            "title": "123",
+            "frameworks": {
+                "pingcastle": [
+                    "A-NoGPOLLMNR"
+                ],
+                "mitre_att&ck": [
+                    "T1557.001"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2577,19 +2842,21 @@
             "uid": 124,
             "severity": 2,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-NTFRSOnSysvol"
-            ],
-            "purpleknight_ids": [
-                "NTFRS SYSVOL replication"
-            ],
-            "anssi_ids": [
-                "vuln2_sysvol_ntfrs"  
-            ],
-            "mitre_ids": [
-                "T1563"
-            ],
+            "title": "124",
+            "frameworks": {
+                "pingcastle": [
+                    "A-NTFRSOnSysvol"
+                ],
+                "purpleknight": [
+                    "NTFRS SYSVOL replication"
+                ],
+                "anssi": [
+                    "vuln2_sysvol_ntfrs"  
+                ],
+                "mitre_att&ck": [
+                    "T1563"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2601,13 +2868,15 @@
             "uid": 125,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-SMB2SignatureNotEnabled"
-            ],
-            "mitre_ids": [
-                "M1557"
-            ],
+            "title": "125",
+            "frameworks": {
+                "pingcastle": [
+                    "A-SMB2SignatureNotEnabled"
+                ],
+                "mitre_att&ck": [
+                    "M1557"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2619,13 +2888,15 @@
             "uid": 126,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-SMB2SignatureNotRequired"
-            ],
-            "mitre_ids": [
-                "M1557"
-            ],
+            "title": "126",
+            "frameworks": {
+                "pingcastle": [
+                    "A-SMB2SignatureNotRequired"
+                ],
+                "mitre_att&ck": [
+                    "M1557"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2637,13 +2908,15 @@
             "uid": 127,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-LDAPSigningDisabled"
-            ],
-            "mitre_ids": [
-                "M1557"
-            ],
+            "title": "127",
+            "frameworks": {
+                "pingcastle": [
+                    "A-LDAPSigningDisabled"
+                ],
+                "mitre_att&ck": [
+                    "M1557"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2655,13 +2928,15 @@
             "uid": 128,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-HardenedPaths"
-            ],
-            "mitre_ids": [
-                "M1557.001"
-            ],
+            "title": "128",
+            "frameworks": {
+                "pingcastle": [
+                    "A-HardenedPaths"
+                ],
+                "mitre_att&ck": [
+                    "M1557.001"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2673,16 +2948,18 @@
             "uid": 129,
             "severity": 4,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-SmartCardPwdRotation"
-            ],
-            "anssi_ids": [
-                "vuln4_smartcard_expire_passwords"  
-            ],
-            "mitre_ids": [
-                "T1110.002"
-            ],
+            "title": "129",
+            "frameworks": {
+                "pingcastle": [
+                    "A-SmartCardPwdRotation"
+                ],
+                "anssi": [
+                    "vuln4_smartcard_expire_passwords"  
+                ],
+                "mitre_att&ck": [
+                    "T1110.002"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2694,13 +2971,15 @@
             "uid": 130,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-SmartCardRequired"
-            ],
-            "mitre_ids": [
-                "T1110.002"
-            ],
+            "title": "130",
+            "frameworks": {
+                "pingcastle": [
+                    "A-SmartCardRequired"
+                ],
+                "mitre_att&ck": [
+                    "T1110.002"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2712,13 +2991,15 @@
             "uid": 131,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-ProtectedUsers"
-            ],
-            "mitre_ids": [
-                "M1026"
-            ],
+            "title": "131",
+            "frameworks": {
+                "pingcastle": [
+                    "A-ProtectedUsers"
+                ],
+                "mitre_att&ck": [
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2730,14 +3011,16 @@
             "uid": 132,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-LAPS-Not-Installed"
-            ],
-            "mitre_ids": [
-                "T1078.003",
-                "M1026"
-            ],
+            "title": "132",
+            "frameworks": {
+                "pingcastle": [
+                    "A-LAPS-Not-Installed"
+                ],
+                "mitre_att&ck": [
+                    "T1078.003",
+                    "M1026"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2749,13 +3032,15 @@
             "uid": 133,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DCRefuseComputerPwdChange"
-            ],
-            "mitre_ids": [
-                "M1015"
-            ],
+            "title": "133",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DCRefuseComputerPwdChange"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2767,13 +3052,15 @@
             "uid": 134,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DC-Spooler"
-            ],
-            "mitre_ids": [
-                "T1187"
-            ],
+            "title": "134",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DC-Spooler"
+                ],
+                "mitre_att&ck": [
+                    "T1187"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2785,13 +3072,15 @@
             "uid": 135,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DC-WebClient"
-            ],
-            "mitre_ids": [
-                "T1187"
-            ],
+            "title": "135",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DC-WebClient"
+                ],
+                "mitre_att&ck": [
+                    "T1187"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2803,13 +3092,15 @@
             "uid": 136,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DC-Coerce"
-            ],
-            "mitre_ids": [
-                "T1187"
-            ],
+            "title": "136",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DC-Coerce"
+                ],
+                "mitre_att&ck": [
+                    "T1187"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2821,13 +3112,15 @@
             "uid": 137,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-PwdGPO"
-            ],
-            "mitre_ids": [
-                "T1552.006"
-            ],
+            "title": "137",
+            "frameworks": {
+                "pingcastle": [
+                    "A-PwdGPO"
+                ],
+                "mitre_att&ck": [
+                    "T1552.006"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2839,18 +3132,20 @@
             "uid": 138,
             "severity": 2,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-DsHeuristicsAnonymous",
-                "A-DsHeuristicsDoNotVerifyUniqueness"
-            ],
-            "anssi_ids": [
-                "vuln2_dsheuristics_bad"  
-            ],
-            "mitre_ids": [
-                "T1110.003",
-                "T1187"
-            ],
+            "title": "138",
+            "frameworks": {
+                "pingcastle": [
+                    "A-DsHeuristicsAnonymous",
+                    "A-DsHeuristicsDoNotVerifyUniqueness"
+                ],
+                "anssi": [
+                    "vuln2_dsheuristics_bad"  
+                ],
+                "mitre_att&ck": [
+                    "T1110.003",
+                    "T1187"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2862,13 +3157,15 @@
             "uid": 139,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-AnonymousAuthorizedGPO"
-            ],
-            "mitre_ids": [
-                "T1110.003"
-            ],
+            "title": "139",
+            "frameworks": {
+                "pingcastle": [
+                    "A-AnonymousAuthorizedGPO"
+                ],
+                "mitre_att&ck": [
+                    "T1110.003"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2880,31 +3177,21 @@
             "uid": 140,
             "severity": 2,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-PreWin2000Anonymous"
-            ],
-            "purpleknight_ids": [
-                "Anonymous access to Active Directory enabled"
-            ],
-            "anssi_ids": [
-                "vuln2_compatible_2000_anonymous"  
-            ],
-            "mitre_ids": [
-                "T1110.003"
-            ],
-            "concepts": [],
-            "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
-            }
-        },
-        {
-            "uid": 141,
-            "severity": 9,
-            "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
+            "title": "140",
+            "frameworks": {
+                "pingcastle": [
+                    "A-PreWin2000Anonymous"
+                ],
+                "purpleknight": [
+                    "Anonymous access to Active Directory enabled"
+                ],
+                "anssi": [
+                    "vuln2_compatible_2000_anonymous"  
+                ],
+                "mitre_att&ck": [
+                    "T1110.003"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2916,13 +3203,15 @@
             "uid": 142,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-NullSession"
-            ],
-            "mitre_ids": [
-                "T1110.003"
-            ],
+            "title": "142",
+            "frameworks": {
+                "pingcastle": [
+                    "A-NullSession"
+                ],
+                "mitre_att&ck": [
+                    "T1110.003"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2934,16 +3223,18 @@
             "uid": 143,
             "severity": 2,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-AdminSDHolder"
-            ],
-            "anssi_ids": [
-                "vuln2_privileged_members_no_admincount"  
-            ],
-            "mitre_ids": [
-                "M1022"
-            ],
+            "title": "143",
+            "frameworks": {
+                "pingcastle": [
+                    "A-AdminSDHolder"
+                ],
+                "anssi": [
+                    "vuln2_privileged_members_no_admincount"  
+                ],
+                "mitre_att&ck": [
+                    "M1022"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2955,13 +3246,15 @@
             "uid": 144,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-LimitBlankPasswordUse"
-            ],
-            "mitre_ids": [
-                "T1110.003"
-            ],
+            "title": "144",
+            "frameworks": {
+                "pingcastle": [
+                    "A-LimitBlankPasswordUse"
+                ],
+                "mitre_att&ck": [
+                    "T1110.003"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2973,19 +3266,21 @@
             "uid": 145,
             "severity": 2,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-MinPwdLen"
-            ],
-            "purpleknight_ids": [
-                "Privileged users with weak password policy"
-            ],
-            "anssi_ids": [
-                "vuln2_privileged_members_password"  
-            ],
-            "mitre_ids": [
-                "T1201"
-            ],
+            "title": "145",
+            "frameworks": {
+                "pingcastle": [
+                    "A-MinPwdLen"
+                ],
+                "purpleknight": [
+                    "Privileged users with weak password policy"
+                ],
+                "anssi": [
+                    "vuln2_privileged_members_password"  
+                ],
+                "mitre_att&ck": [
+                    "T1201"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -2997,14 +3292,16 @@
             "uid": 146,
             "severity": 9,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "pingcastle_ids": [
-                "A-Guest"
-            ],
-            "mitre_ids": [
-                "T1078.003",
-                "M1015"
-            ],
+            "title": "146",
+            "frameworks": {
+                "pingcastle": [
+                    "A-Guest"
+                ],
+                "mitre_att&ck": [
+                    "T1078.003",
+                    "M1015"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -3016,14 +3313,16 @@
             "uid": 147,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Users and computers with non-default Primary Group IDs"
-            ],
-            "anssi_ids": [
-                "vuln1_primary_group_id_1000",
-                "vuln3_primary_group_id_nochange"
-            ],
+            "title": "147",
+            "frameworks": {
+                "purpleknight": [
+                    "Users and computers with non-default Primary Group IDs"
+                ],
+                "anssi": [
+                    "vuln1_primary_group_id_1000",
+                    "vuln3_primary_group_id_nochange"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -3035,13 +3334,15 @@
             "uid": 148,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Non-default access to DPAPI key"
-            ],
-            "anssi_ids": [
-                "vuln1_permissions_dpapi"
-            ],
+            "title": "148",
+            "frameworks": {
+                "purpleknight": [
+                    "Non-default access to DPAPI key"
+                ],
+                "anssi": [
+                    "vuln1_permissions_dpapi"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -3053,15 +3354,17 @@
             "uid": 149,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Permission changes on AdminSDHolder object",
-                "Privileged objects with unprivileged owners"
-            ],
-            "anssi_ids": [
-                "vuln1_permissions_ adminsdholder",
-                "vuln1_privileged_members_perm"
-            ],
+            "title": "149",
+            "frameworks": {
+                "purpleknight": [
+                    "Permission changes on AdminSDHolder object",
+                    "Privileged objects with unprivileged owners"
+                ],
+                "anssi": [
+                    "vuln1_permissions_ adminsdholder",
+                    "vuln1_privileged_members_perm"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -3073,13 +3376,15 @@
             "uid": 150,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Domain controllers in an inconsistent state"
-            ],
-            "anssi_ids": [
-                "vuln1_dc_inconsistent_uac"
-            ],
+            "title": "150",
+            "frameworks": {
+                "purpleknight": [
+                    "Domain controllers in an inconsistent state"
+                ],
+                "anssi": [
+                    "vuln1_dc_inconsistent_uac"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -3091,14 +3396,16 @@
             "uid": 151,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "Non-default access to gMSA root key"
-            ],
-            "anssi_ids": [
-                "vuln1_permissions_gmsa_keys",
-                "vuln2_permissions_gmsa_keys"
-            ],
+            "title": "151",
+            "frameworks": {
+                "purpleknight": [
+                    "Non-default access to gMSA root key"
+                ],
+                "anssi": [
+                    "vuln1_permissions_gmsa_keys",
+                    "vuln2_permissions_gmsa_keys"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
@@ -3110,15 +3417,17 @@
             "uid": 152,
             "severity": 1,
             "file_name": "squelette documentation.docx",
-            "title": "En écriture...",
-            "purpleknight_ids": [
-                "GPO linking delegation at the AD Site level",
-                "GPO linking delegation at the domain controller OU level",
-                "GPO linking delegation at the domain level"
-            ],
-            "anssi_ids": [
-                "vuln1_permissions_gpo_priv"
-            ],
+            "title": "152",
+            "frameworks": {
+                "purpleknight": [
+                    "GPO linking delegation at the AD Site level",
+                    "GPO linking delegation at the domain controller OU level",
+                    "GPO linking delegation at the domain level"
+                ],
+                "anssi": [
+                    "vuln1_permissions_gpo_priv"
+                ]
+            },
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
