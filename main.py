@@ -1155,11 +1155,20 @@ def build_docx_document(json_database:list) -> None:
 		#
 		day_passed = 0
 		#
+		#
+		#
+		risks_to_solve = len([risk for risk in ordered_json_database["risks"] if "found" in risk.keys()])
+		#
 		# As long as there are risks to solve
 		#
-		while risk_index < len(ordered_json_database["risks"]) -1:
-
+		while risk_index < risks_to_solve:
+			#
+			#
+			#
 			if ordered_json_database["risks"][risk_index]["days_to_fix"][line_key] <= day_passed:
+				#
+				#
+				#
 				risk_index += 1
 				#
 				# Reset the count of day passed
@@ -1168,38 +1177,23 @@ def build_docx_document(json_database:list) -> None:
 			#
 			# For each of the five severities
 			#
-			for severity in range(1, 6):
-				#
-				# Set a default severity for the current risk
-				#
-				anssi_severity = 5
-				#
-				# If the current risk is not referenced by ANSSI
-				#
-				if "anssi" in ordered_json_database["risks"][risk_index]["frameworks"].keys():
-					#
-					# Else, go through all the ANSSI IDs corresponding to the current risk
-					#
-					for anssi_id in ordered_json_database["risks"][risk_index]["frameworks"]["anssi"]:
-						#
-						# Get the severity of the current ID
-						#
-						risk_severity = int(anssi_id[4:5])
-						#
-						# If the severity is more important than the current one
-						#
-						if risk_severity < anssi_severity:
-							#
-							# Set it as current severity
-							#
-							anssi_severity = risk_severity
+			for current_severity in range(1, 6):
 				#
 				# If the current risk is of the current severity
 				#
-				if severity == anssi_severity:
-					if (severity > 1) and len(line_data["line_parts"][f"Niveau {severity}"]["y_values"]) > 0 and numpy.isnan(line_data["line_parts"][f"Niveau {severity}"]["y_values"][-1]):
-						line_data["line_parts"][f"Niveau {severity}"]["y_values"][-1] = line_data["line_parts"][f"Niveau {severity -1}"]["y_values"][-2]
-					line_data["line_parts"][f"Niveau {severity}"]["y_values"].append(len(json_database["risks"]) -(risk_index +1))
+				if current_severity == ordered_json_database["risks"][risk_index]["severity"]:
+					#
+					#
+					#
+					if (current_severity > 1) and len(line_data["line_parts"][f"Niveau {current_severity}"]["y_values"]) > 0 and numpy.isnan(line_data["line_parts"][f"Niveau {current_severity}"]["y_values"][-1]):
+						#
+						#
+						#
+						line_data["line_parts"][f"Niveau {current_severity}"]["y_values"][-1] = line_data["line_parts"][f"Niveau {current_severity -1}"]["y_values"][-2]
+					#
+					#
+					#
+					line_data["line_parts"][f"Niveau {current_severity}"]["y_values"].append(risks_to_solve - (risk_index +1))
 				#
 				# Else, if the current risk is not of the current severity
 				#
@@ -1207,7 +1201,7 @@ def build_docx_document(json_database:list) -> None:
 					#
 					# Add an empty value
 					#
-					line_data["line_parts"][f"Niveau {severity}"]["y_values"].append(numpy.nan)
+					line_data["line_parts"][f"Niveau {current_severity}"]["y_values"].append(numpy.nan)
 			#
 			# Increase the count of days passed
 			#

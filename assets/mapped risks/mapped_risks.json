@@ -223,7 +223,8 @@
         },
         {
             "uid": 5,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "web_enrollement_certificate.docx",
             "title": "Autorité de certification Active Directory avec inscription WEB",
             "frameworks": {
@@ -337,7 +338,8 @@
         },
         {
             "uid": 9,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "9",
             "frameworks": {
@@ -418,7 +420,8 @@
         },
         {
             "uid": 12,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "12",
             "frameworks": {
@@ -473,7 +476,8 @@
         },
         {
             "uid": 14,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "14",
             "frameworks": {
@@ -547,7 +551,8 @@
         },
         {
             "uid": 17,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "17",
             "frameworks": {
@@ -568,7 +573,8 @@
         },
         {
             "uid": 18,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "18",
             "frameworks": {
@@ -608,7 +614,8 @@
         },
         {
             "uid": 21,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "21",
             "frameworks": {
@@ -625,7 +632,8 @@
         },
         {
             "uid": 22,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "22",
             "frameworks": {
@@ -642,7 +650,8 @@
         },
         {
             "uid": 23,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "23",
             "frameworks": {
@@ -690,7 +699,8 @@
         },
         {
             "uid": 25,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "25",
             "frameworks": {
@@ -728,7 +738,8 @@
         },
         {
             "uid": 27,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "27",
             "frameworks": {
@@ -772,7 +783,8 @@
         },
         {
             "uid": 29,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "29",
             "frameworks": {
@@ -789,7 +801,8 @@
         },
         {
             "uid": 30,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "30",
             "frameworks": {
@@ -810,7 +823,8 @@
         },
         {
             "uid": 31,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "31",
             "frameworks": {
@@ -883,7 +897,8 @@
         },
         {
             "uid": 34,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "34",
             "frameworks": {
@@ -900,7 +915,8 @@
         },
         {
             "uid": 35,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "35",
             "frameworks": {
@@ -925,7 +941,8 @@
         },
         {
             "uid": 36,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "36",
             "frameworks": {
@@ -945,7 +962,8 @@
         },
         {
             "uid": 37,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "37",
             "frameworks": {
@@ -965,7 +983,8 @@
         },
         {
             "uid": 38,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "38",
             "frameworks": {
@@ -1093,7 +1112,8 @@
         },
         {
             "uid": 43,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "43",
             "frameworks": {
@@ -1113,7 +1133,8 @@
         },
         {
             "uid": 44,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "44",
             "frameworks": {
@@ -1133,7 +1154,8 @@
         },
         {
             "uid": 45,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "45",
             "frameworks": {
@@ -1150,7 +1172,8 @@
         },
         {
             "uid": 46,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "46",
             "frameworks": {
@@ -1167,7 +1190,8 @@
         },
         {
             "uid": 47,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "47",
             "frameworks": {
@@ -1184,7 +1208,8 @@
         },
         {
             "uid": 48,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "48",
             "frameworks": {
@@ -1201,7 +1226,8 @@
         },
         {
             "uid": 49,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "49",
             "frameworks": {
@@ -1218,7 +1244,8 @@
         },
         {
             "uid": 50,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "50",
             "frameworks": {
@@ -1284,7 +1311,8 @@
         },
         {
             "uid": 53,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "53",
             "frameworks": {
@@ -1330,7 +1358,8 @@
         },
         {
             "uid": 55,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "55",
             "frameworks": {
@@ -1406,7 +1435,8 @@
         },
         {
             "uid": 58,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "58",
             "frameworks": {
@@ -1426,7 +1456,8 @@
         },
         {
             "uid": 59,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "59",
             "frameworks": {
@@ -1446,7 +1477,8 @@
         },
         {
             "uid": 60,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "60",
             "frameworks": {
@@ -1493,7 +1525,8 @@
         },
         {
             "uid": 62,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "62",
             "frameworks": {
@@ -1539,7 +1572,8 @@
         },
         {
             "uid": 64,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "64",
             "frameworks": {
@@ -1559,7 +1593,8 @@
         },
         {
             "uid": 65,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "65",
             "frameworks": {
@@ -1579,7 +1614,8 @@
         },
         {
             "uid": 66,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "66",
             "frameworks": {
@@ -1599,7 +1635,8 @@
         },
         {
             "uid": 67,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "67",
             "frameworks": {
@@ -1619,7 +1656,8 @@
         },
         {
             "uid": 68,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "68",
             "frameworks": {
@@ -1639,7 +1677,8 @@
         },
         {
             "uid": 69,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "69",
             "frameworks": {
@@ -1659,7 +1698,8 @@
         },
         {
             "uid": 70,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "70",
             "frameworks": {
@@ -1679,7 +1719,8 @@
         },
         {
             "uid": 71,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "71",
             "frameworks": {
@@ -1745,7 +1786,8 @@
         },
         {
             "uid": 74,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "74",
             "frameworks": {
@@ -1765,7 +1807,8 @@
         },
         {
             "uid": 75,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "75",
             "frameworks": {
@@ -1785,7 +1828,8 @@
         },
         {
             "uid": 76,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "76",
             "frameworks": {
@@ -1805,7 +1849,8 @@
         },
         {
             "uid": 77,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "77",
             "frameworks": {
@@ -1852,7 +1897,8 @@
         },
         {
             "uid": 79,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "79",
             "frameworks": {
@@ -1872,7 +1918,8 @@
         },
         {
             "uid": 80,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "80",
             "frameworks": {
@@ -1892,7 +1939,8 @@
         },
         {
             "uid": 81,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "81",
             "frameworks": {
@@ -1940,7 +1988,8 @@
         },
         {
             "uid": 83,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "83",
             "frameworks": {
@@ -1960,7 +2009,8 @@
         },
         {
             "uid": 84,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "84",
             "frameworks": {
@@ -1980,7 +2030,8 @@
         },
         {
             "uid": 85,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "85",
             "frameworks": {
@@ -2000,7 +2051,8 @@
         },
         {
             "uid": 86,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "86",
             "frameworks": {
@@ -2046,7 +2098,8 @@
         },
         {
             "uid": 88,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "88",
             "frameworks": {
@@ -2066,7 +2119,8 @@
         },
         {
             "uid": 89,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "89",
             "frameworks": {
@@ -2086,7 +2140,8 @@
         },
         {
             "uid": 90,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "90",
             "frameworks": {
@@ -2191,7 +2246,8 @@
         },
         {
             "uid": 94,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "94",
             "frameworks": {
@@ -2211,7 +2267,8 @@
         },
         {
             "uid": 95,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "95",
             "frameworks": {
@@ -2231,7 +2288,8 @@
         },
         {
             "uid": 96,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "96",
             "frameworks": {
@@ -2251,7 +2309,8 @@
         },
         {
             "uid": 97,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "97",
             "frameworks": {
@@ -2271,7 +2330,8 @@
         },
         {
             "uid": 98,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "98",
             "frameworks": {
@@ -2340,7 +2400,8 @@
         },
         {
             "uid": 101,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "101",
             "frameworks": {
@@ -2453,7 +2514,8 @@
         },
         {
             "uid": 106,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "106",
             "frameworks": {
@@ -2473,7 +2535,8 @@
         },
         {
             "uid": 107,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "107",
             "frameworks": {
@@ -2520,7 +2583,8 @@
         },
         {
             "uid": 109,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "109",
             "frameworks": {
@@ -2564,7 +2628,8 @@
         },
         {
             "uid": 111,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "111",
             "frameworks": {
@@ -2584,7 +2649,8 @@
         },
         {
             "uid": 112,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "112",
             "frameworks": {
@@ -2604,7 +2670,8 @@
         },
         {
             "uid": 113,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "113",
             "frameworks": {
@@ -2624,7 +2691,8 @@
         },
         {
             "uid": 114,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "114",
             "frameworks": {
@@ -2673,7 +2741,8 @@
         },
         {
             "uid": 116,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "116",
             "frameworks": {
@@ -2693,7 +2762,8 @@
         },
         {
             "uid": 117,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "117",
             "frameworks": {
@@ -2713,7 +2783,8 @@
         },
         {
             "uid": 118,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "118",
             "frameworks": {
@@ -2733,7 +2804,8 @@
         },
         {
             "uid": 119,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "119",
             "frameworks": {
@@ -2753,7 +2825,8 @@
         },
         {
             "uid": 120,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "120",
             "frameworks": {
@@ -2773,7 +2846,8 @@
         },
         {
             "uid": 121,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "121",
             "frameworks": {
@@ -2820,7 +2894,8 @@
         },
         {
             "uid": 123,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "123",
             "frameworks": {
@@ -2866,7 +2941,8 @@
         },
         {
             "uid": 125,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "125",
             "frameworks": {
@@ -2886,7 +2962,8 @@
         },
         {
             "uid": 126,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "126",
             "frameworks": {
@@ -2906,7 +2983,8 @@
         },
         {
             "uid": 127,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "127",
             "frameworks": {
@@ -2926,7 +3004,8 @@
         },
         {
             "uid": 128,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "128",
             "frameworks": {
@@ -2969,7 +3048,8 @@
         },
         {
             "uid": 130,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "130",
             "frameworks": {
@@ -2989,7 +3069,8 @@
         },
         {
             "uid": 131,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "131",
             "frameworks": {
@@ -3009,7 +3090,8 @@
         },
         {
             "uid": 132,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "132",
             "frameworks": {
@@ -3030,7 +3112,8 @@
         },
         {
             "uid": 133,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "133",
             "frameworks": {
@@ -3050,7 +3133,8 @@
         },
         {
             "uid": 134,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "134",
             "frameworks": {
@@ -3070,7 +3154,8 @@
         },
         {
             "uid": 135,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "135",
             "frameworks": {
@@ -3090,7 +3175,8 @@
         },
         {
             "uid": 136,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "136",
             "frameworks": {
@@ -3110,7 +3196,8 @@
         },
         {
             "uid": 137,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "137",
             "frameworks": {
@@ -3155,7 +3242,8 @@
         },
         {
             "uid": 139,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "139",
             "frameworks": {
@@ -3201,7 +3289,8 @@
         },
         {
             "uid": 142,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "142",
             "frameworks": {
@@ -3244,7 +3333,8 @@
         },
         {
             "uid": 144,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "144",
             "frameworks": {
@@ -3290,7 +3380,8 @@
         },
         {
             "uid": 146,
-            "severity": 9,
+            "severity": 5,
+            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "146",
             "frameworks": {
