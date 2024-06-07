@@ -59,15 +59,6 @@ PATH_RACI = ./assets/raci/raci.docx
 PATH_MAPPED_RISKS = ./assets/mapped risks/mapped_risks.json
 
 #
-# Path to the file containing the mapping of the risks
-#
-# Default:
-#
-# 	PATH_MAPPED_REFERENCES = ./assets/mapped risks/mapped_risks.docx
-#
-PATH_MAPPED_REFERENCES = ./assets/mapped risks/mapped_risks.docx
-
-#
 # Encoding of the mapped_risks.json file
 #
 #   assets
