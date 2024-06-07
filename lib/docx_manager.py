@@ -308,7 +308,7 @@ class DocxManager():
 
 		# This gets access to the document.xml.rels file and gets a new relation id value
 		part = paragraph.part
-		r_id = part.relate_to(url, docx.opc.constants.RELATIONSHIP_TYPE.HYPERLINK, is_external=("#" in url))
+		r_id = part.relate_to(url, docx.opc.constants.RELATIONSHIP_TYPE.HYPERLINK, is_external=True)
 
 		# Create the w:hyperlink tag and add needed values
 		hyperlink = docx.oxml.shared.OxmlElement('w:hyperlink')
