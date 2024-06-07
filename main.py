@@ -412,7 +412,7 @@ def mark_risks_found(json_database:list, ids_of_risks_to_mark:list, key_of_list_
 		#
 		# If the current risk does not have a PingCastle ID
 		#
-		if key_of_list_of_ids not in current_risk.keys():
+		if key_of_list_of_ids not in current_risk["frameworks"].keys():
 			#
 			# Go to the next risk
 			#
@@ -420,7 +420,7 @@ def mark_risks_found(json_database:list, ids_of_risks_to_mark:list, key_of_list_
 		#
 		# Go through all the PingCastle IDs of the current risk
 		#
-		for current_pingcastle_id in current_risk[key_of_list_of_ids]:
+		for current_pingcastle_id in current_risk["frameworks"][key_of_list_of_ids]:
 			#
 			# If the current PingCastle ID is not in the list of found IDs
 			#
@@ -454,7 +454,7 @@ def process_pingcastle_data(json_database:list) -> list:
 	#
 	# Get the unified ID for all the PingCastle risks ID
 	#
-	json_database = mark_risks_found(json_database, risk_ids_from_pingcastle_file, "pingcastle_ids")
+	json_database = mark_risks_found(json_database, risk_ids_from_pingcastle_file, "pingcastle")
 	#
 	# Return the filtered JSON database
 	#
@@ -478,7 +478,7 @@ def process_purpleknight_data(json_database:list) -> list:
 	#
 	# Get the unified ID for all the PurpleKnight risks ID
 	#
-	json_database = mark_risks_found(json_database, risk_ids_from_purpleknight_file, "purpleknight_ids")
+	json_database = mark_risks_found(json_database, risk_ids_from_purpleknight_file, "purpleknight")
 	#
 	# Return the filtered JSON database
 	#
@@ -508,7 +508,7 @@ def create_bar_chart(chart_data) -> None:
 	#
 	for stacked_bar in chart_data["stacked_bars"]:
 		#
-		# Add a new stacked bar with a vlue in each category
+		# Add a new stacked bar with a value in each category
 		#
 		data_frame_values[stacked_bar["legend"]] = [stacked_bar["categories"][category]["value"] for category in data_frame_values["Category"]]
 	#
@@ -542,7 +542,11 @@ def create_bar_chart(chart_data) -> None:
 			#
 			# Define the text properties of the values of the current category
 			#
-			axis.text(index, middle_height, category["label"]["value"], ha=category["label"]["alignment"], color=category["label"]["font_color"])
+			text = category["label"]["value"] if category["label"]["value"] else ""
+			#
+			#
+			#
+			axis.text(index, middle_height, text, ha=category["label"]["alignment"], color=category["label"]["font_color"])
 		#
 		# Adjust the position of the x-axis labels based on the bottom line of the light purple bars
 		#
@@ -738,7 +742,7 @@ def order_risks_by_severity(json_database):
 	#
 	# Go through the severities from 1 to 5
 	#
-	for current_severity in range(1, 6):
+	for current_severity in range(1, 10):
 		#
 		# Go through all the risks in the json database
 		#
@@ -1172,11 +1176,11 @@ def build_docx_document(json_database:list) -> None:
 				#
 				# If the current risk is not referenced by ANSSI
 				#
-				if "anssi_ids" in ordered_json_database["risks"][risk_index].keys():
+				if "anssi" in ordered_json_database["risks"][risk_index]["frameworks"].keys():
 					#
 					# Else, go through all the ANSSI IDs corresponding to the current risk
 					#
-					for anssi_id in ordered_json_database["risks"][risk_index]["anssi_ids"]:
+					for anssi_id in ordered_json_database["risks"][risk_index]["frameworks"]["anssi"]:
 						#
 						# Get the severity of the current ID
 						#
@@ -1234,7 +1238,7 @@ def build_docx_document(json_database:list) -> None:
 	#
 	# Add the title of the chart
 	#
-	my_docx_manager.title(text="Durée de correction des risques détectés", level=1)
+	my_docx_manager.title(text="Durée de correction", level=1)
 	#
 	# Add the description of the chart
 	#
@@ -1309,6 +1313,10 @@ def build_docx_document(json_database:list) -> None:
 		#
 		if "found" not in mapped_risk.keys():
 			#
+			# Write it in the console
+			#
+			logging.log(f'Risk "{mapped_risk["uid"]}" not found in the input files.')
+			#
 			# Go to the next risk
 			#
 			continue
@@ -1324,6 +1332,61 @@ def build_docx_document(json_database:list) -> None:
 			title_level = 2
 			#
 			my_docx_manager.title(mapped_risk["title"], title_level)
+			#
+			my_docx_manager.title("Référentiels", title_level +1)
+			#
+			for current_framework in json_database["frameworks"].values():
+				#
+				if current_framework["id"] not in mapped_risk["frameworks"].keys():
+					#
+					continue
+				#
+				if len(mapped_risk["frameworks"][current_framework["id"]]) == 0:
+					#
+					continue
+				#
+				my_docx_manager.text(current_framework["name"], "Strong Paragraph")
+				#
+				for current_id in mapped_risk["frameworks"][current_framework["id"]]:
+					#
+					current_link = ""
+					#
+					if current_framework["id"] == "pingcastle":
+						#
+						current_link = "https://pingcastle.com/PingCastleFiles/ad_hc_rules_list.html"
+					#
+					elif current_framework["id"] == "purpleknight":
+						#
+						current_link = "https://www.semperis.com/purple-knight/security-indicators/"
+					#
+					elif current_framework["id"] == "anssi":
+						#
+						current_id = current_id[:4] + current_id[5:]
+						#
+						current_link = f'https://www.cert.ssi.gouv.fr/uploads/ad_checklist.html#{current_id}'
+					#
+					elif current_framework["id"] == "mitre_att&ck":
+						#
+						if '.' in current_id:
+							major_id, minor_id = current_id.split('.')
+						#
+						else:
+							major_id = current_id
+							minor_id = None
+						#
+						if current_id[0] == "M":
+							#
+							current_link = f'https://attack.mitre.org/mitigations/{major_id}'
+						#
+						elif current_id[0] == "T":
+							#
+							current_link = f'https://attack.mitre.org/techniques/{major_id}'
+						#
+						if minor_id:
+							#
+							current_link += f'/{minor_id}'
+					#
+					my_docx_manager.link(current_id, current_link, "List Bullet")
 			#
 			if len(mapped_risk["concepts"]) > 0:
 				#
@@ -1352,14 +1415,6 @@ def build_docx_document(json_database:list) -> None:
 			# Write it in the console
 			#
 			logging.log(f'Documentation not found at "{file_path}".', "error")
-	#
-	# Go to the next page of the DOCX report
-	#
-	my_docx_manager.break_page()
-	#
-	# Add the footer of the report
-	#
-	my_docx_manager.append(config.get("PATH_MAPPED_REFERENCES"))
 	#
 	# Go to the next page of the DOCX report
 	#
