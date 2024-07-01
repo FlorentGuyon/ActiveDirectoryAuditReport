@@ -111,7 +111,7 @@
         {
             "uid": 1,
             "severity": 1,
-            "file_name": "external_trust_without_sid_filtering.docx",
+            "file_name": "1_external_trust_without_sid_filtering.docx",
             "title": "Relation de confiance externe sans filtrage des identificateurs de sécurité",
             "frameworks": {
                 "pingcastle": [
@@ -137,12 +137,13 @@
                 "minimum": 1,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 2,
             "severity": 3,
-            "file_name": "unknown_domain_in_sid_history.docx",
+            "file_name": "2_unknown_domain_in_sid_history.docx",
             "title": "Domaine inconnu dans un historique d'identificateurs de sécurité",
             "frameworks": {
                 "pingcastle": [
@@ -165,12 +166,13 @@
                 "minimum": 1,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 3,
             "severity": 2,
-            "file_name": "old_kerberos_password.docx",
+            "file_name": "3_old_kerberos_password.docx",
             "title": "Vieux mot de passe Kerberos",
             "frameworks": {
                 "pingcastle": [
@@ -193,7 +195,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 4,
@@ -219,13 +222,14 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 5,
             "severity": 5,
             "severity_to_update": true,
-            "file_name": "web_enrollement_certificate.docx",
+            "file_name": "5_web_enrollement_certificate.docx",
             "title": "Autorité de certification Active Directory avec inscription WEB",
             "frameworks": {
                 "pingcastle": [
@@ -246,7 +250,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 6,
@@ -278,7 +283,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 7,
@@ -314,7 +320,8 @@
                 "minimum": 2,
                 "average": 3,
                 "maximum": 4
-            }
+            },
+            "found": {}
         },
         {
             "uid": 8,
@@ -334,7 +341,8 @@
                 "minimum": 1,
                 "average": 2,
                 "maximum": 3
-            }
+            },
+            "found": {}
         },
         {
             "uid": 9,
@@ -355,7 +363,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 10,
@@ -379,7 +388,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 11,
@@ -416,7 +426,8 @@
                 "minimum": 2,
                 "average": 3,
                 "maximum": 4
-            }
+            },
+            "found": {}
         },
         {
             "uid": 12,
@@ -449,7 +460,8 @@
                 "minimum": 9,
                 "average": 10,
                 "maximum": 11
-            }
+            },
+            "found": {}
         },
         {
             "uid": 13,
@@ -472,7 +484,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 14,
@@ -493,7 +506,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 15,
@@ -520,7 +534,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 16,
@@ -547,7 +562,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 17,
@@ -569,7 +585,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 18,
@@ -590,7 +607,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 19,
@@ -610,7 +628,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 21,
@@ -628,7 +647,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 22,
@@ -638,7 +658,7 @@
             "title": "22",
             "frameworks": {
                 "purpleknight": [
-                    "Non-privileged users with access to gMSA passwords"
+                    "Principals with constrained authentication delegation enabled for a DC service"
                 ]
             },
             "concepts": [],
@@ -646,7 +666,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 23,
@@ -664,12 +685,13 @@
                 "minimum": 1,
                 "average": 2,
                 "maximum": 3
-            }
+            },
+            "found": {}
         },
         {
             "uid": 24,
             "severity": 1,
-            "file_name": "admin_accounts_vulnerable_to_kerberoast_attack.docx",
+            "file_name": "24_admin_accounts_vulnerable_to_kerberoast_attack.docx",
             "title": "Comptes administrateurs vulnérables à l'attaque Kerberoast",
             "frameworks": {
                 "pingcastle": [
@@ -695,7 +717,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 25,
@@ -713,7 +736,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 26,
@@ -734,7 +758,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 27,
@@ -755,7 +780,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 28,
@@ -779,7 +805,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 29,
@@ -797,7 +824,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 30,
@@ -819,7 +847,8 @@
                 "minimum": 1,
                 "average": 2,
                 "maximum": 3
-            }
+            },
+            "found": {}
         },
         {
             "uid": 31,
@@ -840,7 +869,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 32,
@@ -866,7 +896,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 33,
@@ -893,7 +924,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 34,
@@ -911,7 +943,8 @@
                 "minimum": 2,
                 "average": 3,
                 "maximum": 4
-            }
+            },
+            "found": {}
         },
         {
             "uid": 35,
@@ -937,7 +970,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 36,
@@ -958,7 +992,8 @@
                 "minimum": 1,
                 "average": 2,
                 "maximum": 3
-            }
+            },
+            "found": {}
         },
         {
             "uid": 37,
@@ -979,7 +1014,8 @@
                 "minimum": 2,
                 "average": 3,
                 "maximum": 4
-            }
+            },
+            "found": {}
         },
         {
             "uid": 38,
@@ -1000,7 +1036,8 @@
                 "minimum": 1,
                 "average": 2,
                 "maximum": 3
-            }
+            },
+            "found": {}
         },
         {
             "uid": 39,
@@ -1028,7 +1065,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 40,
@@ -1055,7 +1093,8 @@
                 "minimum": 4,
                 "average": 5,
                 "maximum": 6
-            }
+            },
+            "found": {}
         },
         {
             "uid": 41,
@@ -1078,7 +1117,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 42,
@@ -1108,7 +1148,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 43,
@@ -1129,7 +1170,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 44,
@@ -1150,7 +1192,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 45,
@@ -1168,7 +1211,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 46,
@@ -1186,7 +1230,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 47,
@@ -1204,7 +1249,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 48,
@@ -1222,7 +1268,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 49,
@@ -1240,7 +1287,8 @@
                 "minimum": 0.5,
                 "average": 0.5,
                 "maximum": 1.5
-            }
+            },
+            "found": {}
         },
         {
             "uid": 50,
@@ -1261,7 +1309,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 51,
@@ -1284,7 +1333,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 52,
@@ -1307,7 +1357,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 53,
@@ -1331,7 +1382,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 54,
@@ -1354,7 +1406,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 55,
@@ -1375,7 +1428,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 56,
@@ -1403,7 +1457,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 57,
@@ -1431,7 +1486,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 58,
@@ -1452,7 +1508,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 59,
@@ -1473,7 +1530,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 60,
@@ -1495,7 +1553,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 61,
@@ -1521,7 +1580,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 62,
@@ -1545,7 +1605,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 63,
@@ -1568,7 +1629,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 64,
@@ -1589,7 +1651,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 65,
@@ -1610,7 +1673,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 66,
@@ -1631,7 +1695,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 67,
@@ -1652,7 +1717,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 68,
@@ -1673,7 +1739,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 69,
@@ -1694,7 +1761,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 70,
@@ -1715,7 +1783,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 71,
@@ -1736,7 +1805,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 72,
@@ -1759,7 +1829,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 73,
@@ -1782,7 +1853,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 74,
@@ -1803,7 +1875,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 75,
@@ -1824,7 +1897,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 76,
@@ -1845,7 +1919,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 77,
@@ -1866,7 +1941,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 78,
@@ -1893,7 +1969,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 79,
@@ -1914,7 +1991,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 80,
@@ -1935,7 +2013,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 81,
@@ -1956,7 +2035,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 82,
@@ -1984,7 +2064,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 83,
@@ -2005,7 +2086,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 84,
@@ -2026,7 +2108,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 85,
@@ -2047,7 +2130,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 86,
@@ -2068,7 +2152,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 87,
@@ -2094,7 +2179,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 88,
@@ -2115,7 +2201,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 89,
@@ -2136,7 +2223,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 90,
@@ -2158,7 +2246,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 91,
@@ -2185,7 +2274,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 92,
@@ -2215,7 +2305,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 93,
@@ -2242,7 +2333,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 94,
@@ -2263,7 +2355,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 95,
@@ -2284,7 +2377,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 96,
@@ -2305,7 +2399,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 97,
@@ -2326,7 +2421,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 98,
@@ -2347,7 +2443,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 99,
@@ -2370,7 +2467,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 100,
@@ -2396,7 +2494,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 101,
@@ -2418,7 +2517,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 102,
@@ -2441,7 +2541,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 103,
@@ -2464,7 +2565,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 104,
@@ -2487,7 +2589,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 105,
@@ -2510,7 +2613,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 106,
@@ -2531,7 +2635,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 107,
@@ -2552,7 +2657,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 108,
@@ -2579,7 +2685,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 109,
@@ -2600,7 +2707,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 110,
@@ -2624,7 +2732,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 111,
@@ -2645,7 +2754,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 112,
@@ -2666,7 +2776,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 113,
@@ -2687,7 +2798,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 114,
@@ -2708,7 +2820,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 115,
@@ -2737,7 +2850,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 116,
@@ -2758,7 +2872,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 117,
@@ -2779,7 +2894,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 118,
@@ -2800,7 +2916,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 119,
@@ -2821,7 +2938,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 120,
@@ -2842,7 +2960,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 121,
@@ -2863,7 +2982,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 122,
@@ -2890,7 +3010,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 123,
@@ -2911,7 +3032,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 124,
@@ -2937,7 +3059,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 125,
@@ -2958,7 +3081,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 126,
@@ -2979,7 +3103,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 127,
@@ -3000,7 +3125,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 128,
@@ -3021,7 +3147,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 129,
@@ -3044,7 +3171,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 130,
@@ -3065,7 +3193,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 131,
@@ -3086,7 +3215,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 132,
@@ -3108,7 +3238,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 133,
@@ -3129,7 +3260,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 134,
@@ -3150,7 +3282,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 135,
@@ -3171,7 +3304,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 136,
@@ -3192,7 +3326,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 137,
@@ -3213,7 +3348,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 138,
@@ -3238,7 +3374,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 139,
@@ -3259,7 +3396,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 140,
@@ -3285,7 +3423,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 142,
@@ -3306,7 +3445,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 143,
@@ -3329,7 +3469,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 144,
@@ -3350,7 +3491,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 145,
@@ -3376,7 +3518,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 146,
@@ -3398,7 +3541,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 147,
@@ -3419,7 +3563,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 148,
@@ -3439,7 +3584,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 149,
@@ -3461,7 +3607,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 150,
@@ -3481,7 +3628,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 151,
@@ -3502,7 +3650,8 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
         },
         {
             "uid": 152,
@@ -3524,7 +3673,730 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
-            }
+            },
+            "found": {}
+        },
+        {
+            "uid": 153,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "153",
+            "frameworks": {
+                "purpleknight": [
+                    "Abnormal Password Refresh"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 154,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "154",
+            "frameworks": {
+                "purpleknight": [
+                    "AD objects created within the last 10 days"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 155,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "155",
+            "frameworks": {
+                "purpleknight": [
+                    "Built-in domain Administrator account used within the last two weeks"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 156,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "156",
+            "frameworks": {
+                "purpleknight": [
+                    "Changes to privileged group membership in the last 7 days"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 157,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "157",
+            "frameworks": {
+                "purpleknight": [
+                    "Computer accounts in privileged groups"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 158,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "158",
+            "frameworks": {
+                "purpleknight": [
+                    "Ephemeral Admins"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 159,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "159",
+            "frameworks": {
+                "purpleknight": [
+                    "FGPP not applied to Group"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 160,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "160",
+            "frameworks": {
+                "purpleknight": [
+                    "Recent privileged account creation activity"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 161,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "161",
+            "frameworks": {
+                "purpleknight": [
+                    "Recent sIDHistory changes on objects"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 162,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "162",
+            "frameworks": {
+                "purpleknight": [
+                    "Users and computers without readable PGID"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 163,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "163",
+            "frameworks": {
+                "purpleknight": [
+                    "Write access to RBCD on DC"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 164,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "164",
+            "frameworks": {
+                "purpleknight": [
+                    "Built-in guest account is enabled"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 165,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "165",
+            "frameworks": {
+                "purpleknight": [
+                    "Changes to default security descriptor schema in the last 90 days"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 167,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "167",
+            "frameworks": {
+                "purpleknight": [
+                    "Foreign Security Principals in Privileged Group"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 168,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "168",
+            "frameworks": {
+                "purpleknight": [
+                    "Inheritance enabled on AdminSDHolder object"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 169,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "169",
+            "frameworks": {
+                "purpleknight": [
+                    "Non default value on ms-Mcs-AdmPwd SearchFlags"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 170,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "170",
+            "frameworks": {
+                "purpleknight": [
+                    "Objects in built-in protected groups without adminCount=1 (SDProp)"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 171,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "171",
+            "frameworks": {
+                "purpleknight": [
+                    "Users with permissions to set Server Trust Account"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 172,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "172",
+            "frameworks": {
+                "purpleknight": [
+                    "Dangerous Trust Attribute Set"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 173,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "173",
+            "frameworks": {
+                "purpleknight": [
+                    "Domain controllers with old passwords"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 174,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "174",
+            "frameworks": {
+                "purpleknight": [
+                    "Domains with obsolete functional levels"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 175,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "175",
+            "frameworks": {
+                "purpleknight": [
+                    "Evidence of Mimikatz DCShadow attack"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 176,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "176",
+            "frameworks": {
+                "purpleknight": [
+                    "gMSA not in use"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 177,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "177",
+            "frameworks": {
+                "purpleknight": [
+                    "Non-standard schema permissions"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 178,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "178",
+            "frameworks": {
+                "purpleknight": [
+                    "Operator groups no longer protected by AdminSDHolder and SDProp"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 179,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "179",
+            "frameworks": {
+                "purpleknight": [
+                    "Print spooler service is enabled on a DC"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 180,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "180",
+            "frameworks": {
+                "purpleknight": [
+                    "Privileged user credentials cached on RODC"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 181,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "181",
+            "frameworks": {
+                "purpleknight": [
+                    "Resource Based Constrained Delegation applied to AZUREADSSOACC account"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 182,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "182",
+            "frameworks": {
+                "purpleknight": [
+                    "SMBv1 is enabled on Domain Controllers"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 183,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "183",
+            "frameworks": {
+                "purpleknight": [
+                    "Zerologon vulnerability"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 184,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "184",
+            "frameworks": {
+                "purpleknight": [
+                    "Computer account takeover through Kerberos Resource-Based Constrained Delegation (RBCD)"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 185,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "185",
+            "frameworks": {
+                "purpleknight": [
+                    "Changes to Default Domain Policy or Default Domain Controllers Policy in the last 7 days"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 186,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "186",
+            "frameworks": {
+                "purpleknight": [
+                    "Dangerous GPO logon script path"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 187,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "187",
+            "frameworks": {
+                "purpleknight": [
+                    "Dangerous user rights granted by GPO"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 188,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "188",
+            "frameworks": {
+                "purpleknight": [
+                    "Reversible passwords found in GPOs"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 189,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "189",
+            "frameworks": {
+                "purpleknight": [
+                    "SYSVOL Executable Changes"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 190,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "190",
+            "frameworks": {
+                "purpleknight": [
+                    "Write access to RBCD on krbtgt account"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 191,
+            "severity": 5,
+            "severity_to_update": true,
+            "file_name": "squelette documentation.docx",
+            "title": "191",
+            "frameworks": {
+                "purpleknight": [
+                    "Kerberos protocol transition delegation configured"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.5,
+                "average": 1,
+                "maximum": 2
+            },
+            "found": {}
         }
     ]
 }

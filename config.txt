@@ -14,31 +14,31 @@
 LOG_LEVEL = info
 
 #
-# Path to the PingCastle input folder
+# Path to the PingCastle and PurpleKnight input files
 #
 # Default:
 #
-# 	PATH_INPUT_PINGCASTLE = ./input/pingcastle
+# 	PATH_INPUTS = ./input
 #
-PATH_INPUT_PINGCASTLE = ./input/pingcastle
-
-#
-# Path to the PurpleKnight input folder
-#
-# Default:
-#
-# 	PATH_INPUT_PURPLEKNIGHT = ./input/purpleknight
-#
-PATH_INPUT_PURPLEKNIGHT = ./input/purpleknight
+PATH_INPUTS = ./input
 
 #
 # Path to the DOCX documentation of the risks
 #
 # Default:
 #
-# 	PATH_DOCUMENTATIONS = ./assets/documentations
+# 	PATH_RISKS_DOCUMENTATIONS = ./assets/documentations/risks
 #
-PATH_DOCUMENTATIONS = ./assets/documentations
+PATH_RISKS_DOCUMENTATIONS = ./assets/documentations/risks
+
+#
+# Path to the DOCX documentation of the concepts
+#
+# Default:
+#
+# 	PATH_CONCEPTS_DOCUMENTATIONS = ./assets/documentations/concepts
+#
+PATH_CONCEPTS_DOCUMENTATIONS = ./assets/documentations/concepts
 
 #
 # Path to the file containing the RACI documentation
