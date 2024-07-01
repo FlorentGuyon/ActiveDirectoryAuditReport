@@ -394,8 +394,8 @@
         {
             "uid": 11,
             "severity": 1,
-            "file_name": "squelette documentation.docx",
-            "title": "11",
+            "file_name": "11_old_password.docx",
+            "title": "Vieux mot de passe",
             "frameworks": {
                 "pingcastle": [
                     "S-PwdNeverExpires",
