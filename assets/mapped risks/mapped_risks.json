@@ -691,8 +691,8 @@
         {
             "uid": 24,
             "severity": 1,
-            "file_name": "24_admin_accounts_vulnerable_to_kerberoast_attack.docx",
-            "title": "Comptes administrateurs vulnérables à l'attaque Kerberoast",
+            "file_name": "24_accounts_with_spn_defined.docx",
+            "title": "Compte avec un nom principal de service",
             "frameworks": {
                 "pingcastle": [
                     "P-Kerberoasting"
