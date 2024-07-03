@@ -4119,10 +4119,9 @@
         },
         {
             "uid": 179,
-            "severity": 5,
-            "severity_to_update": true,
-            "file_name": "squelette documentation.docx",
-            "title": "179",
+            "severity": 1,
+            "file_name": "179_windows_print_spooler_enabled_on_domain_controller.docx",
+            "title": "Service d'impression Windows actif sur un contrôleur de domaine",
             "frameworks": {
                 "purpleknight": [
                     "Print spooler service is enabled on a DC"
@@ -4130,9 +4129,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
