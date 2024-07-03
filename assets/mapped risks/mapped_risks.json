@@ -134,9 +134,9 @@
                 "sid_filtering"
             ],
             "days_to_fix": {
-                "minimum": 1,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -164,8 +164,8 @@
             ],
             "days_to_fix": {
                 "minimum": 1,
-                "average": 1,
-                "maximum": 2
+                "average": 2,
+                "maximum": 3
             },
             "found": {}
         },
@@ -192,9 +192,9 @@
                 "kerberos"
             ],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 0.5,
-                "maximum": 1.5
+                "minimum": 0.25,
+                "average": 1,
+                "maximum": 1
             },
             "found": {}
         },
@@ -219,16 +219,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
+                "minimum": 0.25,
                 "average": 0.5,
-                "maximum": 1.5
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 5,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "5_web_enrollement_certificate.docx",
             "title": "Autorité de certification Active Directory avec inscription WEB",
             "frameworks": {
@@ -247,9 +246,9 @@
                 "ntlm"
             ],
             "days_to_fix": {
-                "minimum": 0.5,
+                "minimum": 0.25,
                 "average": 0.5,
-                "maximum": 1.5
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -280,9 +279,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -317,9 +316,9 @@
                 "certificate"
             ],
             "days_to_fix": {
-                "minimum": 2,
-                "average": 3,
-                "maximum": 4
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -346,8 +345,7 @@
         },
         {
             "uid": 9,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 4,
             "file_name": "squelette documentation.docx",
             "title": "9",
             "frameworks": {
@@ -360,9 +358,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
+                "minimum": 0.25,
                 "average": 0.5,
-                "maximum": 1.5
+                "maximum": 1
             },
             "found": {}
         },
@@ -385,9 +383,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
+                "minimum": 0.25,
                 "average": 0.5,
-                "maximum": 1.5
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -423,16 +421,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 2,
-                "average": 3,
-                "maximum": 4
+                "minimum": 0.25,
+                "average": 0.75,
+                "maximum": 1
             },
             "found": {}
         },
         {
             "uid": 12,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "12",
             "frameworks": {
@@ -457,9 +454,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 9,
-                "average": 10,
-                "maximum": 11
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -481,16 +478,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 14,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "14",
             "frameworks": {
@@ -503,9 +499,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 0.5,
-                "maximum": 1.5
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -531,8 +527,8 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 0.5,
+                "minimum": 0.25,
+                "average": 1,
                 "maximum": 1.5
             },
             "found": {}
@@ -560,15 +556,14 @@
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
-                "average": 0.5,
-                "maximum": 1.5
+                "average": 1,
+                "maximum": 2
             },
             "found": {}
         },
         {
             "uid": 17,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 4,
             "file_name": "squelette documentation.docx",
             "title": "17",
             "frameworks": {
@@ -582,16 +577,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
         {
             "uid": 18,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "18",
             "frameworks": {
@@ -604,9 +598,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
+                "minimum": 0.25,
                 "average": 0.5,
-                "maximum": 1.5
+                "maximum": 1
             },
             "found": {}
         },
@@ -620,7 +614,7 @@
                     "Dangerous control paths expose certificate templates"
                 ],
                 "anssi": [
-                    "vuln1_adcs_template_ control"
+                    "vuln1_adcs_template_control"
                 ]
             },
             "concepts": [],
@@ -628,6 +622,30 @@
                 "minimum": 0.5,
                 "average": 1,
                 "maximum": 2
+            },
+            "found": {}
+        },
+        {
+            "uid": 20,
+            "severity": 3,
+            "file_name": "squelette documentation.docx",
+            "title": "20",
+            "frameworks": {
+                "pingcastle": [
+                    "S-PwdLastSet-45"  
+                ],
+                "anssi": [
+                    "vuln3_password_change_server_no_change_45"
+                ],
+                "mitre_att&ck": [
+                    "M1015"
+                ]
+            },
+            "concepts": [],
+            "days_to_fix": {
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 1
             },
             "found": {}
         },
@@ -714,9 +732,9 @@
                 "spn"
             ],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 1
             },
             "found": {}
         },
@@ -763,8 +781,7 @@
         },
         {
             "uid": 27,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 4,
             "file_name": "squelette documentation.docx",
             "title": "27",
             "frameworks": {
@@ -777,9 +794,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 0.5,
-                "maximum": 1.5
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -802,16 +819,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
         {
             "uid": 29,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "29",
             "frameworks": {
@@ -821,16 +837,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
+                "minimum": 0.25,
                 "average": 0.5,
-                "maximum": 1.5
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 30,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "30",
             "frameworks": {
@@ -844,16 +859,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 1,
-                "average": 2,
-                "maximum": 3
+                "minimum": 0.25,
+                "average": 1,
+                "maximum": 2
             },
             "found": {}
         },
         {
             "uid": 31,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "31",
             "frameworks": {
@@ -866,9 +880,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 0.5,
-                "maximum": 1.5
+                "minimum": 1,
+                "average": 1.5,
+                "maximum": 2
             },
             "found": {}
         },
@@ -893,9 +907,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
+                "minimum": 0.25,
                 "average": 0.5,
-                "maximum": 1.5
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -921,16 +935,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 1
             },
             "found": {}
         },
         {
             "uid": 34,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 4,
             "file_name": "squelette documentation.docx",
             "title": "34",
             "frameworks": {
@@ -940,16 +953,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 2,
-                "average": 3,
-                "maximum": 4
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
         {
             "uid": 35,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "35",
             "frameworks": {
@@ -967,16 +979,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 36,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "36",
             "frameworks": {
@@ -989,16 +1000,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 1,
-                "average": 2,
-                "maximum": 3
+                "minimum": 0.5,
+                "average": 0.75,
+                "maximum": 1
             },
             "found": {}
         },
         {
             "uid": 37,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "37",
             "frameworks": {
@@ -1011,16 +1021,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 2,
-                "average": 3,
-                "maximum": 4
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 38,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "38",
             "frameworks": {
@@ -1033,9 +1042,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 1,
-                "average": 2,
-                "maximum": 3
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -1062,9 +1071,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
+                "minimum": 0.25,
                 "average": 0.5,
-                "maximum": 1.5
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -1090,9 +1099,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 4,
-                "average": 5,
-                "maximum": 6
+                "minimum": 0.5,
+                "average": 0.75,
+                "maximum": 1
             },
             "found": {}
         },
@@ -1114,9 +1123,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
+                "minimum": 0.25,
                 "average": 0.5,
-                "maximum": 1.5
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -1145,16 +1154,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
+                "minimum": 0.25,
                 "average": 0.5,
-                "maximum": 1.5
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 43,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "43",
             "frameworks": {
@@ -1167,16 +1175,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 44,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 4,
             "file_name": "squelette documentation.docx",
             "title": "44",
             "frameworks": {
@@ -1190,8 +1197,8 @@
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "average": 0.75,
+                "maximum": 1
             },
             "found": {}
         },
@@ -1292,8 +1299,7 @@
         },
         {
             "uid": 50,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 4,
             "file_name": "squelette documentation.docx",
             "title": "50",
             "frameworks": {
@@ -1306,9 +1312,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -1330,9 +1336,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -1354,16 +1360,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 1,
+                "average": 2,
+                "maximum": 3
             },
             "found": {}
         },
         {
             "uid": 53,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "53",
             "frameworks": {
@@ -1379,9 +1384,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 1
             },
             "found": {}
         },
@@ -1403,16 +1408,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 1
             },
             "found": {}
         },
         {
             "uid": 55,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "55",
             "frameworks": {
@@ -1425,9 +1429,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -1454,9 +1458,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -1483,9 +1487,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -1513,8 +1517,7 @@
         },
         {
             "uid": 59,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 4,
             "file_name": "squelette documentation.docx",
             "title": "59",
             "frameworks": {
@@ -1527,16 +1530,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
         {
             "uid": 60,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 4,
             "file_name": "squelette documentation.docx",
             "title": "60",
             "frameworks": {
@@ -1550,9 +1552,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -1577,16 +1579,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 62,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 1,
             "file_name": "squelette documentation.docx",
             "title": "62",
             "frameworks": {
@@ -1602,9 +1603,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -1634,8 +1635,7 @@
         },
         {
             "uid": 64,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "64",
             "frameworks": {
@@ -1648,16 +1648,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 1
             },
             "found": {}
         },
         {
             "uid": 65,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 1,
             "file_name": "squelette documentation.docx",
             "title": "65",
             "frameworks": {
@@ -1670,16 +1669,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 66,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 4,
             "file_name": "squelette documentation.docx",
             "title": "66",
             "frameworks": {
@@ -1692,9 +1690,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -1744,8 +1742,7 @@
         },
         {
             "uid": 69,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 1,
             "file_name": "squelette documentation.docx",
             "title": "69",
             "frameworks": {
@@ -1758,9 +1755,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -1858,8 +1855,7 @@
         },
         {
             "uid": 74,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "74",
             "frameworks": {
@@ -1872,9 +1868,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -1902,8 +1898,7 @@
         },
         {
             "uid": 76,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 1,
             "file_name": "squelette documentation.docx",
             "title": "76",
             "frameworks": {
@@ -1916,16 +1911,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 77,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "77",
             "frameworks": {
@@ -1938,9 +1932,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -1966,9 +1960,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -2018,8 +2012,7 @@
         },
         {
             "uid": 81,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "81",
             "frameworks": {
@@ -2032,9 +2025,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -2069,8 +2062,7 @@
         },
         {
             "uid": 83,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 1,
             "file_name": "squelette documentation.docx",
             "title": "83",
             "frameworks": {
@@ -2083,9 +2075,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -2113,8 +2105,7 @@
         },
         {
             "uid": 85,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "85",
             "frameworks": {
@@ -2128,15 +2119,14 @@
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "average": 0.75,
+                "maximum": 1
             },
             "found": {}
         },
         {
             "uid": 86,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "86",
             "frameworks": {
@@ -2149,9 +2139,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -2176,16 +2166,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 88,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "88",
             "frameworks": {
@@ -2198,16 +2187,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 89,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 1,
             "file_name": "squelette documentation.docx",
             "title": "89",
             "frameworks": {
@@ -2221,15 +2209,14 @@
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "average": 0.5,
+                "maximum": 1
             },
             "found": {}
         },
         {
             "uid": 90,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "90",
             "frameworks": {
@@ -2243,9 +2230,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -2271,9 +2258,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -2338,8 +2325,7 @@
         },
         {
             "uid": 94,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "94",
             "frameworks": {
@@ -2352,16 +2338,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
         {
             "uid": 95,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 4,
             "file_name": "squelette documentation.docx",
             "title": "95",
             "frameworks": {
@@ -2374,16 +2359,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
         {
             "uid": 96,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "96",
             "frameworks": {
@@ -2396,9 +2380,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -2426,8 +2410,7 @@
         },
         {
             "uid": 98,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "98",
             "frameworks": {
@@ -2440,9 +2423,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -2491,9 +2474,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -2539,8 +2522,8 @@
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "average": 0.75,
+                "maximum": 1
             },
             "found": {}
         },
@@ -2562,9 +2545,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -2586,9 +2569,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -2618,8 +2601,7 @@
         },
         {
             "uid": 106,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "106",
             "frameworks": {
@@ -2632,16 +2614,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 107,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "107",
             "frameworks": {
@@ -2654,9 +2635,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -2682,8 +2663,8 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
+                "minimum": 1,
+                "average": 1.5,
                 "maximum": 2
             },
             "found": {}
@@ -2759,8 +2740,7 @@
         },
         {
             "uid": 112,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "112",
             "frameworks": {
@@ -2773,16 +2753,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 113,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "113",
             "frameworks": {
@@ -2795,16 +2774,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 114,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "114",
             "frameworks": {
@@ -2817,9 +2795,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 3,
+                "maximum": 5
             },
             "found": {}
         },
@@ -2855,8 +2833,7 @@
         },
         {
             "uid": 116,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "116",
             "frameworks": {
@@ -2869,16 +2846,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 117,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "117",
             "frameworks": {
@@ -2891,16 +2867,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 118,
             "severity": 5,
-            "severity_to_update": true,
             "file_name": "squelette documentation.docx",
             "title": "118",
             "frameworks": {
@@ -2913,9 +2888,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -2943,8 +2918,7 @@
         },
         {
             "uid": 120,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 1,
             "file_name": "squelette documentation.docx",
             "title": "120",
             "frameworks": {
@@ -2957,16 +2931,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 121,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 1,
             "file_name": "squelette documentation.docx",
             "title": "121",
             "frameworks": {
@@ -2980,8 +2953,8 @@
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "average": 0.75,
+                "maximum": 1
             },
             "found": {}
         },
@@ -3007,16 +2980,15 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
         {
             "uid": 123,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "123",
             "frameworks": {
@@ -3029,9 +3001,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -3056,9 +3028,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -3130,8 +3102,7 @@
         },
         {
             "uid": 128,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "128",
             "frameworks": {
@@ -3144,9 +3115,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -3220,8 +3191,7 @@
         },
         {
             "uid": 132,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "132",
             "frameworks": {
@@ -3235,9 +3205,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -3265,8 +3235,7 @@
         },
         {
             "uid": 134,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "134",
             "frameworks": {
@@ -3279,9 +3248,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.25,
+                "maximum": 0.25
             },
             "found": {}
         },
@@ -3309,8 +3278,7 @@
         },
         {
             "uid": 136,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 3,
             "file_name": "squelette documentation.docx",
             "title": "136",
             "frameworks": {
@@ -3324,15 +3292,14 @@
             "concepts": [],
             "days_to_fix": {
                 "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "average": 0.75,
+                "maximum": 1
             },
             "found": {}
         },
         {
             "uid": 137,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 1,
             "file_name": "squelette documentation.docx",
             "title": "137",
             "frameworks": {
@@ -3345,9 +3312,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -3420,8 +3387,8 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
+                "minimum": 1,
+                "average": 2,
                 "maximum": 2
             },
             "found": {}
@@ -3466,9 +3433,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -3523,8 +3490,7 @@
         },
         {
             "uid": 146,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 1,
             "file_name": "squelette documentation.docx",
             "title": "146",
             "frameworks": {
@@ -3538,9 +3504,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -3598,7 +3564,7 @@
                     "Privileged objects with unprivileged owners"
                 ],
                 "anssi": [
-                    "vuln1_permissions_ adminsdholder",
+                    "vuln1_permissions_adminsdholder",
                     "vuln1_privileged_members_perm"
                 ]
             },
@@ -3647,9 +3613,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
@@ -4362,8 +4328,7 @@
         },
         {
             "uid": 190,
-            "severity": 5,
-            "severity_to_update": true,
+            "severity": 2,
             "file_name": "squelette documentation.docx",
             "title": "190",
             "frameworks": {
@@ -4373,9 +4338,9 @@
             },
             "concepts": [],
             "days_to_fix": {
-                "minimum": 0.5,
-                "average": 1,
-                "maximum": 2
+                "minimum": 0.25,
+                "average": 0.5,
+                "maximum": 0.5
             },
             "found": {}
         },
