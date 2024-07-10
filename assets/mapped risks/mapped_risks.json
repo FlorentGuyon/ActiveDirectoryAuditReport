@@ -889,8 +889,8 @@
         {
             "uid": 32,
             "severity": 1,
-            "file_name": "squelette documentation.docx",
-            "title": "32",
+            "file_name": "32_inactive_domain_controller.docx",
+            "title": "Contrôleur de domaine inactif",
             "frameworks": {
                 "pingcastle": [
                     "S-DC-Inactive"
