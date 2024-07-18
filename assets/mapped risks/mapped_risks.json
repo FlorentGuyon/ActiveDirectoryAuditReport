@@ -536,8 +536,8 @@
         {
             "uid": 16,
             "severity": 1,
-            "file_name": "squelette documentation.docx",
-            "title": "16",
+            "file_name": "16_privileged_account_with_non_expiring_password.docx",
+            "title": "Compte à privièges sans expiration de mot-de-passe",
             "frameworks": {
                 "pingcastle": [
                     "P-ServiceDomainAdmin"
