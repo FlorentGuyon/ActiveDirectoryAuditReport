@@ -1,14 +1,20 @@
 # Exclude all template files (DOCX, TTF...)
 assets/templates/*
+# Except the default template
+!assets/templates/template_metsys
 
 # Exclude all input files (HTML, XML)
 input/*
+# Except the input folder itself
+!input/.gitkeep
 
 # Exclude the Python cache folder
 lib/__pycache__
 
 # Exclude all output files (DOCX, PDF)
 output/*
+# Except the output folder itself
+!output/.gitkeep
 
 # Exclude all temporary files
 ~*

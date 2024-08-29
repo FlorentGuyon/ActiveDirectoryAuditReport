@@ -6,6 +6,7 @@ matplotlib>=3.8.3
 numpy>=1.26.4
 openpyxl>=3.1.2
 pandas>=2.2.1
+pythoncom>=
 python-docx>=1.1.0
 pywin32>=306
 seaborn>=0.13.2

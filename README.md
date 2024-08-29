@@ -1,42 +1,35 @@
-# Active Directory Audit Report
-_Transform a PingCastle HTML or XML report into a branded DOCX and PDF report._
+# Getting Started
+1. Install **python** (tested on the v3.11.4 for Windows)
 
-## How it works
+2. Download and unzip the script folder
 
-- Add DOCX header (with custom styles) and footer:
-    - ./assets/templates/MyFirstTemplate/header.docx
-    - ./assets/templates/MyFirstTemplate/footer.docx
-    - ./assets/templates/MyFirstTemplate/fonts/MyFirstFont/font.ttf
-- Add the output report of a PingCastle run:
-    - ./input/ad_hc_<domain>.com.(xml or html)
-- Configure additional options:
-    - config.txt
-- Run the python script and get the DOCX and PDF reports:
-    - ./output/ActiveDirectoryAuditReport.(docx and pdf)
+3. Install the requirements:
+	`cd <path to the script>`
+	`py -m pip install -r requirements.txt`
 
-## Installation
-_Requires python3 and pip to run._
+4. Create a new template, if necessary:
+	- Copy the folder: `assets/templates/template_metsys`
+	- Paste the folder: `assets/templates/<template name>`
+	- Update the folder:
+		- Add/Remove fonts folders in the folder: `assets/templates/<template name>/fonts` (some fonts cannot be embedded in PDF files)
+		- Update the files **header.docx** and **footer.docx**
 
-#### Install the dependencies and build the report.
+5. Update the **config.txt** file, if necessary
 
-```sh
-py -m pip install -r .\requirements.txt
-py audit.py
-```
+6. Add the input files in the **input** folder:
+	- PingCastle: `ad_hc_*.xml`
+	- PurpleKnight: `Security_Assessment_Report_*.xlsx`
 
-## Compatibilities
+7. Execute the program:
+	`cd <path to the script>`
+	`py main.py`
 
-| Python | Windows 11 |
-|--------|------------|
-| 3.11.4 | OK         |
+8.	Get the final report in the **output** folder:
+	`ActiveDirectoryAuditReport.pdf`
 
-## Help
+# Test mode
+It is possible to generate a test report that includes all existing risks. To do this:
 
-- If the following error occurs: ```win32com.gen_py [...] has no attribute 'clsidtopackagemap'```
-    - Delete the following folder and retry: ```C:\Users\<username>\AppData\Local\Temp\gen_py```
-
-## License
-
-MIT
-
-**Free Software, Hell Yeah!**
+1. Uncomment the `TEST MODE` lines in the **mark_risks_found** function within the **main.py** file.
+2. Generate the report.
+3. Comment the `TEST MODE` lines again.

@@ -593,6 +593,10 @@ def mark_risks_found(json_database:list, datetime:str, ids_of_risks_to_mark:list
 	# Go through all the risks in the JSON database
 	#
 	for current_risk_index, current_risk in enumerate(json_database["risks"]):
+		# TEST MODE #
+		#current_risk["found"][datetime] = True
+		#continue
+		# TEST MODE #
 		#
 		# If the current risk does not have a PingCastle or PurpleKnight ID
 		#
@@ -773,7 +777,7 @@ def create_stacked_bar_chart(risks_data) -> None:
 	# Melt the DataFrame to long format for seaborn
 	data_melted = pandas.melt(data, id_vars='Datetime', var_name='Category', value_name='Value')
 	
-	print(data_melted)
+	#print(data_melted)
 
 	# Set up the matplotlib figure
 	matplotlib.pyplot.figure(figsize=(12, 8))
@@ -911,7 +915,13 @@ def create_bar_chart(chart_data) -> None:
 			#
 			# Define the text properties of the values of the current category
 			#
-			text = category["label"]["value"] if category["label"]["value"] else ""
+			if category["label"]["value"]:
+				if category["label"]["value"] < 0:
+					text = -category["label"]["value"]
+				else:
+					text = category["label"]["value"]
+			else:
+				text = ""
 			#
 			#
 			#
@@ -1558,7 +1568,7 @@ def build_docx_document(sorted_input_files:dict, json_database:dict) -> None:
 	# #
 	# # Create a bar chart with the history of the risks found in each severity
 	# #
-	create_stacked_bar_chart(json_database["risks"])
+	#create_stacked_bar_chart(json_database["risks"])
 
 	#
 	# Add the title of the chart
@@ -1785,7 +1795,7 @@ def build_docx_document(sorted_input_files:dict, json_database:dict) -> None:
 			# Append nan to the shorter list until both lists have the same size
 			if length_diff > 0:
 				chart_data["lines"][line_key]["line_parts"][f"Niveau {severity}"]["y_values"] += [numpy.nan] * length_diff
-	print(chart_data)
+	#print(chart_data)
 	#
 	# Create a bar chart with the risks found compared to the total in each category
 	#
@@ -1900,13 +1910,9 @@ def build_docx_document(sorted_input_files:dict, json_database:dict) -> None:
 			#
 			my_docx_manager.title("Référentiels", title_level +1)
 			#
-			table = [["", ""]] * len(mapped_risk["frameworks"].keys())
-			#
-			table = my_docx_manager.table(table, border_color="#D9D9D9")
-			#
 			for line_index, framework_id in enumerate(mapped_risk["frameworks"].keys()):
 				#
-				table.rows[line_index].cells[0].paragraphs[0]._element = my_docx_manager.text(json_database["frameworks"][framework_id]["name"], "Subtitle")._element
+				my_docx_manager.add_text(json_database["frameworks"][framework_id]["name"], "Strong Paragraph")
 				#
 				for current_index, current_id in enumerate(mapped_risk["frameworks"][framework_id]):
 					#
@@ -1946,8 +1952,8 @@ def build_docx_document(sorted_input_files:dict, json_database:dict) -> None:
 						if minor_id:
 							#
 							current_link += f'/{minor_id}'
-					
-					#table[line_index][1].append(my_docx_manager.link(current_id, current_link, "List Bullet"))
+					#
+					my_docx_manager.add_link(current_id, current_link, "List Bullet")
 			#
 			if len(mapped_risk["concepts"]) > 0:
 				#
@@ -1977,10 +1983,6 @@ def build_docx_document(sorted_input_files:dict, json_database:dict) -> None:
 			#
 			logging.log(f'Documentation not found at "{file_path}".', "error")
 	#
-	# Go to the next page of the DOCX report
-	#
-	my_docx_manager.break_page()
-	#
 	# DOCX footer file for the report
 	# Example: "./assets/templates/MyFirstTemplate/footer.docx"
 	#
@@ -1988,12 +1990,13 @@ def build_docx_document(sorted_input_files:dict, json_database:dict) -> None:
 	#
 	# Add the footer of the report
 	#
+	my_docx_manager.break_page()
 	my_docx_manager.append(footer_file)
 	#
 	#
 	#
-	my_docx_manager.replace_text("[company_name]", "GERFLOR")
-	my_docx_manager.replace_text("[company_address]", "26275 SAULCE-SUR-RHONE")
+	my_docx_manager.replace_text("[company_name]", config.get("COMPANY_NAME"))
+	my_docx_manager.replace_text("[company_address]", config.get("COMPANY_ADDRESS"))
 	#
 	# Save the last modifications of the DOCX report
 	#

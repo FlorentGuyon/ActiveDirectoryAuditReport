@@ -1,4 +1,18 @@
 #
+# Name of the company to print in the final report
+#
+#	COMPANY_NAME = Google
+#
+COMPANY_NAME = GERFLOR
+
+#
+# Address of the company to print in the final report
+#
+#	COMPANY_ADDRESS = 1000 Cauliflower Street
+#
+COMPANY_ADDRESS = 26275 SAULCE-SUR-RHONE
+
+#
 # Level of informations logged during the execution of the program:
 #
 # 	debug 	-> 	All the available logs

@@ -546,53 +546,53 @@ class DocxManager():
 		# Reload the DOCX document with the changes
 		self.load_file()
 
-	@logging.log_call
-	def table(self, data, border_color="#000000"):
-		# Create a new Document
-		doc = self.document
-		
-		# Add a table with the given data
-		table = doc.add_table(rows=len(data), cols=len(data[0]))
-
-		# Define the RGB color from the hex code
-		border_color_rgb = docx.shared.RGBColor(int(border_color[1:3], 16), int(border_color[3:5], 16), int(border_color[5:7], 16))
-
-		#for i, row_data in enumerate(data):
-			#row = table.rows[i]
-			#for j, cell_data in enumerate(row_data):
-				#cell = row.cells[j]
-				#cell.paragraphs = data[i][j][1]
-				#cell.text = str(cell_data)
-				# Center the text vertically
-				#cell.vertical_alignment = docx.enum.table.WD_ALIGN_VERTICAL.CENTER
-				# Center the text horizontally
-				#for paragraph in cell.paragraphs:
-					#for run in paragraph.runs:
-						#run.font.size = docx.shared.Pt(11)
-					#paragraph.alignment = 1  # Center alignment
-
-		# Apply the border style to the table
-		tbl = table._tbl  # Get the table element
-		tbl_pr = tbl.tblPr  # Access table properties
-		tbl_borders = docx.oxml.OxmlElement('w:tblBorders')  # Create a new borders element
-
-		# Define border attributes
-		borders = ['top', 'left', 'bottom', 'right', 'insideH', 'insideV']
-		for border in borders:
-			border_element = docx.oxml.OxmlElement(f'w:{border}')
-			border_element.set(docx.oxml.ns.qn('w:val'), 'single')
-			border_element.set(docx.oxml.ns.qn('w:sz'), '4')
-			border_element.set(docx.oxml.ns.qn('w:space'), '0')
-			border_element.set(docx.oxml.ns.qn('w:color'), border_color[1:])  # Use hex color without '#'
-			tbl_borders.append(border_element)
-
-		tbl_pr.append(tbl_borders)  # Append borders to table properties
-		
-		#
-		logging.log(f'Table {data} added to the document.')
-
-		#
-		return table
+	#@logging.log_call
+	#def table(self, data, border_color="#000000"):
+	#	# Create a new Document
+	#	doc = self.document
+	#	
+	#	# Add a table with the given data
+	#	table = doc.add_table(rows=len(data), cols=len(data[0]))
+	#
+	#	# Define the RGB color from the hex code
+	#	border_color_rgb = docx.shared.RGBColor(int(border_color[1:3], 16), int(border_color[3:5], 16), int(border_color[5:7], 16))
+	#
+	#	#for i, row_data in enumerate(data):
+	#		#row = table.rows[i]
+	#		#for j, cell_data in enumerate(row_data):
+	#			#cell = row.cells[j]
+	#			#cell.paragraphs = data[i][j][1]
+	#			#cell.text = str(cell_data)
+	#			# Center the text vertically
+	#			#cell.vertical_alignment = docx.enum.table.WD_ALIGN_VERTICAL.CENTER
+	#			# Center the text horizontally
+	#			#for paragraph in cell.paragraphs:
+	#				#for run in paragraph.runs:
+	#					#run.font.size = docx.shared.Pt(11)
+	#				#paragraph.alignment = 1  # Center alignment
+	#
+	#	# Apply the border style to the table
+	#	tbl = table._tbl  # Get the table element
+	#	tbl_pr = tbl.tblPr  # Access table properties
+	#	tbl_borders = docx.oxml.OxmlElement('w:tblBorders')  # Create a new borders element
+	#
+	#	# Define border attributes
+	#	borders = ['top', 'left', 'bottom', 'right', 'insideH', 'insideV']
+	#	for border in borders:
+	#		border_element = docx.oxml.OxmlElement(f'w:{border}')
+	#		border_element.set(docx.oxml.ns.qn('w:val'), 'single')
+	#		border_element.set(docx.oxml.ns.qn('w:sz'), '4')
+	#		border_element.set(docx.oxml.ns.qn('w:space'), '0')
+	#		border_element.set(docx.oxml.ns.qn('w:color'), border_color[1:])  # Use hex color without '#'
+	#		tbl_borders.append(border_element)
+	#
+	#	tbl_pr.append(tbl_borders)  # Append borders to table properties
+	#	
+	#	#
+	#	logging.log(f'Table {data} added to the document.')
+	#
+	#	#
+	#	return table
 
 	#@logging.log_call
 	#def increase_numbering(self, increased_heading_level:int=1) -> None:
